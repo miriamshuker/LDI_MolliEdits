@@ -25,22 +25,20 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
         SIT
     }
     public PlayerState state;
-    public bool startSneaky;
+    public bool forceSneak;
     public bool isSmall;
+    public bool debugPause;
 
     [Header("Sounds")]
     public AudioManager.AudioTrack[] sounds;
+    [Range(0, 1.5f)]
+    public float minPitch, maxPitch;
+    [Range(0, 2f)]
+    public float sneakPitchMultiplier, sneakVolMultiplier;
 
     #region References
     [Header("Input Actions")]
-    public PlayerInput input;
-    InputAction moveAction;
-    InputAction jumpAction;
-    InputAction interactAction;
-    InputAction sneakAction;
-    InputAction phoneAction;
-    InputAction resetAction;
-    InputAction freeAction;
+    public InputHelper input;
     [Header("References")]
     public Animator animator;
     public GameObject interactArrow;
@@ -66,9 +64,10 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     #region Variables
     [Header("Movement")]
     private bool canMove;
-    private Vector2 move;
+    private Vector3 move;
     public float walkSpeed;
     public float sneakSpeed;
+    float moveX;
 
     [Header("Fall and Jump")]
     public LayerMask jumpLayerMask;
@@ -77,13 +76,20 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     public float landTime;
     public float jumpBufferTime;
     float timeSinceJumpInput;
-    public bool isGrounded;
     public float fallSpeed;
     public float fallFastMultiplier;
     [SerializeField]
     private float fallSpeedActual;
     private bool isFastfall;
-    private bool isFalling;
+    [SerializeField]
+    GroundState groundState;
+
+    enum GroundState
+    {
+        GROUNDED,
+        RISING,
+        FALLING,
+    }
 
     [Header("Stealth")]
     public LayerMask stealthLayerMask;
@@ -91,6 +97,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     public float sneakRadius;
     public float walkRadius;
     public bool isDetectable;
+    private bool isSneaking;
 
     #endregion
 
@@ -99,13 +106,6 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
         if (Instance == null)
         {
             Instance = this;
-            moveAction = input.actions["Move"];
-            jumpAction = input.actions["Jump"];
-            interactAction = input.actions["Interact"];
-            sneakAction = input.actions["Sneak"];
-            phoneAction = input.actions["TogglePhone"];
-            resetAction = input.actions["Reset"];
-            freeAction = input.actions["Free"];
         }
         else if (Instance != this)
         {
@@ -119,91 +119,58 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
         rb = GetComponent<Rigidbody2D>();
         col = GetComponent<CapsuleCollider2D>();
         dr = FindObjectOfType<DialogueRunner>();
+        if (input == null)
+        {
+            input = InputHelper.Instance;
+        }
         interactIndex = -1;
 
         canMove = true;
         fallSpeedActual = fallSpeed;
         isFastfall = false;
     }
+    void OnEnable()
+    {
+        input.jumpAction.started += Jump;
+        input.jumpAction.canceled += Fastfall;
+        input.sneakAction.started += Sneak;
+        input.sneakAction.canceled += Sneak;
+        input.moveAction.performed += Move;
+        input.moveAction.canceled += Move;
+        input.interactAction.started += Interact;
+        input.interactAction.canceled += Interact;
+        input.phoneAction.started += TogglePhone;
+        input.freeAction.started += Free;
+        input.resetAction.started += Reset;
+    }
+    void OnDisable()
+    {
+        input.jumpAction.started -= Jump;
+        input.jumpAction.canceled -= Fastfall;
+        input.sneakAction.started -= Sneak;
+        input.sneakAction.canceled -= Sneak;
+        input.moveAction.performed -= Move;
+        input.moveAction.canceled -= Move;
+        input.interactAction.started -= Interact;
+        input.interactAction.canceled -= Interact;
+        input.phoneAction.started -= TogglePhone;
+        input.freeAction.started -= Free;
+        input.resetAction.started -= Reset;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if (canMove && state != PlayerState.BUSY && !GameManager.Instance.isBusy && !EssayGrader.isUp)
+        if (CanAct())
         {
-            CheckFall();
             CheckGround();
-            Move();
-
-            if (jumpAction.phase == InputActionPhase.Started)
-            {
-                Jump();
-            }
-            if (isGrounded && interactAction.phase == InputActionPhase.Started)
-            {
-                if (interactList.Count > 0)
-                {
-                    //Pause();
-                    SelectInteractable(moveAction.ReadValue<Vector2>().x);
-
-                }
-            }
-            else if (interactAction.phase == InputActionPhase.Canceled)
-            {
-                if (interactSelection != null)
-                {
-                    interactSelection.Interact();
-                    interactArrow.SetActive(false);
-                    sfxPlayer.PlayOneShot(sounds[3].audioClip, 0.2f);
-                }
-            }
-            if (phoneAction.phase == InputActionPhase.Started)
-            {
-                Debug.Log(PhoneManager.Instance.phoneState);
-                if (PhoneManager.Instance.isFocused)
-                {
-                    PhoneManager.Instance.Unfocus();
-                }
-                else
-                {
-                    PhoneManager.Instance.Focus();
-                }
-            }
-        }
-        else
-        {
-            Pause();
-        }
-        if (!isGrounded && jumpAction.phase == InputActionPhase.Canceled)
-        {
-            Fastfall();
-        }
-
-        if (resetAction.phase == InputActionPhase.Started)
-        {
-            GameManager.Instance.isBusy = false;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        }
-        if (!GameManager.Instance.debugMode)
-            return;
-        if (freeAction.phase == InputActionPhase.Started)
-        {
-            state = PlayerState.NONE;
-            GameManager.Instance.inConvo = false;
-            GameManager.Instance.isBusy = false;
+            CheckFall();
+            CheckAnimation();
         }
     }
     void FixedUpdate()
     {
-        transform.position = transform.position + new Vector3(move.x, 0, 0) * Time.fixedDeltaTime;
-    }
-    public void PlaySound(int index)
-    {
-        AudioManager.AudioTrack a = sounds[index];
-        if (a != null && a.audioClip != null)
-        {
-            sfxPlayer.PlayOneShot(a.audioClip);
-        }
+        transform.position += move * Time.deltaTime;
     }
     public void SetPlayerState(PlayerState setting)
     {
@@ -216,31 +183,81 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
 
     #region Movement Functions
-
-    void Move()
+    void CheckAnimation()
     {
-        move = moveAction.ReadValue<Vector2>();
-        if (move.x > 0.1)
+        move.x = IsSneaky() && groundState == GroundState.GROUNDED ? moveX * sneakSpeed : moveX * walkSpeed;
+        if (groundState != GroundState.GROUNDED)
         {
-            spriteRenderer.flipX = false;
-            SetMoveSpeed();
+            return;
         }
-        else if (move.x < -0.1)
+        if (IsStopped())
         {
-            spriteRenderer.flipX = true;
-            SetMoveSpeed();
-        }
-        else if (isGrounded)
-        {
-            if (sneakAction.triggered)
+            if (IsSneaky())
             {
-                animator.SetInteger("State", (int)PlayerState.CROUCH);
-                AdjustCollider(true);
+                PlayAnimation(PlayerState.CROUCH);
             }
             else
             {
-                animator.SetInteger("State", (int)PlayerState.NONE);
-                AdjustCollider(false);
+                PlayAnimation(PlayerState.NONE);
+            }
+        }
+        else
+        {
+            if (IsSneaky())
+            {
+                PlayAnimation(PlayerState.SNEAK);
+            }
+            else
+            {
+                PlayAnimation(PlayerState.WALK);
+            }
+        }
+    }
+
+    void Move(InputAction.CallbackContext context)
+    {
+        //read input
+        moveX = context.ReadValue<Vector2>().x;
+        //quit early if we stopped moving and we're grounded
+        if (!CanAct() || IsStopped() || (context.phase == InputActionPhase.Canceled && groundState == GroundState.GROUNDED))
+        {
+            moveX = 0;
+            return;
+        }
+        spriteRenderer.flipX = moveX < 0;
+    }
+    void Sneak(InputAction.CallbackContext context)
+    {
+        if (!CanAct())
+        {
+            return;
+        }
+        isSneaking = context.phase != InputActionPhase.Canceled;
+        if (groundState != GroundState.GROUNDED)
+        {
+            return;
+        }
+        AdjustCollider(isSneaking);
+        if (isSneaking)
+        {
+            if (IsStopped())
+            {
+                PlayAnimation(PlayerState.NONE);
+            }
+            else
+            {
+                PlayAnimation(PlayerState.WALK);
+            }
+        }
+        else
+        {
+            if (IsStopped())
+            {
+                PlayAnimation(PlayerState.CROUCH);
+            }
+            else
+            {
+                PlayAnimation(PlayerState.SNEAK);
             }
         }
     }
@@ -260,79 +277,45 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
             }
         }
     }
-    void SetMoveSpeed()
+    void Jump(InputAction.CallbackContext context)
     {
-        var test = Gamepad.current;
-        //if (test.)
-        if (!isGrounded)
-        {
-            move *= walkSpeed;
-        }
-        else
-        {
-            if (startSneaky || sneakAction.triggered)
-            {
-                animator.SetInteger("State", (int)PlayerState.SNEAK);
-                move *= sneakSpeed;
-            }
-            else
-            {
-                animator.SetInteger("State", (int)PlayerState.WALK);
-                move *= walkSpeed;
-            }
-        }
-        AdjustCollider(false);
-    }
-    void Jump()
-    {
-        if (LevelLoader.Instance != null && LevelLoader.Instance.currentScene != "ChinatownOutside" && LevelLoader.Instance.currentScene != "Outside test")
+        if (!CanAct())
         {
             return;
         }
         timeSinceJumpInput = Time.time;
-        if (isGrounded)
+        if (groundState == GroundState.GROUNDED)
         {
             //Debug.Log("Trying to jump!");
-            StopAllCoroutines();
-
-            move = Vector2.zero;
-            state = PlayerState.JUMP;
-            animator.SetInteger("State", (int)state);
-            //StartCoroutine(IJump());
-            //TESTING
+            groundState = GroundState.RISING;
+            PlayAnimation(PlayerState.JUMP);
+            //PlaySound("JUMP", 0.5f);
             rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-            
-            fallSpeedActual = fallSpeed;
         }
     }
-    void Fall()
+    void CheckFall()
     {
-        isFalling = true;
-        rb.gravityScale = fallSpeedActual;
-        state = PlayerState.FALL;
-        animator.SetInteger("State", (int)state);
+        if (groundState != GroundState.GROUNDED && rb.velocity.y < -0.05)
+        {
+            groundState = GroundState.FALLING;
+            //PlayAnimation(PlayerState.FALL);
+        }
     }
-    void Fastfall()
+    void Fastfall(InputAction.CallbackContext context)
     {
-        //TESTING: Removed ground check
-        if (!isFastfall)
+        if (groundState != GroundState.GROUNDED && !isFastfall)
         {
             //Debug.Log("Fastfalling");
             isFastfall = true;
-            //TESTING
-            fallSpeedActual = fallSpeed * fallFastMultiplier;
-            rb.gravityScale = fallSpeedActual;
+            rb.gravityScale = fallSpeed * fallFastMultiplier;
         }
     }
     void Land()
     {
-        isFalling = false;
-        //Debug.Log("Grounded");
-        StopAllCoroutines();
-
+        //Debug.Log("landed");
         isFastfall = false;
-        fallSpeedActual = fallSpeed;
-        rb.gravityScale = fallSpeedActual;
+        groundState = GroundState.GROUNDED;
+        rb.gravityScale = fallSpeed;
 
         if ((Time.time - timeSinceJumpInput) < jumpBufferTime)
         {
@@ -341,55 +324,45 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
         }
         else
         {
-            state = PlayerState.LAND;
-            animator.SetInteger("State", (int)state);
-            //StartCoroutine(ILand());
-            //TESTING
-            sfxPlayer.PlayOneShot(sounds[2].audioClip);
-            state = PlayerState.NONE;
-            animator.SetInteger("State", (int)state);
+            PlaySound("LAND", 0.5f);
+            if (!IsStopped())
+            {
+                PlayAnimation(PlayerState.WALK);
+            }
+            else
+            {
+                PlayAnimation(PlayerState.NONE);
+            }
         }
     }
 
-    void CheckFall()
-    {
-        if (!isGrounded && rb.velocity.y < -.05)
-        {
-            Fall();
-        }
-    }
     void CheckGround()
     {
+        if (groundState != GroundState.FALLING)
+        {
+            return;
+        }
         Bounds colBounds = col.bounds;
         Vector2 colBox = new Vector2(colBounds.size.x - .25f, colBounds.size.y);
         Vector2 colCenter = new Vector2(colBounds.center.x, colBounds.center.y - .05f);
         Collider2D raycastHit = Physics2D.OverlapBox(colCenter, colBox, 0, jumpLayerMask);
         //Debug.Log(raycastHit != null);
         bool hitGround = raycastHit != null;
-        if (!isGrounded && hitGround)
+        if (hitGround)
         {
-            isGrounded = hitGround;
             Land();
         }
-        isGrounded = hitGround;
     }
 
-    IEnumerator IJump()
-    {
-        yield return StopMovement(jumpTime);
-        rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-        fallSpeedActual = fallSpeed;
-    }
-    IEnumerator ILand()
-    {
-        yield return StopMovement(landTime);
-        state = PlayerState.NONE;
-        animator.SetInteger("State", (int)state);
-    }
     public void Pause()
     {
+        moveX = 0;
         move = Vector2.zero;
-        animator.SetInteger("State", (int)PlayerState.NONE);
+        PlayAnimation(PlayerState.NONE);
+    }
+    bool IsStopped()
+    {
+        return Mathf.Abs(moveX) < 0.1f;
     }
     public void AllowMovement(bool setting)
     {
@@ -397,7 +370,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
     public IEnumerator StopMovement(float waitTime)
     {
-        move = Vector2.zero;
+        moveX = 0;
         canMove = false;
         yield return new WaitForSeconds(waitTime);
         canMove = true;
@@ -442,7 +415,29 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
             spriteRenderer.enabled = true;
         }
     }
-
+    void Interact(InputAction.CallbackContext context)
+    {
+        if (!CanAct())
+        {
+            return;
+        }
+        if (groundState == GroundState.GROUNDED && context.phase == InputActionPhase.Started)
+        {
+            if (interactList.Count > 0)
+            {
+                SelectInteractable(input.moveAction.ReadValue<Vector2>().x);
+            }
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            if (interactSelection != null)
+            {
+                interactSelection.Interact();
+                interactArrow.SetActive(false);
+                PlaySound("INTERACT", 0.2f);
+            }
+        }
+    }
     void CheckInteractables()
     {
         Debug.Log("checking interactables");
@@ -534,6 +529,44 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
             //Debug.Log("Made sound, but not detectable right now");
         }
     }
+    public void PlaySound(int index)
+    {
+        AudioManager.AudioTrack a = sounds[index];
+        if (a != null && a.audioClip != null)
+        {
+            PlaySound(a.clipName);
+        }
+    }
+    void PlaySound(string key, float vol = 1)
+    {
+        AudioClip clip = null;
+        switch (key)
+        {
+            case "WALK":
+                clip = sounds[0].audioClip;
+                break;
+            case "JUMP":
+                clip = sounds[1].audioClip;
+                break;
+            case "LAND":
+                clip = sounds[2].audioClip;
+                break;
+            case "INTERACT":
+                clip = sounds[3].audioClip;
+                break;
+        }
+        if (clip != null)
+        {
+            float pitch = Random.Range(minPitch, maxPitch);
+            if (state == PlayerState.SNEAK)
+            {
+                pitch *= sneakPitchMultiplier;
+                vol *= sneakVolMultiplier;
+            }
+            sfxPlayer.pitch = pitch;
+            sfxPlayer.PlayOneShot(clip, vol);
+        }
+    }
     public void Mute()
     {
 
@@ -542,7 +575,51 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     {
 
     }
-    
+    void PlayAnimation(PlayerState state)
+    {
+        this.state = state;
+        animator.SetInteger("State", (int)(state));
+    }
+    bool IsSneaky()
+    {
+        return forceSneak || isSneaking;
+    }
+    bool CanAct()
+    {
+        if (debugPause) return false;
+        return canMove && state != PlayerState.BUSY && !GameManager.Instance.isBusy && !EssayGrader.isUp;
+    }
+    void TogglePhone(InputAction.CallbackContext context)
+    {
+        if ((!PhoneManager.Instance.isFocused && !CanAct() || GameDialogueManager.Instance.dialogueState != GameDialogueManager.DialogueState.NONE))
+        {
+            return;
+        }
+        Debug.Log(PhoneManager.Instance.phoneState);
+        if (PhoneManager.Instance.isFocused)
+        {
+            PhoneManager.Instance.Unfocus();
+        }
+        else
+        {
+            PhoneManager.Instance.Focus();
+            SetPlayerState(PlayerState.BUSY);
+        }
+    }
+    void Reset(InputAction.CallbackContext context)
+    {
+        GameManager.Instance.isBusy = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    void Free(InputAction.CallbackContext context)
+    {
+        if (!GameManager.Instance.debugMode)
+            return;
+        SetPlayerState(PlayerState.NONE);
+        GameManager.Instance.inConvo = false;
+        GameManager.Instance.isBusy = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Interactable"))
@@ -596,5 +673,14 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
         Gizmos.DrawWireSphere(transform.position + soundOffset, sneakRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position + soundOffset, walkRadius);
+
+        if (col)
+        {
+            Bounds colBounds = col.bounds;
+            Vector2 colBox = new Vector2(colBounds.size.x - .25f, colBounds.size.y);
+            Vector2 colCenter = new Vector2(colBounds.center.x, colBounds.center.y - .05f);
+            Gizmos.color = Color.black;
+            Gizmos.DrawWireCube(colCenter, colBox);
+        }
     }
 }

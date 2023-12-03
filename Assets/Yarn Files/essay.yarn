@@ -1,0 +1,78 @@
+title: essayfeedback
+---
+<<setboxlocation DialogueCanvas center>>
+Okay, let's do a read-through of this bad boy. Hmmm....
+
+<<if $essayhasname is false>>
+    Whoops, I forgot to put my name on the paper. That would've been embarrassing.
+    [[essayrework]]
+<<else>>
+    <<if $essayhasfullname is false>>
+        Ah, forgot to put my last name. It's "Nguyen" - might be a little hard to spell for some people.
+        [[essayrework]]
+    <<else>>
+        I even remembered to put my name this time!
+    <<endif>>
+<<endif>>
+
+<<if $essayhasnonos is true >>
+    Dude, I should no better than to use these words. Let's try again.
+    [[essayrework]]
+<<endif>>
+<<if $essayhasriskies is true >>
+    It's a bit vulgar, but as long as I approach the topic well, it should be fine.
+<<endif>>
+
+<<if $essaylength == "vshort" >>
+    C'mon, man. This's waaaaay too short.
+    [[essayrework]]
+<<elseif $essaylength == "short" >>
+    Just a bit on the short side. Let's add some more detail.
+    [[essayrework]]
+<<elseif $essaylength == "medium">>
+    This is a pretty good length.
+<<elseif $essaylength == "long">>
+    Wow, I ended up writing a lot, huh?
+<<endif>>
+
+<<if $essayisontopic is true>>
+    And it looks on-topic, basically.
+<<else>>
+    Hmm. Maybe I should include a few more keywords, just to make sure the grader knows I'm on topic.
+    We're getting there!
+    [[essayrework]]
+<<endif>>
+
+Let's look at the structure here....
+<<if $essayhasspaces is false or $essayhasperiods is false or $essayhascapitals is false>>
+    <<if $essayhasspaces is false>>
+        I should probably break this up into a few more words.
+        Only a bit more editing left to go!
+        [[essayrework]]
+    <<endif>>
+    <<if $essayhasperiods is false>>
+        While I'm at it, I should start using some punctuation here and there, to make it easier to read.
+        Only a bit more editing left to go!
+        [[essayrework]]
+    <<endif>>
+    <<if $essayhascapitals is false>>
+        Don't forget to capitalize here and there!
+        Only a bit more editing left to go!
+        [[essayrework]]
+    <<endif>>
+<<else>>
+    Alright, nice - looks like I have some spaces, punctuation, and capitalization.
+<<endif>>
+
+It looks like everything is... okay?
+It's not perfect, but I'll leave the final touches to future me. Good work, for now!
+<<essaydown UICanvas >>
+<<set $essaydone to true>>
+<<showsuccess UICanvas 3>>
+===
+
+title: essayrework
+---
+<<essayfeedback UICanvas>>
+<<stop>>
+===

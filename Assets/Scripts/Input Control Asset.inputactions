@@ -1,5 +1,5 @@
 {
-    "name": "Let's Do It! (alpha)",
+    "name": "Input Control Asset",
     "maps": [
         {
             "name": "Player",
@@ -11,7 +11,8 @@
                     "id": "a9baf4e5-4136-41ec-ac2b-fe99165ad6ff",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Jump",
@@ -19,15 +20,8 @@
                     "id": "97c60959-23a0-42ca-b00d-6741b3fe1038",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
-                },
-                {
-                    "name": "Sneak",
-                    "type": "Button",
-                    "id": "57fd867a-90b4-4149-8d59-c930291f40cc",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Interact",
@@ -35,15 +29,161 @@
                     "id": "98319ecf-0e21-460d-9800-5df1cda5e35a",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
-                    "name": "Debug",
+                    "name": "Sneak",
+                    "type": "Button",
+                    "id": "57fd867a-90b4-4149-8d59-c930291f40cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Reset",
                     "type": "Button",
                     "id": "8729cbb2-80b8-4868-ad01-788fb2213c63",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Free",
+                    "type": "Button",
+                    "id": "d36d1d05-386f-44b6-9d42-d72cf5317c5b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TogglePhone",
+                    "type": "Button",
+                    "id": "6ab1d250-f17b-4413-8d65-3f61d861c9f1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoC",
+                    "type": "Button",
+                    "id": "68b460fc-2472-496f-a632-6b135ce9146f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoCD",
+                    "type": "Button",
+                    "id": "5607540d-1529-4199-8695-17f414fa8117",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoD",
+                    "type": "Button",
+                    "id": "73a0a599-74c8-47f8-bc93-2f6b11c76e4c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoDE",
+                    "type": "Button",
+                    "id": "e097fc0a-a666-4846-82a6-43485a2f386c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoE",
+                    "type": "Button",
+                    "id": "aed595e0-b9fd-47fb-905f-c7d3308ec55c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoF",
+                    "type": "Button",
+                    "id": "c4d39185-b39e-4a8d-b33a-94a73b9ec463",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoFG",
+                    "type": "Button",
+                    "id": "a4d5843a-cf20-4e71-b71b-3b3228c81683",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoG",
+                    "type": "Button",
+                    "id": "32752d3e-fc40-46a8-9d82-161f5f83d6b2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoGA",
+                    "type": "Button",
+                    "id": "a58e4dcd-1321-439f-a706-6d6133926ade",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoA",
+                    "type": "Button",
+                    "id": "fcc42efa-50f1-4812-90f1-54767a6481c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoAB",
+                    "type": "Button",
+                    "id": "a923fd31-f829-40b7-9f90-e50a6e505158",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoB",
+                    "type": "Button",
+                    "id": "36256bb1-d62b-4df6-9ed6-8c059bddbdf1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PianoC2",
+                    "type": "Button",
+                    "id": "f68eb176-679d-4833-9b97-0fe326958152",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -92,28 +232,6 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
-                    "id": "320bffee-a40b-4347-ac70-c210eb8bc73a",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "1c5327b5-f71c-4f60-99c7-4e737386f1d1",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "left",
                     "id": "d2581a9b-1d11-4566-b27d-b92aff5fabbc",
                     "path": "<Keyboard>/a",
@@ -131,6 +249,28 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "69e56dff-20e7-4932-9453-25b99d90a280",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "04a76b83-95b8-4047-8c7f-e1c86de1f45f",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -235,6 +375,61 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "Button With One Modifier",
+                    "id": "6f13c8b6-0b2d-4b5e-873c-5b08e7a1bba5",
+                    "path": "ButtonWithOneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Reset",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "5b6b339f-e3ce-41b5-9f35-af27066a506e",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "button",
+                    "id": "ae7ec79a-2f63-4b61-9597-5d12980a6bfb",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reset",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "6050c666-a39f-4ed4-8c03-a7cc4de362a5",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Free",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1d4af688-f501-43e6-a396-390eb13b0bcc",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "TogglePhone",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
                     "name": "",
                     "id": "e5f95a46-3657-47ac-90b0-113c4f85e8a1",
                     "path": "<Keyboard>/X",
@@ -246,37 +441,147 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "Button With One Modifier",
-                    "id": "6f13c8b6-0b2d-4b5e-873c-5b08e7a1bba5",
-                    "path": "ButtonWithOneModifier",
+                    "name": "",
+                    "id": "75b9c069-b3e5-4c36-b526-86fd8de151c6",
+                    "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
-                    "action": "Debug",
-                    "isComposite": true,
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoC",
+                    "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "modifier",
-                    "id": "5b6b339f-e3ce-41b5-9f35-af27066a506e",
-                    "path": "<Keyboard>/shift",
+                    "name": "",
+                    "id": "2903e17e-2cd5-4d98-bf1a-e212bb33caaf",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Debug",
+                    "action": "PianoCD",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
                 },
                 {
-                    "name": "button",
-                    "id": "ae7ec79a-2f63-4b61-9597-5d12980a6bfb",
-                    "path": "<Keyboard>/backquote",
+                    "name": "",
+                    "id": "2d4bd2bf-b8e9-494f-9834-5e05f96c7c1b",
+                    "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Debug",
+                    "action": "PianoD",
                     "isComposite": false,
-                    "isPartOfComposite": true
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2a61fa38-d5fa-48a6-9e85-1f30c2c63da2",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoDE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0962aa0c-257f-447e-891a-0c0d87581f31",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoE",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0dfd6b8e-a02c-41b0-aeff-776837f43060",
+                    "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoF",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4dad43b8-7e57-43f6-ab0d-946cce8d7570",
+                    "path": "<Keyboard>/t",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoFG",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "19946ee8-9a81-465a-9462-23105ea0bb67",
+                    "path": "<Keyboard>/g",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoG",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2e3406f1-2db7-4f54-a363-a6fb0a389368",
+                    "path": "<Keyboard>/y",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoGA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e7c9da94-346b-44cd-ba26-6540ccd171ce",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoA",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "76329707-772b-489e-ab91-fc348f626d1f",
+                    "path": "<Keyboard>/u",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoAB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7aa6bcb8-0019-4d82-b6b2-d1c27cff3128",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoB",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "346b3280-734b-4642-adaf-41dfae9634ae",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "PianoC2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -290,7 +595,8 @@
                     "id": "b28a20c5-fdfc-436b-be30-e06b729f23b9",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Submit",
@@ -298,7 +604,8 @@
                     "id": "d33d34d4-aa4d-4fec-9938-cd46fd124d32",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Cancel",
@@ -306,7 +613,8 @@
                     "id": "f76aeaf7-4a70-44d0-acd0-15bb7d71f68f",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Point",
@@ -314,7 +622,8 @@
                     "id": "6bf9b550-b375-413a-8ca0-a5546c38a96c",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "Click",
@@ -322,7 +631,8 @@
                     "id": "8e70813a-f088-49a3-9a2e-328caab5e963",
                     "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "ScrollWheel",
@@ -330,7 +640,8 @@
                     "id": "b59695df-f2fe-4804-9449-be7548dbc6d6",
                     "expectedControlType": "Vector2",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "MiddleClick",
@@ -338,7 +649,8 @@
                     "id": "6100e9b9-74f0-45f7-bf98-ff0abd751927",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "RightClick",
@@ -346,7 +658,8 @@
                     "id": "438b7b0b-31ae-4112-9f8f-9914b5415f39",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "TrackedDevicePosition",
@@ -354,7 +667,8 @@
                     "id": "1746de28-256b-4ebe-a2a0-8f19f46a7657",
                     "expectedControlType": "Vector3",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
                     "name": "TrackedDeviceOrientation",
@@ -362,7 +676,8 @@
                     "id": "fe8f4654-a039-47be-a393-3781315385ac",
                     "expectedControlType": "Quaternion",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [

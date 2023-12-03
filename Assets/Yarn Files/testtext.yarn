@@ -1,0 +1,71 @@
+title: Start
+tags: 
+colorID: 0
+position: -716,148
+---
+ugh my abs are so sore
+[[ Practicing for the competition? |dance]]
+[[ Getting swole, huh? |swole]]
+===
+title: dance
+tags: 
+colorID: 0
+position: -455,420
+---
+Ye
+Starting a bunch of workouts so I'll look good for the video lol
+[[ Keep it up! |encourage]]
+[[ We should work out together! |meet]]
+===
+title: swole
+tags: 
+colorID: 0
+position: -161,124
+---
+Hell yeah
+Gonna be able to crush your head between my thighs soon enough
+[[ Meet a sweet end |yesplease]] 
+[[ Not likely any time soon|nothanks]]
+===
+title: encourage
+tags: 
+colorID: 0
+position: -373,708
+---
+Thanks, I will~
+Anyway
+[[ free ]]
+===
+title: meet
+tags: 
+colorID: 0
+position: -125,581
+---
+Sure!
+Speaking of,
+[[free]]
+===
+title: yesplease
+tags: 
+colorID: 0
+position: 123,279
+---
+oh, btw
+[[ free]]
+===
+title: nothanks
+tags: 
+colorID: 0
+position: 319,28
+---
+you stink
+By the way,
+[[ free]]
+===
+title: free
+tags: 
+colorID: 0
+position: 655,470
+---
+I'm free this weekend.
+===

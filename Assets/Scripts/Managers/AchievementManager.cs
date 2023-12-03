@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class AchievementManager : MonoBehaviour
 {
@@ -14,7 +15,8 @@ public class AchievementManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Comma))
+        Keyboard k = Keyboard.current;
+        if (k.commaKey.wasPressedThisFrame)
         {
             new Achievement("test", false).Unlock();
         }

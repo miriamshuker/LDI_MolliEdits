@@ -20,6 +20,8 @@ public class LevelLoader : MonoBehaviour
     private SpawnInfo spawnInfo;
     private bool ignoreNextSpawn;
 
+    public Scene[] scenes;
+
     [System.Serializable]
     public class SpawnPoint
     {
@@ -60,8 +62,11 @@ public class LevelLoader : MonoBehaviour
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$currentscene", SceneManager.GetActiveScene().name);
         //Debug.Log("showing scene");
         //cross.SetInteger("Black", 1);
-        tm.PlayPreTransition();
-        tm.Begin();
+        if (tm)
+        {
+            tm.PlayPreTransition();
+            tm.Begin();
+        }
         yield return new WaitForSeconds(transitionTime);
         if (!GameManager.Instance.inConvo || gdm.dialogueState == GameDialogueManager.DialogueState.NONE)
         {
@@ -88,6 +93,8 @@ public class LevelLoader : MonoBehaviour
         currentScene = SceneManager.GetActiveScene().name;
         if (pc)
         {
+            pc.enabled = false;
+            pc.enabled = true;
             if (s != null)
             {
                 Debug.Log(s.sceneName);
@@ -147,8 +154,12 @@ public class LevelLoader : MonoBehaviour
 
         Debug.Log("waiting");
         GameManager.Instance.isBusy = true;
+        AudioManager.Instance.FadeOutMusic(transitionTime);
         yield return new WaitForSeconds(transitionTime);
+
         SceneManager.LoadScene(sceneName);
+
+        AudioManager.Instance.FadeInMusic("", transitionTime, 1);
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$currentscene", sceneName);
         wipe.SetBool("WipeIn", true);
         Debug.Log("wiped");

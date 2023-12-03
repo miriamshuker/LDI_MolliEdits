@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using Yarn.Unity;
 
@@ -31,6 +32,15 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     public AudioManager.AudioTrack[] sounds;
 
     #region References
+    [Header("Input Actions")]
+    public PlayerInput input;
+    InputAction moveAction;
+    InputAction jumpAction;
+    InputAction interactAction;
+    InputAction sneakAction;
+    InputAction phoneAction;
+    InputAction resetAction;
+    InputAction freeAction;
     [Header("References")]
     public Animator animator;
     public GameObject interactArrow;
@@ -71,7 +81,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     [SerializeField]
     private float fallSpeedActual;
     private bool isFastfall;
-    bool isFalling;
+    private bool isFalling;
 
     [Header("Utility")]
     Vector2 velocity;
@@ -105,9 +115,20 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            moveAction = input.actions["Move"];
+            jumpAction = input.actions["Jump"];
+            interactAction = input.actions["Interact"];
+            sneakAction = input.actions["Sneak"];
+            phoneAction = input.actions["TogglePhone"];
+            resetAction = input.actions["Reset"];
+            freeAction = input.actions["Free"];
+        }
         else if (Instance != this)
+        {
             Destroy(this.gameObject);
+        }
     }
     // Start is called before the first frame update
     void Start()
@@ -138,16 +159,16 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
         Move();
 
         
-        if (grounded && Input.GetKey(KeyCode.X))
+        if (grounded && interactAction.phase == InputActionPhase.Started)
         {
             if (interactList.Count > 0)
             {
                 //Pause();
-                SelectInteractable(Input.GetAxisRaw("Horizontal"));
+                SelectInteractable(moveAction.ReadValue<Vector2>().x);
 
             }
         }
-        else if (Input.GetKeyUp(KeyCode.X))
+        else if (interactAction.phase == InputActionPhase.Canceled)
         {
             if (interactSelection != null)
             {
@@ -156,7 +177,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
                 sfxPlayer.PlayOneShot(sounds[3].audioClip, 0.2f);
             }
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (phoneAction.phase == InputActionPhase.Started)
         {
             Debug.Log(PhoneManager.Instance.phoneState);
             if (PhoneManager.Instance.isFocused)
@@ -169,7 +190,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
             }
         }
 
-        float x = Input.GetAxisRaw("Horizontal");
+        float x = moveAction.ReadValue<Vector2>().x;
         if (Mathf.Abs(x) > 0.1f)
         {
             spriteRenderer.flipX = x < 0;
@@ -212,12 +233,12 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     {
         if (!GameManager.Instance.debugMode)
             return;
-        if (Input.GetKey(KeyCode.LeftControl) && Input.GetKey(KeyCode.R))
+        if (resetAction.phase == InputActionPhase.Started)
         {
             GameManager.Instance.isBusy = false;
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (freeAction.phase == InputActionPhase.Started)
         {
             state = PlayerState.NONE;
             GameManager.Instance.inConvo = false;
@@ -226,10 +247,10 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     }
     void Move()
     {
-        velocity.x = Input.GetAxisRaw("Horizontal") * (grounded ? moveSpeed : moveSpeed * sneakSpeed);
+        velocity.x = moveAction.ReadValue<Vector2>().x * (grounded ? moveSpeed : moveSpeed * sneakSpeed);
         if (grounded)
         {
-            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.C))
+            if (sneakAction.ReadValue<float>() > 0.2f)
             {
                 animator.SetInteger("State", (int)PlayerState.CROUCH);
                 //AdjustCollider(true);
@@ -261,7 +282,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     {
         if (!grounded)
             return;
-        if (startSneaky || Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.Joystick1Button7))
+        if (startSneaky || sneakAction.ReadValue<float>() > 0.2f)
         {
             animator.SetInteger("State", (int)PlayerState.SNEAK);
         }
@@ -273,15 +294,13 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     }
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (jumpAction.phase == InputActionPhase.Started)
         {
             jumpBufferTime = jumpBufferDur;
         }
-        bool unbuffered = grounded && Input.GetKeyDown(KeyCode.Space);
+        bool unbuffered = grounded && jumpAction.phase == InputActionPhase.Started; //&& Input.GetKeyDown(KeyCode.Space)
         if (unbuffered || jumpBufferTime > 0)
         {
-            jumpBufferTime -= Time.deltaTime;
-
             bool singleJumped = jumpCount < 1;
             if (singleJumped)
             {
@@ -293,6 +312,8 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
                 jumpCount++;
             }
         }
+
+        jumpBufferTime -= Time.deltaTime;
     }
     void Fall(float vel)
     {
@@ -357,7 +378,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
             coyoteTime = coyoteDur;
             //or coyote coroutine
         }
-        else if (state == PlayerState.JUMP && !Input.GetKey(KeyCode.Z))
+        else if (state == PlayerState.JUMP && jumpAction.phase == InputActionPhase.Canceled)
         {
             //velocity.y = velocity.y < 0 ? velocity.y : 0;
             fastFell = true;

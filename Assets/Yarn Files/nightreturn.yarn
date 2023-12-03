@@ -1,0 +1,66 @@
+title: heistreturn
+---
+<<setspawn LevelElements HomeOutside>>
+...
+...
+Looks like the coast is clear. Steady now.
+===
+title: caught
+---
+//Turn on the light
+<<if $vcaught is false>>
+    <<set $vcaught to true>>
+    Mom: What are YOU doing here?
+    <<settimeofday LevelElements night>>
+<<endif>>
+Eddy: Uhhhh....
+->Lie
+    Eddy: I... was at a friend's house. A concert.
+    Mom: No you weren't. You were at June's, right?
+    Eddy: ....
+    Eddy: Yes.
+    Mom: Go to your room.
+    Mom: And you dare lie to me to my face!? What do you take me for?
+    Eddy: Someone who won't listen!
+    Eddy: Sorry. But am I really supposed to be able to talk to you sincerely?
+    Eddy: Every day, it's just hating on Ellen's ex, or complaining about how June is lacking.
+    Eddy: It's just so much negativity. ...How am I supposed to speak up?
+    Mom: ...You don't. That's how it's been for my family, and now for yours.
+    Mom: We aren't your friends. We're your parents.
+->Tell the truth
+    Eddy: I....
+    Eddy: I went to June's house.
+    Mom: And WHY IN THE HELL did you go at night??
+    Mom: Without telling me!? Don't you know how dangerous it is?
+    Eddy: Well that's just the thing!
+    Eddy: I was really too stressed to think about what else might happen.
+    Eddy: I wanted to talk about it with someone, but.... I couldn't talk to you.
+    Mom: Unbelievable.
+    Mom: Why did you go out? How long were you out? What for?
+    Eddy: I... well, I....
+    Mom: Actually, it doesn't matter.
+    Mom: I don't want to talk to you any more.
+    Eddy: But -
+    Eddy: But I want to talk to you. Even though it's awkward.
+<<fadeandwait Canvas 1.5>>
+<<wait .5>>
+<<settimeofday LevelElements bedtime>>
+Eddy: ...
+===
+title: ellenconsole
+---
+Ellen: Hey....
+Eddy: You heard?
+Ellen: I don't think there's any way I could've NOT heard.
+Eddy: Yeah....
+Eddy: Looks like I'm banned from ever having friends or an SO for the rest of my life.
+Eddy: You know how that is.
+Ellen: I agree with you, actually.
+Ellen: I really think it's important to try to make a change even when our culture isn't, well, about that.
+Ellen: And I would've backed you up, but I knew you wouldn't finish your chores in time.
+Ellen: So Mom probably wouldn't take it well.
+Eddy: Eh, thanks for the thought, I guess....
+<<fadeandwait Canvas 1.75>>
+<<wait .5>>
+<<settimeofday LevelElements between>>
+===

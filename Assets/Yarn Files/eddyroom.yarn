@@ -1,0 +1,76 @@
+title: eddyshelf
+---
+<<set $essaydone to false>>
+<<set $quizdone to false>>
+<<set $vessay to false>>
+<<set $trashcollected to 0>>
+Ah, my shelf. Gotta say, I'm pretty proud of this.&happy
+Want to check something out?&normal
+->Top shelf
+    <<setboxlocation DialogueCanvas center>>
+    Which items?
+    ->Awards
+        On the left, a perfect attendance certificate from middle school.
+        On the right, a 4th place trophy from my elementary school chess club.&away
+        ...
+    ->Photo
+        An old photo our parents took of me and Ellen.
+        People say we look around the same age, but I'm still in high school and she's already a quarter to 100!&psh
+->Middle shelves
+    Which items?
+    ->Figurines
+        A couple anime figures I've collected over the years.
+        They're really expensive, so I'm happy to have gotten them as gifts.
+        Their source material is pretty mainstream, so it shouldn't be too hard to recognize them.
+    ->Books
+        A physics textbook, Six of Crows, some Michio Kaku books from back in my science-phase, and the first 10 volumes of Hunter x Hunter.
+        The rest of our collection is in Ellen's room.
+->Bottom shelves
+    Which items?
+    ->Bear
+        A sock plushie June made for me on Valentine's Day.
+        It's really cute!&happy
+        ...I think it's supposed to be a raccoon, though.&uh
+    ->Box
+        A box of KINEX pieces. I think an old sock ended up in there somehow.
+        If you're wondering where I keep my clothes, they're in the closet on the opposite wall.
+        Wait, who am I talking to?&shock
+->(back)
+===
+title: eddydesk
+---
+<< if $essaydone is false or $quizdone is false>>
+    My desk. I have some homework to do.
+    << if $day is 0 >> 
+        ...But I'll get to it tomorrow.&psh
+    << else >>
+        Should I do it now?
+        ->Work on quiz <<if $quizdone is false >>
+            Okay, let's do the quiz real quick.
+            [[quizstart]]
+        ->Work on essay <<if $essaydone is false>>
+            <<if $vessay is false>>
+                <<set $vessay to true>>
+                Let's work on the essay, then.
+            <<endif>>
+            <<essayup UICanvas>>
+            <<stop>>
+        ->Later
+            Let's focus on other stuff for now.
+    <<endif>>
+<< else >>
+    Wow! I'm all done with homework already!
+<<endif>>
+
+===
+title: eddybed
+---
+<< if $veddybed is false >> 
+    My trusty bed.
+    Actually, I have trouble sleeping in it, but it's comfortable nonetheless.
+    << set $veddybed to true>> 
+<< else >>
+    It's a bunk bed for some reason.
+    We used to store stuffed animals up there!
+<< endif >>
+===

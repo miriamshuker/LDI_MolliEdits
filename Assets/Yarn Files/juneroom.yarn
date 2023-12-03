@@ -1,0 +1,52 @@
+title: junedoor
+---
+Okay. This is it. The door to June's room....
+<<to TransitionCanvas JuneRoom>>
+===
+title: juneroom
+---
+Eddy: Hi.
+June: Hello!
+June: You made it.
+Eddy: Of course. I'm a master of stealth.
+June: And... you brought them?
+<<if $condomsdone is true>>
+    Eddy: Yeah, I have condoms right here.
+    June: Whew, what a relief.
+    Eddy: Don't worry, I read the box three times.
+    Eddy: A little pinch, a little roll, and we're ready.
+    June: Well, are you ready?
+    June: I'm ready!
+    ->Yes
+        Eddy: Yeah. Let's figure this out, together.
+        <<fadestay Canvas 1>>
+        Eddy: Is this okay?
+        Ellen: Yeah... that feels pretty good....
+        Ellen: Oh, ouch!
+        Eddy: Sorry! What happened?
+        Ellen: Um, try a different angle.
+        Ellen: Like... this.
+    ->Not yet
+        Eddy: Actually... not quite yet.
+        June: Really? I mean, that's okay.
+        June: I'm a little sad, but okay.
+        June: Let's just hang out, then! I've really missed seeing you.
+        Eddy: I've missed you too.
+<<else>>
+    Eddy: Actually, no.... I got really nervous, and ran out of time.
+    Eddy: Sorry. It seems like an excuse, but we don't need to do anything if you don't want to - it's not safe either.
+    June: *sigh*
+    June: I'm... a little disappointed. But I get it.
+    June: If I had to go buy condoms myself, my heart would be pounding through my chest. You know how judgy Asians are about other Asian girls.
+    Eddy: True.
+    June: But yeah. Let's not try anything until we have protection.
+    Eddy: Agreed.
+    Eddy: ...Do you want to watch Star Trek, at least?
+    June: Definitely! Come here. We can still cuddle.
+<<endif>>
+<<fadeandwait Canvas 3>>
+<<wait 1.5>>
+<<setday LevelElements 2>>
+<<settimeofday LevelElements dinner>>
+<<to TransitionCanvas HomeLower HomeOutside>>
+===

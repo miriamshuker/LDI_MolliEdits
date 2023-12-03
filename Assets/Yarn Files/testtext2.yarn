@@ -1,0 +1,86 @@
+title: art
+tags: 
+colorID: 0
+position: -716,148
+---
+<<setdialogue DialogueCanvas text>>
+ugh my abs are so sore
+June: Hey, you done with dinner?
+Just finished the rest of our bun bo hue
+June: Damn, that sounds good
+June: You got any extra?
+Nope, but I can sneak you some shrimp chips
+Or durian wafers
+June: Durian-flavored stuff stinks
+Isn't that the point? XD
+June: No, I mean it's far inferior to the real thing lol
+June: My grandma's coming over this Sunday, so we're going for dim sum:A type of Chinese cuisine served in the form of many small plates, such as dumplings, buns, fried squid, and pig's feet.
+June: The thing is though
+June: I have an essay due on Monday, so I can't go
+Aw man
+Maybe I should go in your place?
+[[ Practicing for the competition? |dance]]
+[[ Getting swole, huh? |swole]]
+===
+title: dance
+tags: 
+colorID: 0
+position: -455,420
+---
+Ye
+Starting a bunch of workouts so I'll look good for the video lol
+[[ Keep it up! |encourage]]
+[[ We should work out together! |meet]]
+===
+title: swole
+tags: 
+colorID: 0
+position: -161,124
+---
+Hell yeah
+Gonna be able to crush your head between my thighs soon enough
+[[ Meet a sweet end |yesplease]] 
+[[ Not likely any time soon|nothanks]]
+===
+title: encourage
+tags: 
+colorID: 0
+position: -373,708
+---
+Thanks, I will~
+Anyway
+[[ free ]]
+===
+title: meet
+tags: 
+colorID: 0
+position: -125,581
+---
+Sure!
+Speaking of,
+[[free]]
+===
+title: yesplease
+tags: 
+colorID: 0
+position: 123,279
+---
+oh, btw
+[[ free]]
+===
+title: nothanks
+tags: 
+colorID: 0
+position: 319,28
+---
+you stink
+By the way,
+[[ free]]
+===
+title: free
+tags: 
+colorID: 0
+position: 655,470
+---
+I'm free this weekend.
+===

@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
         public string clipName;
         public AudioClip audioClip;
     }
+    public static AudioManager Instance { get; private set; }
     public string startingClip; //if none, do nothing. if same as before, do nothing. otherwise, fade between the songs
     public float fadeInDuration;
     public float fadeInVolume;
@@ -24,10 +25,20 @@ public class AudioManager : MonoBehaviour
     public AudioSource musicSource;
     public AudioSource sfxSource;
     bool isFading;
+    bool shouldAutoplay;
 
     private string prevClipName;
     private float prevClipTime;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+            Destroy(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -78,6 +89,26 @@ public class AudioManager : MonoBehaviour
                 break;
             case ("JuneRoom"):
                 break;
+        }
+    }
+    string GetTrackForScene()
+    {
+        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        switch (sceneName)
+        {
+            case ("EddyRoom"):
+            case ("Bathroom"):
+            case ("HomeUpper"):
+            case ("HomeLower"):
+                return "hideout";
+            case ("HomeOutside"):
+            case ("ChinatownOutside"):
+                 return "v4";
+            case ("JuneOutside"):
+            case ("JuneInside"):
+            case ("JuneRoom"):
+            default:
+                return "";
         }
     }
     AudioClip FindMusicByString(string name)
@@ -149,17 +180,25 @@ public class AudioManager : MonoBehaviour
         }
         FadeInMusic(name, duration, volume);
     }
-    void FadeInMusic(string name, float duration, float volume)
+    public void FadeInMusic(string name, float duration, float volume)
     {
-
+        if (name == null || name.Length < 1)
+        {
+            name = GetTrackForScene();
+        }
         AudioClip a = FindMusicByString(name);
         Debug.Log((a != null) + " " + a.name);
         if (a)
         {
+            if (musicSource.clip == a)
+            {
+                return;
+            }
             musicSource.clip = a;
+            musicSource.Play();
             //slowly raise the volume to desired level over duration of seconds
             Debug.Log("fading in " + name + duration + volume);
-            StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "vol", duration, volume));
+            StartCoroutine(FadeMixerGroup.StartFade(musicSource, "vol", duration, volume));
         }
     }
     [YarnCommand("musicout")]
@@ -170,8 +209,8 @@ public class AudioManager : MonoBehaviour
         //slowly lower the volume to 0 over duration of seconds
         FadeOutMusic(duration);
     }
-    void FadeOutMusic(float duration)
+    public void FadeOutMusic(float duration)
     {
-        StartCoroutine(FadeMixerGroup.StartFade(audioMixer, "vol", duration, 0));
+        StartCoroutine(FadeMixerGroup.StartFade(musicSource, "vol", duration, 0));
     }
 }

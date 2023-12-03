@@ -1,0 +1,175 @@
+title: trash
+---
+<<if $donetrash is false>>
+    <<if $trashcollected < 5>>
+        <<if $trashcollected < 0>>
+            That's one trash bag. On to the next!
+        <<elseif $trashcollected == 1>>
+            Second trash bag.
+        <<elseif $trashcollected == 2>>
+            Third trash bag.
+        <<elseif $trashcollected == 3>>
+            Fourth trash bag. Only one left to go!
+        <<elseif $trashcollected == 4>>
+            This is the last one! I just need to bring these out now.
+        <<endif>>
+        [[updatetrash]]
+    <<else>>
+        I've already gotten all the trash! I just need to bring it to the bin outside.
+    <<endif>>
+<<else>>
+    I already got the trash this week.
+<<endif>>
+
+===
+title: eddytrash
+---
+<<if $day != 0 && $timeofday is "freetime">>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $donetrash is false>>
+        <<if $veddytrash is false>>
+            <<set $veddytrash to true>>
+            I don't really have a lot of trash in my room.
+            In the bin, I mean. I usually throw stuff away downstairs.
+            Anyways, I've got this one.
+            [[trash]]
+        <<else>>
+            I already got this trash.
+        <<endif>>
+    <<else>>
+        [[trash]]
+    <<endif>>
+<<else>>
+    My trash can. It's pretty small.
+    I wish I could say it's because I keep tidy, but I'd be lying.
+<<endif>>
+===
+title: ellentrash
+---
+<<if $donetrash is false>>
+    <<if $vellentrash is false>>
+        <<set $vellentrash to true>>
+        Let me just peek in here for a sec....
+        <<fadeandwait Canvas 1>>
+        Ellen's trash is full of trimmed yarn from crocheting. Cool.
+        [[trash]]
+    <<else>>
+        I already got this trash.
+    <<endif>>
+<<else>>
+    [[trash]]
+<<endif>>
+===
+title: parentstrash
+---
+<<if $donetrash is false>>
+    <<if $vparentstrash is false>>
+        <<set $vparentstrash to true>>
+        Just gotta get their trash real quick....
+        <<fadeandwait Canvas 1>>
+        Alright, we've got it.
+        [[trash]]
+    <<else>>
+        I already got this trash.
+    <<endif>>
+<<else>>
+    [[trash]]
+<<endif>>
+===
+title: bathtrash
+---
+<<if $donetrash is false>>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $vbathroomtrash is false>>
+        <<set $vbathroomtrash to true>>
+        Let's get the trash from the bathroom.
+        <<fadeandwait Canvas .5>>
+        Ugh... there's bits of floss hanging from it.
+        [[trash]]
+    <<else>>
+        I already got this trash.
+    <<endif>>
+<<else>>
+    [[trash]]
+<<endif>>
+===
+title: lowertrash
+---
+<<if $day != 0 && $timeofday is "freetime">>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $donetrash is false>>
+        <<if $vlowertrash is false>>
+            <<set $vlowertrash to true>>
+            This is our biggest trash bin.
+            <<fadeandwait Canvas 1>>
+            It's packed with fruit peels. Thinking about it, we really do eat a lot of fruit, huh?
+            [[trash]]
+        <<else>>
+            I already got this trash.
+        <<endif>>
+    <<else>>
+        [[trash]]
+    <<endif>>
+<<else>>
+    Our downstairs trash can. It's a wearied, old soldier, brought with us from our previous house.
+<<endif>>
+===
+title: outsidetrash
+---
+<<if $donetrash is false>>
+    <<if $trashcollected >= 5>>
+        Here's the garbage bin! I'm all done with this chore.
+        <<set $donetrash to true>>
+        <<showsuccess UICanvas 0>>
+    <<else>>
+        Once I get all the trash, I'll need to bring it all here.
+    <<endif>>
+<<else>>
+    I'm done with the trash already....
+    ...What am I doing, coming out here to sniff the garbage or something?
+<<endif>>
+===
+title: updatetrash
+---
+<<set $trashcollected to $trashcollected + 1>>
+<<addtrash UICanvas>>
+===
+title: leave
+---
+Where should I go from here?
+->Chinatown
+    <<if $condomsdone is false>>
+        <<to TransitionCanvas ChinatownOutside>>
+    <<else>>
+        I already got everything I need from Chinatown.
+        Am I sure I want to go back?
+        ->Yes
+            <<to TransitionCanvas ChinatownOutside>>
+        ->No
+            <<stop>>
+    <<endif>>
+->June's house
+    <<to TransitionCanvas JuneOutside>>
+===
+title: gotcondoms
+---
+<<if $condomsdone is true && $vgotcondoms is false>>
+    Whew. I actually got them.
+    ACTUAL CONDOMS. In the flesh.
+    Or rather, in the latex.
+    Anyway, that's a huge load off.
+    ...Not in THAT way! Get your mind out of the gutter, me.
+    <<showsuccess UICanvas 5>>
+    I should probably test one before I meet up with June, to save myself the embarassment.
+    <<set $vgotcondoms to true>>
+<<endif>>
+===

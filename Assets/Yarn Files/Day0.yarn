@@ -1,0 +1,365 @@
+title: dinnercall
+---
+<<setday TimeManager 0>>
+<<settimeofday TimeManager "evening" >>
+<<clockset UICanvas 7:30>>
+<<clockscale UICanvas 900>>
+<<clockend UICanvas 8:30>>
+<<setspawn LevelElements HomeUpper>>
+<< toblack Canvas 0 >>
+<< camerashake Cameras 1 0.1 100 >> 
+Dad: Eddy! Dinner!
+<< setdialogue DialogueCanvas expo >>
+(Use WASD or the arrow keys to move. Press X to interact.)
+<< toblack Canvas -1 >>
+<<settime UICanvas 8:15>>
+===
+title: dinneryell
+tags: 
+colorID: 0
+position: 1018,308
+---
+<< camerashake Cameras 1 0.1 200 >> 
+Mom: Eddy!!! What are you doing up there!? Eat!
+Eddy: I'm coming!
+<< set $dinnerloiter to true >>
+===
+title: dinnerlate
+---
+<< camerashake Cameras 1 0.2 300 >> 
+Mom: EDDY!!! Come down here!
+Eddy: Agh! I better get going downstairs!
+<<setspawn LevelElements HomeUpper>>
+<<to TransitionCanvas HomeLower HomeUpper>>
+===
+title: dinnerhelp
+---
+<<set $bowlstaken to 0>>
+<<set $bowlmom to false>>
+<<set $bowleddy to false>>
+<<set $bowlellen to false>>
+<<set $bowldad to false>>
+Eddy: Ooh, that smells good!
+Eddy: *sniff sniff*
+Eddy: Mmmmm.
+Eddy: That's definitely bun bo hue.:A spicy Vietnamese noodle soup made with rice noodles, beef, lemongrass, and often pig's blood, oxtail, and beansprouts.
+<<camerashake Cameras .5 .1 100>>
+Dad: Eddy! Bring these bowls out!
+Eddy: Okay!
+===
+title: bunbohue
+---
+<< if $bowlstaken < 1 >>
+    <<set $bowlstaken to 1>>
+    Let's go set this on the table, like Dad asked.
+    <<set $hasbowl to true>>
+    <<seqpickup BunBoHue>>
+<<elseif $bowlstaken == 1>>
+    <<set $bowlstaken to 2>>
+    Two out of four....
+    <<set $hasbowl to true>>
+    <<seqpickup BunBoHue>>
+<<elseif $bowlstaken == 2>>
+    <<set $bowlstaken to 3>>
+    Three out of four....
+    <<set $hasbowl to true>>
+    <<seqpickup BunBoHue>>
+    <<swapsprite BowlSingle 1>>
+<<elseif $bowlstaken == 3>>
+    <<set $bowlstaken to 4>>
+    This is the last one.
+    After this, we can eat!
+    <<set $hasbowl to true>>
+    <<seqpickup BunBoHue>>
+<<endif>>
+===
+title: dadzero
+tags: 
+colorID: 0
+position: 205,520
+---
+<< if $vdadzero is false >> 
+    Dad: Hi, Eddy.
+    Dad: Try to eat some veggies with it, this time.
+    Eddy: I'll put in a leaf or two.
+    <<set $vdadzero to true>>
+<< else >>
+    Dad: Can you get the bowls for me?
+<< endif >>
+===
+title: momzero
+tags: 
+colorID: 0
+position: 417,519
+---
+<< playsound SFXSource murmur >>
+<<camerashake 1 0.1 100>>
+Eddy: Hey, dinnerrrrr!
+Mom: *hushed whispers*
+Ah, she's praying now. Let's not rush her.
+===
+title: morebowls
+---
+Dad: Eddy! Here's the next one.
+<<wait 0.1>>
+<<seqshow BunBoHue>>
+===
+title: chairmom
+---
+Mom usually sits here.
+<<if ($bowlstaken < 4) && ($bowlstaken > 0)>>
+    <<if $bowlmom is false >>
+        <<if $hasbowl is true >>
+            Okay, there's mom's bowl.
+            <<set $bowlmom to true>>
+            <<set $hasbowl to false >>
+            <<wait 0.1>>
+            <<seqplace BunBoHue 0>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        Mom already has a bowl! She doesn't eat much, anyway.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    Mom definitely can't eat a bowl this big.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: chairellen
+---
+Ellen sits here.
+Always taking so long to get downstairs... tsk, tsk.
+<<if $bowlstaken < 4 && $bowlstaken > 0>>
+    <<if $bowlellen is false >>
+        <<if $hasbowl is true>>
+            Okay, there's Ellen's bowl.
+            <<set $bowlellen to true>>
+            <<set $hasbowl to false>>
+            <<wait 0.1>>
+            <<seqplace BunBoHue 1>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        She already has a bowl.
+        ...Ellen's probably gonna get ice cream after this anyway.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    This is way too much food for Ellen.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: chaireddy
+---
+I usually sit here.
+<<if $bowlstaken < 4 && $bowlstaken > 0>>
+    <<if $bowleddy is false >>
+        <<if $hasbowl is true>>
+            Okay, there's my bowl.
+            <<set $bowleddy to true>>
+            <<set $hasbowl to false>>
+            <<wait 0.1>>
+            <<seqplace BunBoHue 2>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        I already have a bowl.
+        Dad always gets me too much regardless, since I need to beef up from twig form.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    I definitely can't eat a bowl this big.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: chairdad
+---
+<<if $bowlstaken < 4>>
+    Dad sits here.
+    He eats more than us and usually gets his portion last, so let's get everyone else's first.
+<<elseif $bowlstaken == 4 && $hasbowl is true >>
+    <<set $hasbowl to false>>
+    Last but not least, dad's bowl!
+    With that, we can finally eat.
+    <<wait 0.1>>
+    Eddy: Dinner's ready, everyone!!!
+    <<fadeandwait Canvas 1>>
+    <<wait 1>>
+    <<settimeofday LevelElements dinner>>
+<<endif>>
+===
+title: dinnerzero
+tags: 
+colorID: 0
+position: 802,570
+---
+<<fadeandwait Canvas 1.5>>
+<<setspawn LevelElements Dinner>>
+<<showplayer Player false>>
+<<swapsprite Table 3>>
+<<swapsprite Pot 0>>
+Eddy: That was great. Like, the beef was super tender.
+Ellen: And perfectly spicy, even though I'm a wimp with hot stuff.
+Dad: Mmm hmm. Even better than McDonald's!
+Mom: Wowww, amaaazing.
+<<setviet DialogueCanvas true>>
+Dad: Eddy, Đào - how was school?:Đào is Ellen's Vietnamese name.
+<<setviet DialogueCanvas false>>
+Eddy: It was okay.
+Eddy: Got some homework and a short free response to do, but that's basically it.
+Ellen: You're so lucky.... I have a BUNCH of stuff I need to do. Med school suuucksss.
+<<setviet DialogueCanvas true>>
+Mom: Trời ơi, always talking in English.:trời ơi is a common Vietnamese phrase. It's used similarly to "good grief," "oh my god," and "yare yare daze".
+Mom: Talk in Vietnamese at the dinner table.
+<<setviet DialogueCanvas false>>
+Ellen: How come Eddy doesn't have to?
+Eddy: I wouldn't be able to talk!
+Ellen: Ugh....
+<<setviet DialogueCanvas true>>
+Ellen: Anyway, I have like, three discussion posts I need to do right after dinner, so I have to finish quick.
+<<setviet DialogueCanvas false>>
+Ellen: I'm gonna need you to edit them later, Eddy.
+Eddy: Hmm, what's in it for me?
+Ellen: Your sister's mental health and academic achievement?
+Eddy: Ehhhh, not making a great case here.
+Ellen: ...
+Eddy: Okay, fineee.
+Ellen: .....
+Eddy: Hey... I was just joking. You okay?
+Ellen: ...I'm fine. Kinda tired, is all.
+<<setviet DialogueCanvas true>>
+<<camerashake Cameras .25 .2 100>>
+Mom: Đào.
+Mom: Don't tell me.
+Mom: You're still thinking about him?
+Mom: You made the right choice, breaking up with thằng này.:That guy.
+<<setviet DialogueCanvas false>>
+Ellen: ...
+<<setviet DialogueCanvas true>>
+Mom: There are people out there who are much better. He's not <i>that</i> handsome, or smart, or tall.
+<<setviet DialogueCanvas false>>
+Eddy: (He's taller than <i>me</i>!)
+<<setviet DialogueCanvas true>>
+Mom: And he's <i>definitely</i> not rich.
+Mom: Americans say to marry who you like, but you can't be full just on love.
+<<setviet DialogueCanvas false>>
+Ellen: Yeah yeah, I know.
+<<setviet DialogueCanvas true>>
+Mom: I'm not saying you should move on right away, but don't have any second thoughts.
+Mom: I do think you should move on though.
+<<setviet DialogueCanvas false>>
+Ellen: I know....
+<<setviet DialogueCanvas true>>
+Dad: If you need someone to talk to, you can talk to Eddy anytime.
+<<setviet DialogueCanvas false>>
+Dad: Look out for her, okay, Eddy?
+Eddy: I got yer back.
+<<setviet DialogueCanvas true>>
+Mom: You'll find someone else. There's looots of people out there.
+Mom: You're like me -- beautiful, smart, and generous -- so guys shouldn't be a problem.
+Dad: Hehe.
+Mom: Did you say something?
+Dad: Ahem. No, your mom's right.
+Mom: Anyway, that guy's no good.
+Mom: He takes up all your time at home, doesn't respect our family's rules...
+Mom: ...always makes you stay out late, and doesn't even always pay when you go out!
+<<setviet DialogueCanvas false>>
+Ellen: (<b>I</b> want to stay out late too...)
+Eddy: (<b>I</b> don't always pay either. June prefers to split....)
+<<setviet DialogueCanvas true>>
+Dad: Ah!
+Dad: And there's that one time, during dinner. I was bringing down the heater from downstairs -
+Dad: - It's very heavy - and he didn't offer to help!
+<<setviet DialogueCanvas false>>
+Eddy: Oh, wait. That time, I saw you too, but I didn't know you needed help.
+Dad: No, you're different. If we need you, we'll tell you.
+<<setviet DialogueCanvas true>>
+Dad: But if your <i>boyfriend or girlfriend</i> sees us having trouble, it should just be common sense to help.
+Dad: Like, when I met your mom, I didn't just pay for our meal. I paid for her whole family, too. That's just how it is.
+Mom: Exactly. It's disrespectful. They need to show they care about your time, about you...
+Mom: ...and about our family, without being asked.
+Mom: This is the problem with Mỹ trắng and Mỹ đen. So many things are different.:Literally, "white Americans" and "black Americans.""
+<<setviet DialogueCanvas true>>
+Eddy: .....
+Ellen: *sigh*
+<<fadeandwait Canvas 1.5>>
+<<wait 0.5>>
+<<swapsprite Table 0>>
+<<wait 1>>
+<<showplayer Player true>>
+<<set $hasicecream to false>>
+<<settimeofday LevelElements night>>
+===
+title: ellen
+---
+<<if $day == 0>>
+    [[ellenzero]]
+<<elseif $day == 1>>
+    [[ellenfirst]]
+<<else>>
+    [[ellenconsole]]
+<<endif>>
+===
+title: ellenzero
+---
+Eddy: Oh, hey....
+Eddy: ... ^serious
+Eddy: Okay, just tell me.^uhh
+Eddy: What're you doing just standing there in the dark?
+Ellen: I wanted to ask you something.
+Eddy: Hmm?
+Ellen: So, the gacha rates for this new banner are awful, right?:Gacha games are typically free-to-play mobile games featuring randomized character draws, or <i>gacha</i>, named after the sound of a capsule-toy machine.
+Ellen: ...Think I should pull?
+(What should I talk to her about?)
+->Gacha banner
+    Yeah, maybe I shouldn't press her on things until she's ready.
+    Eddy: I mean, it has the firework festival versions of Law and Aomine, right? You can afford one or two multis.
+    Ellen: Trueee.
+    Eddy: I'm probably gonna go for one too, for the yukata outfits.:A type of patterned robe traditionally worn at Japanese festivals.
+    Ellen: You go first. I'll decide if I should pull based on your results, kakaka.
+    Eddy: Kgh, man. Hopefully I get something good this time....
+    Eddy: ...
+    <<camerashake 0.5 0.3 200>>
+    Eddy: YAHOO!
+    <<camerashake 0.8 0.1 300>>
+    Ellen: Nooooo!!!
+    Ellen: Whaaaaat!? How'd you get so lucky!?
+    Ellen: I didn't get anything good....
+    Eddy: Can't believe I got Law <i>and</i> Aomine.
+    Eddy: This. Is. Awesome.
+    Ellen: Urgh....
+    <<fadeandwait Canvas 1>>
+->Her feelings
+    I'm being a little nosy, but checking on her might be a good idea.
+    Eddy: Ignoring that for a sec... you okay?
+    Ellen: Yeah. Didn't expect Mom to go so hard, but... I think they're basically right.
+    Eddy: About which part?
+    Ellen: There really are big cultural differences that make it hard to see eye-to-eye on stuff.
+    Ellen: Like, even something like eating by yourself versus eating with the rest of the family.
+    Eddy: We're already a little different from even other Viet people, right?
+    Ellen: Yeah. I mean, it's not impossible, but it takes a lot of work. And it just didn't work out.
+    Eddy: Hey, you actually can talk to me if you want.
+    Ellen: Ew, no thanks.
+    Eddy: I'm a relationship expert, after all.
+    Ellen: ...Which is why you have no friends?
+    <<camerashake Cameras 0.2 0.2 100>>
+    Eddy: Ouch.
+    Ellen: Really though - I'm good.
+    <<fadeandwait Canvas 1>>
+->ICE CREAM <<if $hasicecream is true>>
+    Eddy: Here, I got one for both of us.
+    Ellen: Hmmm....
+    Eddy: Huh?
+    Ellen: Suspicious.... Eddy being nice...? What do you want from me?
+    Eddy: To finish off this ice cream flavor I don't like, duh.
+    Ellen: Dude, I like the one with nuts, not this one.
+    Eddy: That's the point.
+    Ellen: Fine, I'll eat it. Be grateful.
+    Ellen: So, are you gonna make me breakfast tomorrow or something too? I've been craving waffles.
+    Eddy: Oh, heck no.
+    Ellen: Such a disappointment. Is this all you have to offer me?
+    Eddy: No discussion-post revising, that's for sure.
+    Ellen: Wait, no! Help!!
+    <<fadeandwait Canvas 1>>
+<<wait 1>>
+<<settimeofday LevelElements bedtime>>
+
+===

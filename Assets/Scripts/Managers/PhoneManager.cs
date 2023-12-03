@@ -6,6 +6,7 @@ using Yarn.Unity;
 using UnityEngine.EventSystems;
 using System;
 using DG.Tweening;
+using UnityEngine.InputSystem;
 
 //TODO: Possibly rename this to focus on UIAnimationManager? That's all this does.
 public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
@@ -13,6 +14,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public static PhoneManager Instance { get; private set; }
     public TextManager tManager;
     public NoteManager nManager;
+    public InputHelper input;
     //public PhotoManager pManager;
 
     //Reference to other UIElement, to hide it when this is focused
@@ -76,6 +78,11 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     void Start()
     {
+        if (input == null)
+        {
+            input = InputHelper.Instance;
+        }
+        input.clickAction.started += Click;
         canvasGroup.interactable = false;
 
         phoneApp = PhoneApp.HOME;
@@ -84,9 +91,9 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         apps = FindObjectsOfType<AppManager>(true);
         OpenApp("home");
     }
-    void Update()
+    void Click(InputAction.CallbackContext context)
     {
-        if (!GameManager.Instance.inConvo && Input.GetKeyDown(KeyCode.Mouse0) && phoneState == PhoneState.UNHOVER) //also, check if you're texting or in a story-specific message
+        if (!GameManager.Instance.inConvo && input.clickAction.triggered && phoneState == PhoneState.UNHOVER) //also, check if you're texting or in a story-specific message
         {
             Unfocus();
         }

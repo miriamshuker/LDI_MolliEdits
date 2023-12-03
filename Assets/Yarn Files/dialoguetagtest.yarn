@@ -1,0 +1,32 @@
+title: textremoval
+---
+Eddy: Hey, you know what? ^down^ Let's not do that.
+Eddy: @v@ Let's try this instead.
+Eddy: @e@ Or maybe even this.&happy
+===
+title: textlanguage
+---
+Eddy: test.
+===
+title: textmessage
+---
+<<setdialogue DialogueCanvas text>>
+June: test again!
+Eddy: Yep, this seems to be working perfectly. what a relief, huh?
+===
+title: helloworld
+---
+<<textcontact DialogueCanvas June>>
+Eddy: Hey, whattup??
+June: Not much, dude.
+===
+title: helloworld2
+---
+<<textcontact DialogueCanvas June>>
+June: Hey, whattup??
+->Not much.
+    Eddy: Not much.
+->Homework.
+    Eddy: Just doing some homework.
+June: Ah, ok.
+===

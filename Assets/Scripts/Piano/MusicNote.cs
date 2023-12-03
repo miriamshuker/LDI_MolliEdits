@@ -42,4 +42,22 @@ public class MusicNote
                 return key;
         }
     }
+    public bool IsBlackKey()
+    {
+        return IsBlackKey(noteKey);
+    }
+    public static bool IsBlackKey(MusicKey key)
+    {
+        switch (key)
+        {
+            case (MusicKey.CD):
+            case (MusicKey.DE):
+            case (MusicKey.FG):
+            case (MusicKey.GA):
+            case (MusicKey.AB):
+                return true;
+            default:
+                return false;
+        }
+    }
 }

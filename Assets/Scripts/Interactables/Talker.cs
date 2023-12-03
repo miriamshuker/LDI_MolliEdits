@@ -30,7 +30,11 @@ public class Talker : Interactable
     {
         if (nodeName.Length > 0)
         {
-            Debug.Log(dialogueRunner != null);
+            if (!dialogueRunner.NodeExists(nodeName))
+            {
+                Debug.LogWarning("no node with name " + nodeName);
+                return;
+            }
             dialogueRunner.StartDialogue(nodeName);
             return;
         }

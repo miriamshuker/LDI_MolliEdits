@@ -1,0 +1,335 @@
+title: junezero
+---
+<<showplayer Player false>>
+
+<<setdialogue DialogueCanvas text>>
+June: Hey, you done with dinner?
+Just finished the rest of our bun bo hue
+June: Damn, that sounds good
+June: You got any extra?
+Nope, but I can sneak you some shrimp chips
+Or durian wafers
+June: Durian-flavored stuff stinks
+Isn't that the point? XD
+June: No, I mean it's far inferior to the real thing lol
+June: Oh, that reminds me!
+Hm?
+June: My grandma's coming over this Sunday, so we're going for dim sum:A type of Chinese cuisine served in the form of many small plates, including dunplings, buns, fried squid, and pig's feet.
+June: The thing is though
+June: I have an essay due on Monday, so I can't go
+Aw man
+Maybe I should go in your place? ;)
+June: Nahh, if my parents knew you were my bf and not just a friend you'd get yeeted out of there
+My parents know about you though
+June: I know. I wanna tell them too, but I'm scared about how they'd react
+June: And my entire family would be bombarding me with gossip ugh
+June: But nice try
+Worth a shot
+June: Anyway
+June: Just finished my essay early
+Good job!! That's early for you
+June: Hey, shush
+June: The thing is, my parents still think I have work to do
+June: WHICH MEANS
+You're gonna be home alone?
+June: Yep
+Are you sure you feel safe? I mean, your backdoor just got busted in last month
+June: Ngl, still pretty shook about it. 
+June: Like, we weren't in the house when it happened but thinking about it still gives me the creeps
+June: We're getting new security installed tomorrow, at least, so I do feel safer
+That's good! 
+June: Actually, a bit bad in one sense
+that being...?
+June: Like I said, I'll be home alone
+June: WHICH MEANS
+We can hang out?
+June: Exactly ;3
+June: You should come over
+Did you want to, you know...?
+June: YES, it's been like 2 months since we last had privacy
+June: 2 months of suffering
+Jeez, I didn't think I did *that* bad
+Joking, I lasted like 10 seconds...
+June: That's pretty normal for the first time I think
+June: I still want to try again though
+Yeah, I want to make it up to you
+Did some research on using my other parts and appendages
+June: Ooh that sounds nice
+June: I think...?
+Gonna put my feet to good use XD
+June: .....
+Okay, but being serious. Let me know what you like and don't like
+And especially if it hurts or anything
+June: Sure!!!
+June: Same for you
+That is, assuming I somehow get in
+Oh, to your house, that is 
+June: Yeah, you're probably going to need to sneak in...
+Past your security...
+June: And my parents...
+And mine
+June: At like 8 PM on Sunday
+Sounds like a plan
+June: Wait, really!?
+Yeah, I'll figure something out
+Mission accepted
+June: WAHOOOOO
+June: that was kinda cringe
+June: But I'm really excited. I'll help out however I can
+So it's a plan, then!
+Let's do it?
+June: let's do it!
+<<wait .1>>
+<<putawayphone DialogueCanvas >>
+<<wait .1>>
+<<animatet TextingJune DropPhone>>
+<<wait .75>>
+<<animatet TextingJune Flail>>
+<<setdialogue DialogueCanvas talk>>
+<<camerashake Cameras 1.25 0.1 200>>
+Yes!!!
+<<fadeandwait 2>>
+<<wait 1>>
+//<<setday LevelElements 1>>
+<<settimeofday LevelElements morning>>
+<<to TransitionCanvas Bathroom>>
+===
+title: junefirst
+---
+June: This is a convo about sex ;)
+<<settimeofday LevelElements between>>
+===
+title: junelast
+---
+<<showplayer Player false>>
+<<setdialogue DialogueCanvas text>>
+June: hiiii
+June: let me know when you're back home safe and sound
+I'm back home now
+June: Safe and sound?
+->Yes
+    Yeah. I'm good!
+    ...
+    Actually, you know what?
+    [[junetruth]]
+->No
+    [[junetruth]]
+===
+title: junetruth
+---
+<<setdialogue DialogueCanvas text>>
+I got into a huge argument with my Mom
+I'm not sure how much got through
+But we needed to talk about it directly
+June: Are you OK??
+Yeah
+It was just really emotional and draining
+June: Honestly, that might be for the best though
+June: It's like with relationships, y'know?
+June: Sometimes the most important things you need to talk about are the absolute hardest 
+June: And you want to avoid them
+Which I shouldn't
+June: I mean, pick your battles
+June: If you really care about your relationship with someone, but you're unhappy, you need to either talk it out
+Or leave
+June: And I hope it doesn't come to that for us
+...
+You're right
+Is there anything you need to talk about between us?
+June: Well, it's not like we haven't had arguments before, but we worked through them together
+June: Regarding now, at least -
+June: If you're going to use your hands, it's waaay lower than you think
+orz
+My bad
+Like, intellectually I know it should be *down there* down there, but my natural instinct with my own stuff tells me otherwise
+Anything else?
+June: That's about it for now
+June: You?
+...
+I've been pretty anxious about today. I was really worried I'd be a disappointment
+June: Really? You seemed so calm about it
+I know, it's hard to let it show
+I mean, Asians have that stereotype of never showing affection or talking about mushy stuff
+So it kinda carries over
+But I know that's basically an excuse
+June: Not an excuse
+June: The stereotype is based on something
+June: And recognizing it is the first step to moving past it
+Wow
+Sage wisdom
+June: I learned that from a Netflix show somewhere
+Thanks though
+I appreciate you
+A lot
+Going back to earlier...
+Would you want to try again? Knowing we need to communicate more?
+June: Definitely
+Eddy: then
+Eddy: let's do it!
+<<to TransitionCanvas Credits>>
+===
+title: junehouse
+---
+<<if $vjunehouse is false>>
+    <<set $windowsinspected to 0>>
+    .....
+    Wow.
+    <<cameraswap Cameras>>
+    This place is HUGE!
+    <<cameraswap Cameras>>
+    Considering urban real estate prices, this must've cost a fortune.
+    Meaning the security is probably tough as well....
+    Since the front door's a no-go, I should really take a look around to find an entrypoint to use.
+    <<set $vjunehouse to true>>
+<<endif>>
+===
+title: juneplan
+---
+<<if $timeofday is "freetime" && $vjuneplan is false>>
+    <<set $vjuneplan to true>>
+    <<setdialogue DialogueCanvas text>>
+    June: Hey!
+    Hey
+    June: Are you here now?
+    Uhh, yeah...
+    How'd you know?
+    June: The security camera footage
+    June: Anyway, can you come by the side of the house?
+    Sure
+<<endif>>
+===
+title: junecreep
+---
+<<if $timeofday is "freetime" && $vjunecreep is false>>
+    June: <size=30>Pssst.
+    <<animatesprite June Peek true>>
+    June: Over here.
+    <<set $vjunecreep to true>>
+<<endif>>
+===
+title: junesneak
+---
+<<if $timeofday is "freetime" && $vjunesneak is false && $vjunehouse is true && $vjunecreep is true >>
+    <<set $vjunesneak to true>>
+    June: Hi.
+    Eddy: Hi.
+    June: ...
+    June: Come on, you're not weirded out by this at all?
+    Eddy: I live with Ellen.
+    June: That's true.
+    June: Anyway - I got something that could help you out.
+    Eddy: Wait, really?
+    June: Here. I made a little diagram of all the cameras I could find in the house, based on the video feed and stuff.
+    June: You can use it to dodge the chokepoints or whatever.
+    Eddy: Whoa, this must've taken a long time.
+    June: I mean, it's the least I could do for you! Since you're sneaking in and all.
+    June: You do the heisting - and I'm gonna be your Q, hehe.
+    Eddy: ...Ah! I get it - James Bond?
+    June: ???
+    June: Oh, I'm talking Star Trek.
+    Eddy: What a nerddd.
+    June: Ugh, so uncultured.
+    Eddy: We can watch another episode when I come over. I'm still pretty behind.
+    June: On like, a 30-year-old show? For shame.
+    June: But okay!
+    Eddy: Thanks for this diagram, again. I'll do my best to make it worth the trouble!
+    June: I should probably get back inside before my brother finds out snuck out.
+    June: Before we go thoughhh....
+    (She leans in for a kiss.)
+    ->Give her a peck
+        I give her a peck on the cheek.
+        June: Hmm, I guess that'll do for now.
+        June: I'll get a liiittle more out of you later, you hear?
+        Eddy: I hope so.
+    ->Save it for later
+        I boop her on the nose.
+        June: Awww, what?
+        Eddy: Here.
+        I surprise her with a peck to the cheek.
+        June: ...Okay, that works for now.
+    June: See you later!
+    Eddy: See you!
+    <<set $vjunesneak to true>>
+    <<setactive June false>>
+    <<animatesprite June Unpeek true>>
+    <<animatesprite June Peek false>>
+    <<wait 1>>
+    Well that happened.
+    <<showsuccess UICanvas 6>>
+    I still need to scout out an infiltration route though.
+    Let's take a look around.
+<<endif>>
+===
+title: juneexit
+---
+<<if $timeofday is "freetime">>
+    <<if $vjuneplan is false && $vjunesneak is false>>
+        <<to TransitionCanvas HomeOutside>>
+    <<else>>
+        Wait, June said to meet her by the house.
+    <<endif>>
+<<else>>
+    There's no turning back now. It's heist time!
+    <<if $foundroute is false>>
+        Since I didn't find an infiltration route earlier, let's do it now.
+    <<else>>
+        I already found a way in. It's around the other side, by that big tree.
+    <<endif>>
+<<endif>>
+===
+title: inspecthouseleft
+---
+Looks pretty secure here.
+===
+title: inspecthouseright
+---
+Seems pretty secure here, too.
+===
+title: inspecthousedoor
+---
+No way I'm gonna go in through the front door. I'll 1000% be spotted on camera.
+===
+title: inspecthousestatue
+---
+It's a (bronze?) statue of two adults.
+The plaque reads "Employees of the Century Award".
+...Aren't June's parents the owners of their nail supply company?
+===
+title: inspecthousetree
+---
+It's a big tree.
+Looking closely, seems like I might be able to climb it....
+===
+title: inspecthousewindowbad
+---
+<<if $windowsinspected == 0>>
+    The window's locked.
+    <<set $windowsinspected to 1>>
+<<elseif $windowsinspected == 1>>
+    This window's locked too.
+    <<set $windowsinspected to 2>>
+<<else>>
+    Locked.
+<<endif>>
+===
+title: inspecthousewindowgood
+---
+<<if $vinspecthousewindowgood is false>>
+    The window's locked.
+    Or... is it??
+    It seems a bit loose.
+    Oh! It opens up. This seems like my way in.
+    I'll let June know so she can get it fixed later.
+    It's a little dangerous to leave it like this, after all!
+    <<set $vinspecthousewindowgood to true>>
+    <<showsuccess UICanvas 7>>
+<<elseif $timeofday is "between">>
+    This is my way in. Ready?
+    ->Yes
+        <<to TransitionCanvas JuneInside>>
+    ->No
+        <<stop>>
+<<else>>
+    This is the way in! Good find. Let's regroup later tonight and sneak in.
+<<endif>>
+===

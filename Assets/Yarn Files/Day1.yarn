@@ -1,0 +1,159 @@
+title: backhomefirst
+---
+<<setspawn LevelElements HomeOutside>>
+<<setclock UICanvas false>>
+<<settime UICanvas 12>>
+<<set $trashcollected to 0>>
+<<set $donetrash to false>>
+<<set $veddytrash to false>>
+<<set $vellentrash to false>>
+<<set $vparentstrash to false>>
+<<set $vbathroomtrash to false>>
+<<set $vlowertrash to false>>
+<<set $quizprogress to 0>>
+<<clockset UICanvas 12>>
+<<clockstop UICanvas>>
+<<clockscale UICanvas 30>>
+Finally back from school.
+I couldn't focus very well in class because I couldn't stop worrying about hanging out with June.
+I mean, my blood was rushing elsewhere too, but that can't be helped....
+I can go to my <b>room</b> and start homework, or....
+Wait, what were my chores again...?
+I can also go to Chinatown to buy condoms, or scout out June's house. It's like a 30 minute walk each way.
+Just gotta be careful about the <b>6 PM curfew.</b> It'll be bad if I don't come home before sunset.
+Anyway, I need to decide what I'm going to do today. <b>6 hours will fly by FAST.</b>
+<<clockstart UICanvas>>
+<<settimeofday LevelElements freetime>>
+===
+title: dadhome
+---
+<<if $tvfix is false>>
+    Dad: Hellooo, Eddy!
+    Eddy: Hellooooo, Dad!
+    <<setviet DialogueCanvas true>>
+    Dad: Can you help me with the TV? It's not turning on for some reason.
+    <<setviet DialogueCanvas false>>
+    Ellen: Yeah, I tried everything I could think of!
+    Eddy: I can take a look.
+<<else>>
+    Dad: It works!!
+    Eddy: Are you going to get back to watching documentaries about Chinese people cooking in the countryside?
+    Ellen: Haha, you bet he is!
+    Dad: Ah, just let me know when you want to eat dinner.
+    <<fadeandwait Canvas 1>>
+    <<settimeofday LevelElements dinner>>
+    <<to LevelElements HomeLower dinner>>
+<<endif>>
+===
+title: ellenhome
+---
+<<if $tvfix is false>>
+    Eddy: Ayy.
+    Ellen: Ayyyy.
+    Eddy: You changed into your PJs instantly.
+    Ellen: Duh. I transform into cute mode outside, then change back to Himouto-mode at home.
+    Eddy: The many masks of Ellen.
+    Ellen: They're all beautiful though.
+    Ellen: Oh yeah, the TV's busted. Take a look. Maybe put your programming class to good use.
+    Eddy: Huh?? What's that got to do with TVs?
+    Ellen: *sigh* Useless as usual.
+    Eddy: Ugh.
+<<else>>
+    Eddy: So you "tried everything" huh?
+    Ellen: Welllll - I was just testing you, obviously.
+    Eddy: Aha, all part of your master plan to consistently <i>seem</i> useless.
+    Ellen: ...
+    Ellen: ...And it looks like you caught me!
+<<endif>>
+===
+title: momhome
+---
+<<if $vmomhome is false>>
+    Eddy: Hi.
+    Mom: Hello.
+    <<setviet DialogueCanvas true>>
+    Mom: I just did my nails again. What do you think?
+    <<setviet DialogueCanvas false>>
+    Eddy: Very... modern-looking, actually!
+    Eddy: It's like something I'd expect from a trendy 20-year-old or whatever.
+    Eddy: No offense.
+    <<setviet DialogueCanvas true>>
+    Mom: Mmhmm, that's because I found this design on Youtube.
+    <<setviet DialogueCanvas false>>
+    Eddy: Wowww, adapting to the conveniences of the internet, now?
+    <<setviet DialogueCanvas true>>
+    Mom: I'm learning every day.
+    <<set $vmomhome to true>>
+<<else>>
+    Eddy: Was work OK today?
+    <<setviet DialogueCanvas true>>
+    Mom: Not much business.
+    Mom: Everyone who wants their nails done will turn on you the instant you're unavailable.
+    Mom: Look - my hand's shaking from all the pedicure scrubbing I needed to do.
+    Mom: This is why you need to stay in school. Get a good, easy job.
+    <<setviet DialogueCanvas false>>
+    Eddy: Yeah... you're right.
+<<endif>>
+===
+title: inspecttv
+---
+<<if $timeofday is "evening" && $day is 1>>
+    <<if $tvfix is false>>
+        Ellen and Dad are wondering what's wrong with the TV. Let's take a look.
+        [[inspecttvoptions]]
+    <<else>>
+        It's fixed!
+    <<endif>>
+<<else>>
+    It's our big TV.
+    We usually use the small one in Ellen's room for the Switch and old GameCube games.
+<<endif>>
+===
+title: inspecttvoptions
+---
+->Try power button <<if $tvbutton is false>>
+    Let's see.... the power button doesn't work, even if held down.
+    Ellen: I already tried that!
+    <<set $tvbutton to true>>
+->Check AV cables <<if $tvcable is false>>
+    Hm. Seems like the cables are all in the right place, so the display should show an image.
+    Ellen: I tried that too!
+    <<set $tvcable to true>>
+<<if $tvbutton is true && $tvcable is true>>
+    Eddy: Oh, wait. I know what it is.
+    Eddy: The plug is kinda loose. Just need to push it back in there, and....
+    Eddy: Got it.
+    Ellen: Whaaaat!? I tried that a million times!
+    Eddy: Then it worked the million-and-first time.
+    <<set $tvfix to true>>
+<<endif>>
+[[inspecttvoptions]]
+===
+title: dinnerfirst
+---
+<<fadeandwait Canvas 1.5>>
+<<setspawn LevelElements Dinner>>
+<<showplayer Player false>>
+<<swapsprite Table 3>>
+Eddy: Mmm. This is always a bit of a pain to make, huh?
+Ellen: What? It's so easy.
+...
+This is kind of an uneventful dinner.
+I'm too stressed to really talk about anything....
+<<fadeandwait Canvas 1.5>>
+<<wait 0.5>>
+<<swapsprite Table 0>>
+<<wait 1>>
+<<showplayer Player true>>
+<<settimeofday LevelElements night>>
+===
+title: ellenfirst
+---
+Ellen: Yo.
+Eddy: Yo.
+Ellen: What was up with you during dinner?
+Eddy: Ehhh, nothing.
+Eddy: Just kind of tired, is all.
+Ellen: OK, OK.
+<<settimeofday LevelElements bedtime>>
+===

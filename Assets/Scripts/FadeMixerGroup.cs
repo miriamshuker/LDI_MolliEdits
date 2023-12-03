@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class FadeMixerGroup
 {
-    public static IEnumerator StartFade(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
+    public static IEnumerator StartFadeMix(AudioMixer audioMixer, string exposedParam, float duration, float targetVolume)
     {
         float currentTime = 0;
         float currentVol;
@@ -18,6 +18,20 @@ public static class FadeMixerGroup
             currentTime += Time.deltaTime;
             float newVol = Mathf.Lerp(currentVol, targetValue, currentTime / duration);
             audioMixer.SetFloat(exposedParam, Mathf.Log10(newVol) * 20);
+            yield return null;
+        }
+        yield break;
+    }
+    public static IEnumerator StartFade(AudioSource audioSource, string exposedParam, float duration, float targetVolume)
+    {
+        float currentTime = 0;
+        float currentVol = audioSource.volume;
+
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            float newVol = Mathf.Lerp(currentVol, targetVolume, currentTime / duration);
+            audioSource.volume = newVol;
             yield return null;
         }
         yield break;

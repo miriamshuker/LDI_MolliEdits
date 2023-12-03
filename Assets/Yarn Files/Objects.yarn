@@ -1,0 +1,144 @@
+title: vase
+tags: 
+colorID: 0
+position: 
+---
+One of our vases.
+The flowers are fake, so we don't need to replace them. They're a little dusty now.
+===
+title: painting
+tags: 
+colorID: 0
+position: 
+---
+A painting my mom got from somewhere.
+It depicts a woman in <i>ao dai</i>, pulling a bamboo hat over her face. Cool pose.
+===
+title: dishwasher
+tags: 
+colorID: 0
+position: 143,198
+---
+<< set $vdishwasher to false >> 
+
+Our dishwasher.
+<< if $vdishwasher == true >> 
+    We don't actually use it for washing dishes, so it's like an extra cabinet for our cups.
+<< endif >> 
+<< set $vdishwasher to true >>
+===
+title: stove
+tags: 
+colorID: 0
+position: 410,190
+---
+The stove.
+It's lined with aluminum foil to make it easier to clean.
+===
+title: clock
+tags: 
+colorID: 0
+position: 659,204
+---
+<< if $clocktime is null >>
+    << set $clocktime to 10>>
+<< else >>
+    << if $clocktime == 10>>
+        It's currently 10 AM.
+        << set $clocktime to $clocktime + 0.1>> 
+    << elseif $clocktime > 10>>
+        Oh! Now it's 10 past 10.
+    << endif>>
+<< endif >>
+===
+title: fruit
+tags: 
+colorID: 0
+position: 446,409
+---
+<< if $bananacount is null>>
+    << set $bananacount to 4>>
+<< endif>>
+<< if $bananacount > 0 >> 
+    A bunch of bananas. There's {$bananacount} [plural {$bananacount} one="banana" other="bananas"] left.
+    I'll eat one.
+    << set $bananacount to $bananacount - 1>> 
+<< else >>
+    There used to be a bunch of bananas here, but I ate them all.
+<< endif >>
+===
+title: ricecooker
+tags: 
+colorID: 0
+position: 
+---
+The rice cooker.
+<< if $ricedone is false >> 
+    It's empty.
+<< else >>
+    It's cooking rice right now.
+<< endif >>
+===
+title: ricecooker2
+tags: 
+colorID: 0
+position: 
+---
+<< if $ricedone is false >> 
+    Ah, yeah. I needed to make rice as well.
+    Should I go ahead and make it now?
+    -> Right now
+        Well, I got nothing better to do.
+        Scoop the rice...
+        Wash once... Wash twice...
+        Fill it up to the line...
+        And we're done!
+        << set $ricedone to true >>
+        <<showsuccess UICanvas 1>>
+        <<animatesprite RiceCooker On true>>
+    -> Not yet
+        Do I reaaally want to do it now? No.
+        Let's hold off on it until later.
+<< endif >>
+===
+title: stairs
+---
+<<if $day == 0 && !($timeofday == "freetime" || $timeofday == "night")>>
+    Our stairs. Probably not the time to use 'em for some exercise.
+<<else>>
+    <<to TransitionCanvas HomeUpper>>
+<<endif>>
+===
+title: fridge
+---
+<<if $day is 0 && $timeofday is "night">>
+    <<if $talkicecream is false>>
+        Hmm... Ellen looked a little down.
+        Ice cream always helps with her mood.
+        Should I grab some for her?
+        ->Yes
+            <<set $hasicecream to true >>
+            Good idea.
+        ->No
+            <<set $hasicecream to false >>
+            Maybe not.
+        <<set $talkicecream to true >>
+    <<else>>
+        <<if $hasicecream is true >>
+            I already got ice cream for both of us.
+        <<else >>
+            Nah, let's pass on the ice cream.
+        <<endif>>
+    <<endif>>
+<<else>>
+    Our fridge. 
+    <<if $day is 1>>
+        :Looks like we're stocking up on ingredients for spring rolls.:Gỏi cuốn, made by wrapping pork or shrimp, vegetables, and rice noodles in rice paper. Often served with a side of fish sauce or peanut sauce.
+    <<elseif $day is 2>>
+        :Oh, we're gonna have cá kho today!:Caramelized and braised portions of fish steak, usually served in a sweet brown sauce and topped with scallions.
+    <<else>>
+    <<endif>>
+    
+<<endif>>
+
+===

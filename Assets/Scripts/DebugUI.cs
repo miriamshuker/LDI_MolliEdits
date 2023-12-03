@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class DebugUI : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class DebugUI : MonoBehaviour
     {
         if (!GameManager.Instance.debugMode)
             return;
-        if (Input.GetKeyDown(KeyCode.RightBracket))
+        Keyboard k = Keyboard.current;
+        if (k.rightBracketKey.wasPressedThisFrame)
         {
             ToggleDay();
         }
@@ -33,7 +35,7 @@ public class DebugUI : MonoBehaviour
             UpdateDay();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftBracket)) {
+        if (k.leftBracketKey.wasPressedThisFrame) {
             ToggleVar();
         }
     }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Yarn.Unity;
 using System.Text;
+using UnityEngine.InputSystem;
 
 //Communicates with the DialogueRunner and DialogueUI
 //to play appropriate animations and parse text.
@@ -19,7 +20,8 @@ public class GameDialogueManager : MonoBehaviour
     public GameObject showFullButton;
     public GameObject continueButton;
     public List<Button> optionsTalk;
-    public List<Button> optionsText;
+    public List<Button> optionsText; 
+    public InputHelper input;
 
     public enum DialogueState
     {
@@ -88,6 +90,7 @@ public class GameDialogueManager : MonoBehaviour
     public float quickNextTime;
     public float quickNextTimeText;
     private float nextHoldTime;
+    private bool isHolding;
 
     private bool waitingForOptions;
     private List<Button> buttons;
@@ -108,7 +111,17 @@ public class GameDialogueManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (input == null)
+        {
+            input = InputHelper.Instance;
+        }
         //HideAll();
+        input.jumpAction.started += Next;
+        input.jumpAction.canceled += Next;
+        input.jumpAction.started += Select;
+        input.moveAction.performed += Navigate;
+        input.moveAction.canceled += Navigate;
+        //input.interactAction.started += Select;
     }
 
     // Update is called once per frame
@@ -116,13 +129,7 @@ public class GameDialogueManager : MonoBehaviour
     {
         if (dialogueState != DialogueState.NONE)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            { 
-                if (!isWaitingForPhone && dialogueState != DialogueState.EXPO) {
-                    Next();
-                }
-            }
-            if (Input.GetKey(KeyCode.Space))
+            if (isHolding)
             {
                 float targetTime = 1f;
                 if (dialogueState == DialogueState.TALK)
@@ -137,28 +144,57 @@ public class GameDialogueManager : MonoBehaviour
                     nextHoldTime = 0;
                 }
             }
-            else if (Input.GetKeyUp(KeyCode.Space))
-            {
-                nextHoldTime = 0;
-            }
-
-            if (waitingForOptions)
-            {
-                CheckOptionNavigation();
-            }
-            /*
-            if (dui.optionButtons[0].isActiveAndEnabled)
-            {
-                if (Input.GetKeyDown(KeyCode.Alpha1))
-                {
-                    dui.optionButtons[0].Select();
-                }
-                if (Input.GetKeyDown(KeyCode.Alpha2))
-                {
-                    dui.optionButtons[1].Select();
-                }
-            }*/
         }
+    }
+    void Next(InputAction.CallbackContext context)
+    {
+        if (dialogueState != DialogueState.NONE && context.phase == InputActionPhase.Started)
+        {
+            isHolding = true;
+            if (!isWaitingForPhone && dialogueState != DialogueState.EXPO)
+            {
+                Next();
+            }
+        }
+        else if (context.phase == InputActionPhase.Canceled)
+        {
+            isHolding = false;
+            nextHoldTime = 0;
+        }
+    }
+    void Navigate(InputAction.CallbackContext context)
+    {
+        if (dialogueState == DialogueState.NONE || !waitingForOptions)
+        {
+            return;
+        }
+        Vector2 input = context.ReadValue<Vector2>();
+
+        if (input.x > 0.1 && buttonIndex % 2 == 0)
+        {
+            CheckOption(buttonIndex + 1);
+        }
+        else if (input.x < -0.1 && buttonIndex % 2 != 0)
+        {
+            CheckOption(buttonIndex - 1);
+        }
+        if (input.y > 0.1)
+        {
+            CheckOption(buttonIndex - 2);
+        }
+        else if (input.y < -0.1)
+        {
+            CheckOption(buttonIndex + 2);
+        }
+    }
+    void Select(InputAction.CallbackContext context)
+    {
+        if (dialogueState == DialogueState.NONE || !waitingForOptions || buttons == null || buttons.Count == 0 || 
+            buttonIndex < 0 || buttonIndex >= buttons.Count)
+        {
+            return;
+        }
+        buttons[buttonIndex].onClick.Invoke();
     }
     public void StartDialogue()
     {
@@ -214,31 +250,6 @@ public class GameDialogueManager : MonoBehaviour
         CloseSubtitle();
 
         sfxSource.Stop();
-    }
-    void CheckOptionNavigation()
-    {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        if (input.x > 0.1 && buttonIndex % 2 == 0)
-        {
-            CheckOption(buttonIndex + 1);
-        }
-        else if (input.x < -0.1 && buttonIndex % 2 != 0)
-        {
-            CheckOption(buttonIndex - 1);
-        }
-        if (input.y > 0.1)
-        {
-            CheckOption(buttonIndex - 2);
-        }
-        else if (input.y < -0.1)
-        {
-            CheckOption(buttonIndex + 2);
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            buttons[buttonIndex].onClick.Invoke();
-        }
     }
     void CheckOption(int index)
     {
@@ -453,7 +464,7 @@ public class GameDialogueManager : MonoBehaviour
     IEnumerator Exposition()
     {
         expositionObject.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1.2f);
         expositionAnimator.SetTrigger("Start");
         yield return new WaitForSeconds(.8f);
 

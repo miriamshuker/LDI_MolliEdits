@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using Yarn.Unity;
 
 public class TimeManager : MonoBehaviour
@@ -31,27 +32,28 @@ public class TimeManager : MonoBehaviour
         {
             return;
         }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
+        Keyboard k = Keyboard.current;
+        if (k.numpad0Key.wasPressedThisFrame)
         {
             SetDay(0);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha1))
+        else if (k.numpad1Key.wasPressedThisFrame)
         {
             SetDay(1);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (k.numpad2Key.wasPressedThisFrame)
         {
             SetDay(2);
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        else if (k.numpad3Key.wasPressedThisFrame)
         {
             SetDay(3);
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        if (k.oKey.wasPressedThisFrame)
         {
             PrevTimeOfDay();
         }
-        if (Input.GetKeyDown(KeyCode.P))
+        if (k.pKey.wasPressedThisFrame)
         {
             NextTimeOfDay();
         }

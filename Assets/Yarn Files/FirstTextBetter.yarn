@@ -1,0 +1,109 @@
+title: phone
+tags: 
+colorID: 0
+position: -716,148
+---
+<<setdialoguestate DialogueRunner text>>
+<< setspritecolor DialogueRunner red>> 
+ugh my abs are so sore
+[[ Practicing for the competition? |dance]]
+[[ Getting swole, huh? |swole]]
+===
+title: dance
+tags: 
+colorID: 0
+position: -455,420
+---
+<< setspritecolor DialogueRunner yellow>> 
+Ye
+Starting a bunch of workouts so I'll look good for the video lol
+[[ Keep it up! |encourage]]
+[[ We should work out together! |meet]]
+===
+title: swole
+tags: 
+colorID: 0
+position: -161,124
+---
+<< setspritecolor DialogueRunner orange >> 
+Fuck yeah
+Gonna be able to crush your head between my thighs soon enough
+[[ Meet a sweet end |yesplease]] 
+[[ Not likely any time soon|nothanks]]
+===
+title: encourage
+tags: 
+colorID: 0
+position: -373,708
+---
+<< setspritecolor DialogueRunner green >>
+Thanks, I will~
+Anyway
+[[ free ]]
+===
+title: meet
+tags: 
+colorID: 0
+position: -125,581
+---
+Sure!
+Speaking of,
+[[free]]
+===
+title: yesplease
+tags: 
+colorID: 0
+position: 123,279
+---
+<< setspritecolor DialogueRunner yellow >> 
+oh, btw
+[[ free]]
+===
+title: nothanks
+tags: 
+colorID: 0
+position: 319,28
+---
+<< setspritecolor DialogueRunner red >>
+you stink
+By the way,
+[[ free]]
+===
+title: free
+tags: 
+colorID: 0
+position: 655,470
+---
+<< setspritecolor DialogueRunner yellow >>
+I'm free this weekend.
+Want to hang out?
+-> Sure
+    << setspritecolor DialogueRunner green >> 
+    cool! I don't actually have any work to do, so
+    if we can get my parents out of the house for a bit
+-> Maaaybe
+    << setspritecolor DialogueRunner red >> 
+    I'm being serious
+    I have a free day this Saturday, so you can come over
+<< setspritecolor DialogueRunner orange >> 
+We can do something
+-> Something?
+<< setspritecolor DialogueRunner green >> 
+Yeah, let's do it!
+<< setspritecolor DialogueRunner orange >> 
+If you want to, obviously
+<< setspritecolor DialogueRunner green >> 
+-> I need to get some more though
+    Thanks!
+    I'm really excited
+-> Totally! Gonna need to prep first
+    OK!
+    << setspritecolor DialogueRunner orange >> 
+    Thanks for doing the dirty work of buying condoms lol
+    if anyone saw me in the supermarket, i'd die of embarassment
+<< setspritecolor DialogueRunner yellow >> 
+OK, I'll see you then
+Let me know if anything comes up
+<< setspritecolor DialogueRunner green >>
+Keep me updated on your progress, ok?
+===

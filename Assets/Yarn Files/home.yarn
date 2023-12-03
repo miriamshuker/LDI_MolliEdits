@@ -1,0 +1,118 @@
+title: doorentrance
+---
+<<if $day == 0>>
+    I probably shouldn't go running away from home right now.
+<<else>>
+    <<if $timeofday is "freetime">>
+        <<to TransitionCanvas HomeOutside>>
+    <<elseif $timeofday is "between">>
+        The front door makes a lot of noise, so if I want to sneak out, I should find another way.
+        Maybe I should check the other rooms for an alternate route.
+    <<else>>
+        I probably shouldn't go running away from home right now.
+    <<endif>>
+<<endif>>
+===
+title: dooreddy
+tags: 
+colorID: 0
+position: 212,57
+---
+<< if $day is 0>>
+    <<if $timeofday is "evening" or $timeofday is "afternoon">>
+        My room. I made the carrot nameplate in kindergarten and kept it 'til now.
+        Speaking of carrots - I should get downstairs for dinner!
+    <<elseif $timeofday is "night">>
+        Wait, Ellen was just standing around over there.
+        I shouldn't just ignore her, right?
+        ->Go in
+            Alright.
+            I feel bad for this, but maybe she needs some space.
+            It's always tough to open up, so she only needs to talk about it when she's ready.
+            ...Well, sometimes you need to force a confrontation to make meaningful change, but I don't think this is an example.
+            <<settimeofday LevelElements bedtime>>
+            <<to TransitionCanvas EddyRoom>>
+        ->Don't go in
+            Yeah, maybe I should see if she needs something.
+    <<else>>
+        <<to TransitionCanvas EddyRoom>>
+    <<endif>>
+<<else>>
+    <<to TransitionCanvas EddyRoom>>
+<< endif >>
+===
+title: doorellen
+tags: 
+colorID: 0
+position: 446,55
+---
+Ellen's room. 
+<<if $day == 0>>
+    << if $timeofday is "evening" >>
+        She's in there now.
+        Considering recent events, I probably shouldn't bother her....
+        For now, at least!
+    <<elseif $timeofday is "bedtime">>
+        She's probably playing an otome game before bed, so let's leave her alone.
+    <<endif>>
+<<elseif $timeofday is "freetime" && $donetrash is false>>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $vellentrash is false>>
+        Ellen's at class right now. Should I go ahead and grab her trash?
+        ->Yes
+            Okay, good idea.
+            [[ellentrash]]
+        ->No
+            Maybe later.
+    <<endif>>
+<<else>>
+    <<if $timeofday is "bedtime" || $timeofday is "between">>
+        Ellen's in her room now. Let's hope she doesn't notice I'm out....
+    <<endif>>
+<< endif >>
+===
+title: doorbathroom
+tags: 
+colorID: 0
+position: 668,56
+---
+<< if $day is 0>>
+    Our bathroom. I don't need to go right now.
+<<else>>
+    <<to TransitionCanvas Bathroom>>
+<< endif >>
+===
+title: doorparents
+tags: 
+colorID: 0
+position: 887,56
+---
+Mom and Dad's room.
+<< if $day is 0 >>
+    <<if $timeofday is "evening" >>
+        I don't go in often, but now's not the time anyway. Let's grab some dinner!
+    <<elseif $timeofday is "bedtime">>
+        They're probably sleeping already!
+    <<endif>>
+<<elseif $timeofday is "freetime" && $donetrash is false>>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $vparentstrash is false>>
+        Mom and Dad are at work now, but I can drop in to grab their trash. Should I?
+        ->Yes
+            Okay, good idea.
+            [[parentstrash]]
+        ->No
+            Maybe later.
+    <<endif>>
+<<elseif $timeofday is "night">>
+    They're in bed now.
+<<elseif $timeofday is "bedtime">>
+    Let's be as quiet as possible. Worst case, I get caught before I even go out!
+<< endif >>
+===
