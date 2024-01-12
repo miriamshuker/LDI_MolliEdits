@@ -1,0 +1,64 @@
+fileFormatVersion: 2
+guid: 5ff02452595937347992a0ea320f5be7
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - trash-trash-0
+  - trash-trash-1
+  - trash-trash-2
+  - trash-trash-3
+  - trash-trash-4
+  - trash-trash-5
+  - trash-trash-6
+  - trash-firsttrash-7
+  - trash-eddytrash-8
+  - trash-eddytrash-9
+  - trash-eddytrash-10
+  - trash-eddytrash-11
+  - trash-eddytrash-12
+  - trash-eddytrash-13
+  - trash-ellentrash-14
+  - trash-ellentrash-15
+  - trash-ellentrash-16
+  - trash-parentstrash-17
+  - trash-parentstrash-18
+  - trash-parentstrash-19
+  - trash-bathtrash-20
+  - trash-bathtrash-21
+  - trash-bathtrash-22
+  - trash-bathtrash-23
+  - trash-lowertrash-24
+  - trash-lowertrash-25
+  - trash-lowertrash-26
+  - trash-lowertrash-27
+  - trash-lowertrash-28
+  - trash-outsidetrash-29
+  - trash-outsidetrash-30
+  - trash-outsidetrash-31
+  - trash-outsidetrash-32
+  - trash-leave-33
+  - trash-leave-34
+  - trash-leave-35
+  - trash-leave-36
+  - trash-leave-37
+  - trash-leave-38
+  - trash-leave-39
+  - trash-gotcondoms-40
+  - trash-gotcondoms-41
+  - trash-gotcondoms-42
+  - trash-gotcondoms-43
+  - trash-gotcondoms-44
+  - trash-gotcondoms-45
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 5ff02452595937347992a0ea320f5be7,
+    type: 3}
+  localizations: []

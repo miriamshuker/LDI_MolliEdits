@@ -1,0 +1,18 @@
+title: quick_d0
+---
+<<to TransitionCanvas EddyRoom>>
+<<settime TimeManager 0 freetime>>
+Quick jump to Day 0.
+<<clockset UICanvas 19:30>>
+<<clockend UICanvas 20:00>>
+<<clockscale UICanvas 1>>
+===
+title: quick_d1
+---
+<<to TransitionCanvas Bathroom>>
+<<settime TimeManager 1 freetime>>
+Quick jump to Day 1.
+<<clockset UICanvas 12:00>>
+<<clockend UICanvas 18:00>>
+<<clockscale UICanvas 1>>
+===

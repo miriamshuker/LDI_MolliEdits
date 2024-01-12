@@ -1,0 +1,60 @@
+fileFormatVersion: 2
+guid: ee1e2917f6699cf459c873946aa02891
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - ellen-ellen_d0-0
+  - ellen-ellen_d0-1
+  - ellen-ellen_d0-2
+  - ellen-ellen_d0-3
+  - ellen-ellen_d0-4
+  - ellen-ellen_d0-5
+  - ellen-ellen_d0-6
+  - ellen-ellen_d0-7
+  - ellen-ellen_d0-8
+  - ellen-ellen_d0-9
+  - ellen-ellen_d0-10
+  - ellen-ellen_d0-11
+  - ellen-ellen_d0-12
+  - ellen-ellen_d0-13
+  - ellen-ellen_d0-14
+  - ellen-ellen_d0-15
+  - ellen-ellen_d0-16
+  - ellen-ellen_d0-17
+  - ellen-ellen_d0-18
+  - ellen-ellen_d0-19
+  - ellen-ellen_d0-20
+  - ellen-ellen_d0-21
+  - ellen-ellen_d0-22
+  - ellen-ellen_d0-23
+  - ellen-ellen_d0-24
+  - ellen-ellen_d0-25
+  - ellen-ellen_d0-26
+  - ellen-ellen_d0-27
+  - ellen-ellen_d0-28
+  - ellen-ellen_d0-29
+  - ellen-ellen_d0-30
+  - ellen-ellen_d0-31
+  - ellen-ellen_d0-32
+  - ellen-ellen_d0-33
+  - ellen-ellen_d0-34
+  - ellen-ellen_d0-35
+  - ellen-ellen_d0-36
+  - ellen-ellen_d0-37
+  - ellen-ellen_d0-38
+  - ellen-ellen_d0-39
+  - ellen-ellen_d0-40
+  - ellen-ellen_d0-41
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: ee1e2917f6699cf459c873946aa02891,
+    type: 3}
+  localizations: []

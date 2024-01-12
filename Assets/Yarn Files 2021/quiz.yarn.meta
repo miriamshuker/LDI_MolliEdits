@@ -1,0 +1,79 @@
+fileFormatVersion: 2
+guid: bd73f20b82abd1f4cbbbcaed1d013921
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - quiz-quizstart-0
+  - quiz-quizstart-1
+  - quiz-quizstart-2
+  - quiz-quizstart-3
+  - quiz-quizstart-4
+  - quiz-quizstart-5
+  - quiz-quizstart-6
+  - quiz-quizstart-7
+  - quiz-quizstart-8
+  - quiz-quizstart-9
+  - quiz-quizstart-10
+  - quiz-quizstart-11
+  - quiz-quizstart-12
+  - quiz-quizstart-13
+  - quiz-quizstart-14
+  - quiz-quizstart-15
+  - quiz-quizstart-16
+  - quiz-quizstart-17
+  - quiz-quizstart-18
+  - quiz-quizstart-19
+  - quiz-quizstart-20
+  - quiz-quizstart-21
+  - quiz-quizstart-22
+  - quiz-quizstart-23
+  - quiz-quizstart-24
+  - quiz-quizstart-25
+  - quiz-quizstart-26
+  - quiz-quizstart-27
+  - quiz-quizstart-28
+  - quiz-quizstart-29
+  - quiz-quizstart-30
+  - quiz-quizstart-31
+  - quiz-quizstart-32
+  - quiz-quizstart-33
+  - quiz-quizstart-34
+  - quiz-quizstart-35
+  - quiz-quizstart-36
+  - quiz-quizstart-37
+  - quiz-quizstart-38
+  - quiz-quizstart-39
+  - quiz-quizstart-40
+  - quiz-quizstart-41
+  - quiz-quizstart-42
+  - quiz-quizstart-43
+  - quiz-quizstart-44
+  - quiz-quizstart-45
+  - quiz-quizstart-46
+  - quiz-quizstart-47
+  - quiz-quizstart-48
+  - quiz-quizstart-49
+  - quiz-quizstart-50
+  - quiz-quizstart-51
+  - quiz-quizstart-52
+  - quiz-quizstart-53
+  - quiz-quizstart-54
+  - quiz-quizstart-55
+  - quiz-quizstart-56
+  - quiz-quizstart-57
+  - quiz-quizstart-58
+  - quiz-quizstart-59
+  - quiz-quizstart-60
+  - quiz-quizstart-61
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

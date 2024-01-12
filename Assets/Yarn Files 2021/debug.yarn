@@ -1,0 +1,43 @@
+title: quick_d0
+---
+<<to TransitionCanvas EddyRoom>>
+<<settime TimeManager 0 freetime>>
+Quick jump to Day 0.
+<<set $d0_june to false>>
+<<clockset UICanvas 19:30>>
+<<clockend UICanvas 20:00>>
+//<<clockscale UICanvas 1>>
+===
+title: quick_d1
+---
+<<to TransitionCanvas Bathroom>>
+<<settime TimeManager 1 freetime>>
+Quick jump to Day 1.
+<<clockset UICanvas 12:00>>
+<<clockend UICanvas 18:00>>
+<<clockscale UICanvas 1>>
+===
+title: debug_viet
+---
+Eddy: This is how English looks.
+Eddy: This is how Vietnamese looks.@v
+Eddy: This is how English looks.@
+===
+title: quick_d1_dinner
+---
+<<to TransitionCanvas HomeLower>>
+<<settime TimeManager 1 dinner>>
+Quick jump to Day 1 Dinner.
+<<clockset UICanvas 18:30>>
+<<clockend UICanvas 20:00>>
+<<clockscale UICanvas 5>>
+===
+title: qd1
+---
+<<tor TransitionCanvas Bathroom>>
+<<clockset UICanvas 9:00>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<clockend UICanvas 17:00>>
+<<settime TimeManager 1 freetime>>
+===

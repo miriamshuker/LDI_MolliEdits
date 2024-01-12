@@ -22,8 +22,8 @@ public class EssayManager : MonoBehaviour
     [YarnCommand("essayup")]
     public void EssayUp()
     {
-        GameManager.Instance.isBusy = true;
         EssayGrader.isUp = true;
+        GameManager.Instance.inEssay = true;
 
         essay.SetActive(true);
         foreach (Button b in essayButtons)
@@ -39,8 +39,7 @@ public class EssayManager : MonoBehaviour
     {
         EssayGrader.SaveEssay(essayText.text);
         //essay.SetActive(false);
-
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inEssay = false;
         EssayGrader.isUp = false;
     }
     [YarnCommand("essaydown")]
@@ -49,7 +48,7 @@ public class EssayManager : MonoBehaviour
         EssayGrader.SaveEssay(essayText.text);
         essay.SetActive(false);
 
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inEssay = false;
         EssayGrader.isUp = false;
     }
     public void EssayGrade()

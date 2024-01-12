@@ -1,0 +1,49 @@
+fileFormatVersion: 2
+guid: 932c178dc858d984f972db331446f480
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - trash-trash-0
+  - trash-trash-1
+  - trash-trash-2
+  - trash-trash-3
+  - trash-trash-4
+  - trash-trash-5
+  - trash-trash-6
+  - trash-firsttrash-7
+  - trash-eddy_trash-8
+  - trash-eddy_trash-9
+  - trash-eddy_trash2-10
+  - trash-eddy_trash2-11
+  - trash-eddy_trash2-12
+  - trash-eddy_trash2-13
+  - trash-ellen_trash-14
+  - trash-ellen_trash-15
+  - trash-ellen_trash-16
+  - trash-parents_trash-17
+  - trash-parents_trash-18
+  - trash-parents_trash-19
+  - trash-bath_trash-20
+  - trash-bath_trash-21
+  - trash-bath_trash-22
+  - trash-lower_trash-23
+  - trash-lower_trash-24
+  - trash-lower_trash-25
+  - trash-lower_trash-26
+  - trash-lower_trash-27
+  - trash-outside_trash-28
+  - trash-outside_trash-29
+  - trash-outside_trash-30
+  - trash-outside_trash-31
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

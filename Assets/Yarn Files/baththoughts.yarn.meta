@@ -1,0 +1,60 @@
+fileFormatVersion: 2
+guid: 600e7d1da20ab48a4bb4dbc89deed09b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - baththoughts-bathfirst-0
+  - baththoughts-bathfirst-1
+  - baththoughts-bathfirst-2
+  - baththoughts-bathfirst-3
+  - baththoughts-bathfirst-4
+  - baththoughts-bathfirst-5
+  - baththoughts-bathfirst-6
+  - baththoughts-bathfirst-7
+  - baththoughts-bathfirst-8
+  - baththoughts-bathfirst-9
+  - baththoughts-bathfirst-10
+  - baththoughts-bathfirst-11
+  - baththoughts-bathfirst-12
+  - baththoughts-bathfirst-13
+  - baththoughts-bathfirst-14
+  - baththoughts-bathfirst-15
+  - baththoughts-bathfirst-16
+  - baththoughts-bathfirst-17
+  - baththoughts-bathfirst-18
+  - baththoughts-bathfirst-19
+  - baththoughts-bathfirst-20
+  - baththoughts-bathfirst-21
+  - baththoughts-bathfirst-22
+  - baththoughts-bathfirst-23
+  - baththoughts-bathfirst-24
+  - baththoughts-bathwalkin-25
+  - baththoughts-bathwalkin-26
+  - baththoughts-bathwalkin-27
+  - baththoughts-bathwalkin-28
+  - baththoughts-bathwalkin-29
+  - baththoughts-bathwalkin-30
+  - baththoughts-bathwalkin-31
+  - baththoughts-bathwalkin-32
+  - baththoughts-bathwalkin-33
+  - baththoughts-bathwalkin-34
+  - baththoughts-bathwalkin-35
+  - baththoughts-bathwindow-36
+  - baththoughts-bathwindow-37
+  - baththoughts-bathwindow-38
+  - baththoughts-bathwindow-39
+  - baththoughts-bathwindow-40
+  - baththoughts-bathwindow-41
+  - baththoughts-bathwindow-42
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

@@ -1,0 +1,31 @@
+fileFormatVersion: 2
+guid: 5d44615155f77bc40aff16e8a45a8c6f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d0_main-d0_liedown-0
+  - d0_main-d0_liedown-1
+  - d0_main-d0_liedown-2
+  - d0_main-d0_liedown-3
+  - d0_main-d0_liedown-4
+  - d0_main-d0_liedown-5
+  - d0_main-d0_liedown-6
+  - d0_main-d0_liedown-7
+  - d0_main-d0_hallway-8
+  - d0_main-d0_freetime_slow-9
+  - d0_main-d0_freetime_slow-10
+  - d0_main-d0_hall-11
+  - d0_main-d0_hall-12
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 5d44615155f77bc40aff16e8a45a8c6f,
+    type: 3}
+  localizations: []

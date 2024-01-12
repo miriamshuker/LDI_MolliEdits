@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using Yarn.Unity;
+using Yarn;
 
 public class VariableManager : Yarn.Unity.VariableStorageBehaviour
 {
@@ -76,7 +75,7 @@ public class VariableManager : Yarn.Unity.VariableStorageBehaviour
         }
     }
 
-    public override void SetValue (string variableName, Yarn.Value value)
+    public override void SetValue(string variableName, Yarn.Value value)
     {
         //variables[variableName] = new Yarn.Value(value);
         if (variableName == "day")

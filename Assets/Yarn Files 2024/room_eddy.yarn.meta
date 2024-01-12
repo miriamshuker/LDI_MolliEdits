@@ -1,0 +1,77 @@
+fileFormatVersion: 2
+guid: df86b270c6571ca44975f174744b941b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - room_eddy-eddy_shelf-0
+  - room_eddy-eddy_shelf-1
+  - room_eddy-eddy_shelf-2
+  - room_eddy-eddy_shelf-3
+  - room_eddy-eddy_shelf-4
+  - room_eddy-eddy_shelf-5
+  - room_eddy-eddy_shelf-6
+  - room_eddy-eddy_shelf-7
+  - room_eddy-eddy_shelf-8
+  - room_eddy-eddy_shelf-9
+  - room_eddy-eddy_shelf-10
+  - room_eddy-eddy_shelf-11
+  - room_eddy-eddy_shelf-12
+  - room_eddy-eddy_shelf-13
+  - room_eddy-eddy_shelf-14
+  - room_eddy-eddy_shelf-15
+  - room_eddy-eddy_shelf-16
+  - room_eddy-eddy_shelf-17
+  - room_eddy-eddy_shelf-18
+  - room_eddy-eddy_shelf-19
+  - room_eddy-eddy_shelf-20
+  - room_eddy-eddy_shelf-21
+  - room_eddy-eddy_shelf-22
+  - room_eddy-eddy_shelf-23
+  - room_eddy-eddy_shelf-24
+  - room_eddy-eddy_shelf-25
+  - room_eddy-eddy_shelf-26
+  - room_eddy-eddy_shelf-27
+  - room_eddy-eddy_shelf-28
+  - room_eddy-eddy_shelf-29
+  - room_eddy-eddy_shelf-30
+  - room_eddy-eddy_desk_d0-31
+  - room_eddy-eddy_desk_d0-32
+  - room_eddy-eddy_desk_d0-33
+  - room_eddy-eddy_desk_d0-34
+  - room_eddy-eddy_desk_d0-35
+  - room_eddy-eddy_desk_d1-36
+  - room_eddy-eddy_desk_d1-37
+  - room_eddy-eddy_desk-38
+  - room_eddy-eddy_desk-39
+  - room_eddy-eddy_desk_work-40
+  - room_eddy-eddy_desk_work-41
+  - room_eddy-eddy_desk_work-42
+  - room_eddy-eddy_desk_work-43
+  - room_eddy-eddy_desk_work-44
+  - room_eddy-eddy_desk_work-45
+  - room_eddy-eddy_desk_work-46
+  - room_eddy-eddy_desk_work-47
+  - room_eddy-eddy_desk_work-48
+  - room_eddy-eddy_desk_work-49
+  - room_eddy-eddy_desk_work-50
+  - room_eddy-eddy_bed_d0-51
+  - room_eddy-eddy_bed_d0-52
+  - room_eddy-eddy_bed_d0-53
+  - room_eddy-eddy_bed_d0-54
+  - room_eddy-eddy_bed_d0-55
+  - room_eddy-eddy_bed_main-56
+  - room_eddy-eddy_bed_main-57
+  - room_eddy-eddy_bed_main-58
+  - room_eddy-eddy_bed_main-59
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

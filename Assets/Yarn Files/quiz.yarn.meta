@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: a6068679fd79b44318bf7189b5947cdb
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs: []
+  compilationStatus: 1
+  isSuccesfullyCompiled: 0
+  compilationErrorMessage: "Error on line 6 at position 7:\nmismatched input 'if'
+    expecting COMMAND_END\n<<elseif>>\n      ^^\n\nTokens:\n1:0 ID \"title\"\n1:5
+    HEADER_DELIMITER \": \"\n1:7 REST_OF_LINE \"quizstart\"\n2:0 HEADER_NEWLINE \"\n\"\n2:0
+    '---' \"---\"\n3:0 COMMAND_START \"<<\"\n3:2 COMMAND_IF \"if \"\n3:5 VAR_ID \"$quizprogress\"\n3:19
+    OPERATOR_LOGICAL_LESS \"<\"\n3:21 NUMBER \"1\"\n3:22 EXPRESSION_COMMAND_END \">>\"\n4:4
+    INDENT \"    \"\n4:4 TEXT \"Let's kill this quiz!\"\n5:4 TEXT_NEWLINE \" \"\n5:4
+    TEXT \"With love, that is.\"\n6:0 TEXT_NEWLINE \"\n\"\n5:0 DEDENT \"\n\"\n6:0
+    COMMAND_START \"<<\"\n6:2 COMMAND_ELSE \"else\"\n6:6 COMMAND_TEXT \"if\"\n6:8
+    COMMAND_TEXT_END \">>\""
+  baseLanguage: {fileID: 7128917941130120860, guid: a6068679fd79b44318bf7189b5947cdb,
+    type: 3}
+  localizations: []

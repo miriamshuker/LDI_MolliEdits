@@ -1,0 +1,96 @@
+fileFormatVersion: 2
+guid: 6f9dd6c0f6cab034f915a1390b077583
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - phone_june-phonestart_june-0
+  - phone_june-junezero-1
+  - phone_june-junezero-2
+  - phone_june-junezero-3
+  - phone_june-junezero-4
+  - phone_june-junezero-5
+  - phone_june-junezero-6
+  - phone_june-junezero-7
+  - phone_june-junezero-8
+  - phone_june-junezero-9
+  - phone_june-junezero-10
+  - phone_june-junezero-11
+  - phone_june-junezero-12
+  - phone_june-junezero-13
+  - phone_june-junezero-14
+  - phone_june-junezero-15
+  - phone_june-junezero-16
+  - phone_june-junezero-17
+  - phone_june-junezero-18
+  - phone_june-junezero-19
+  - phone_june-junezero-20
+  - phone_june-junezero-21
+  - phone_june-junezero-22
+  - phone_june-junezero-23
+  - phone_june-junezero-24
+  - phone_june-junezero-25
+  - phone_june-junezero-26
+  - phone_june-junezero-27
+  - phone_june-junezero-28
+  - phone_june-junezero-29
+  - phone_june-junezero-30
+  - phone_june-junezero-31
+  - phone_june-junezero-32
+  - phone_june-junezero-33
+  - phone_june-junezero-34
+  - phone_june-junezero-35
+  - phone_june-junezero-36
+  - phone_june-junezero-37
+  - phone_june-junezero-38
+  - phone_june-junezero-39
+  - phone_june-junezero-40
+  - phone_june-junezero-41
+  - phone_june-junezero-42
+  - phone_june-junezero-43
+  - phone_june-junezero-44
+  - phone_june-junezero-45
+  - phone_june-junezero-46
+  - phone_june-junezero-47
+  - phone_june-junezero-48
+  - phone_june-junezero-49
+  - phone_june-junezero-50
+  - phone_june-junezero-51
+  - phone_june-junezero-52
+  - phone_june-junezero-53
+  - phone_june-junezero-54
+  - phone_june-junezero-55
+  - phone_june-junezero-56
+  - phone_june-junezero-57
+  - phone_june-junezero-58
+  - phone_june-junezero-59
+  - phone_june-junezero-60
+  - phone_june-junezero-61
+  - phone_june-junezero-62
+  - phone_june-junezero-63
+  - phone_june-junezero-64
+  - phone_june-junezero-65
+  - phone_june-junezero-66
+  - phone_june-junezero-67
+  - phone_june-junezero-68
+  - phone_june-junezero-69
+  - phone_june-junezero-70
+  - phone_june-junezero-71
+  - phone_june-junezero-72
+  - phone_june-junezero-73
+  - phone_june-junezero-74
+  - phone_june-junezero-75
+  - phone_june-junezero-76
+  - phone_june-junezero-77
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 6f9dd6c0f6cab034f915a1390b077583,
+    type: 3}
+  localizations: []

@@ -1,0 +1,196 @@
+title: d0_dinner
+---
+Eddy: Dinner's ready, everyone!!!
+<<cross TransitionCanvas 1.5>>
+<<wait 1.5>>
+<<showplayer Player false>>
+<<yarnoff YarnController table>>
+<<if $timeofday != "dinner">>
+    <<settod TimeManager dinner>>
+<<endif>>
+
+Eddy: Fuwaaa....
+Eddy: I'm. So. FULL.
+Dad: Troi oi, look at him rub his belly. It's like mine!@v
+Eddy: That's how good it was.@
+Ellen: Is it just me, or was it spicier this time!?&sick
+Ellen: My tongue's burning.
+Mom: I added some peppers.
+Mom: Used a new recipe my sister told me about.
+Eddy: Online?
+Mom: On Youtube.&smile
+Ellen: Wowww, so advanced!&shock
+Eddy: You know, I saw dad use "lol" the other day.&sly
+Eddy: I'm proud of you.
+Dad: We have to keep learning even when we're old.
+Mom: That reminds me....
+Mom: Eddy, did you do your homework yet?
+Eddy: Uh....
+Eddy: No....
+<<if $vdesk is true>>
+    Eddy: But I wrote down everything I need to finish, for tomorrow!
+    Mom: Hm.
+<<else>>
+    Eddy: I'll check my assignments after dinner.
+    Mom: You don't even know what homework you have!?
+<<endif>>
+Eddy: I mean, I just got them today. I'll handle it by Sunday.&sweat
+Mom: That's what you always say.
+Eddy: And I do mean it.
+(You can argue or give in here.)
+->Argue
+    <<set $d0_argue to true>>
+    Test.
+->Do not
+    <<set $d0_argue to false>>
+    Test.
+Eddy: ....&stress
+Ellen: ....
+Ellen: Anyway!
+Ellen: I'm gonna need some boba to recover from this.
+Ellen: Can you grab it from the fridge for me, Eddy?&charm
+Eddy: Huh? I'm just as far as you are.&uh
+Mom: When did you get bubble tea?
+Ellen: Uh....
+Ellen: I went out with some friends earlier! Right after class ended.
+Ellen: Speaking of -- I gotta finish this discussion tonight, since I'm working tomorrow.
+Ellen: Bye!
+(Ellen leaves.)
+<<hide YarnController EllenSit>>
+Dad: I'll cut some fruit.
+Dad: You start cleaning up, Eddy.
+Eddy: Okay.
+(Skip to a dim, empty kitchen.)
+<<cross TransitionCanvas 2>>
+<<wait 1>>
+<<showplayer Player true>>
+<<settod TimeManager night>>
+<<yarnon YarnController table>>
+Eddy: Ellen's acting all weird too.... Maybe I should ask her about it.
+===
+title: d0_late
+---
+<< camerashake Cameras 1 0.2 300 >> 
+Mom: EDDY!!! Come down here!
+Eddy: Agh! I better get going downstairs!
+<<setspawn LevelElements HomeUpper>>
+<<to TransitionCanvas HomeLower HomeUpper>>
+===
+title: d0_help
+---
+<<set $bowlstaken to 0>>
+<<set $bowlmom to false>>
+<<set $bowleddy to false>>
+<<set $bowlellen to false>>
+<<set $bowldad to false>>
+Eddy: Ooh, that smells good!
+Eddy: *sniff sniff*
+Eddy: Mmmmm.
+Eddy: That's definitely bun bo hue.:A spicy Vietnamese noodle soup made with rice noodles, beef, lemongrass, and often pig's blood, oxtail, and beansprouts.
+<<camerashake Cameras .5 .1 100>>
+Dad: Eddy! Bring these bowls out!
+Eddy: Okay!
+===
+title: bowl
+---
+<<set $hasbowl to true>>
+<<set $bowlstaken to $bowlstaken + 1>>
+<<yarnoff YarnController bowl>>
+
+<< if $bowlstaken == 1 >>
+    Let's go set this on the table, like Dad asked.
+<<elseif $bowlstaken == 2>>
+    Two out of four....
+<<elseif $bowlstaken == 3>>
+    Three out of four....
+<<elseif $bowlstaken == 4>>
+    This is the last one.
+    After this, we can eat!
+<<endif>>
+===
+title: d0_ellenchair
+---
+Ellen sits here.
+Always taking so long to get downstairs... tsk, tsk.
+<<if $bowlstaken < 4 && $bowlstaken > 0>>
+    <<if $bowlellen is false >>
+        <<if $hasbowl is true>>
+            Okay, there's Ellen's bowl.
+            <<set $bowlellen to true>>
+            <<set $hasbowl to false>>
+            <<wait 0.1>>
+            <<yarnon YarnController bowl1>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        She already has a bowl.
+        ...Ellen's probably gonna get ice cream after this anyway.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    This is way too much food for Ellen.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: d0_eddychair
+---
+I usually sit here.
+<<if $bowlstaken < 4 && $bowlstaken > 0>>
+    <<if $bowleddy is false >>
+        <<if $hasbowl is true>>
+            Okay, there's my bowl.
+            <<set $bowleddy to true>>
+            <<set $hasbowl to false>>
+            <<wait 0.1>>
+            <<yarnon YarnController bowl2>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        I already have a bowl.
+        Dad always gets me too much regardless, since I need to beef up from twig form.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    I definitely can't eat a bowl this big.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: d0_dadchair
+---
+<<if $bowlstaken < 4>>
+    Dad sits here.
+    He eats more than us and usually gets his portion last, so let's get everyone else's first.
+<<elseif $bowlstaken == 4 && $hasbowl is true >>
+    <<set $hasbowl to false>>
+    Last but not least, dad's bowl!
+    With that, we can finally eat.
+    <<wait 0.1>>
+    <<yarnon YarnController bowl3>>
+    [[d0_dinner]]
+<<endif>>
+===
+title: d0_momchair
+---
+Mom usually sits here.
+<<if ($bowlstaken < 4) && ($bowlstaken > 0)>>
+    <<if $bowlmom is false >>
+        <<if $hasbowl is true >>
+            Okay, there's mom's bowl.
+            <<set $bowlmom to true>>
+            <<set $hasbowl to false >>
+            <<wait 0.1>>
+            <<yarnon YarnController bowl4>>
+            [[morebowls]]
+        <<endif>>
+    <<else>>
+        Mom already has a bowl! She doesn't eat much, anyway.
+    <<endif>>
+<<elseif $bowlstaken == 4>>
+    Mom definitely can't eat a bowl this big.
+    :This is like, pho xe lua-sized.:Literally "pho train," meaning a very large ("the size of a train") portion of pho.
+<<endif>>
+===
+title: morebowls
+---
+Dad: Eddy! Here's the next one.
+<<wait 0.1>>
+<<yarnon YarnController bowl>>
+===

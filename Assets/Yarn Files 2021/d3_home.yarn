@@ -1,0 +1,161 @@
+title: d3_mom
+---
+<<fromblack 1>>
+<<spawn TransitionCanvas HomeOutside>>
+<<if $d3_ellen is true>>
+    <<yarnon YarnController ellen3>>
+<<endif>>
+<< camerashake Cameras 1 0.2 300 >> 
+Mom: And where do you think you're going?
+<<if $d3_ellen is true>>
+    Ellen: Sorry, Eddy....
+<<endif>>
+Eddy: ...!
+Eddy: I... I was....
+Mom: Sneaking out of the house, and for a <i>girl</i>?
+<< camerashake Cameras 1 0.1 50 >> 
+Mom: Completely irresponsible.
+Mom: You don't even know how to TALK to a girl, and you're out running behind our backs?
+Eddy: T-That one's true, but --
+Mom; You aren't going out any more.
+Mom: Do not see her again.
+Eddy: No!
+Eddy: No! Why!?
+Eddy: I just -- I just wanted to spend time with her.
+Mom: That girl's awful. Making you dance for her, huh?
+Eddy: What?
+Eddy: I-I don't even know why you're so upset!
+Mom; Scampering around, lying to us -- lying to ME.
+Mom: I raised you, you know that?
+Mom: I ask you, tell you, remind you what to do because I've seen it first.
+Mom: And still you don't listen. You don't listen to me.
+Eddy: What does that have to do with this!?
+<< camerashake Cameras 1 0.1 50 >> 
+Eddy: Do you really think I WANT to talk to you!?
+Eddy: .....
+Eddy: Are you really surprised I wanted to see her, by myself?
+Eddy: What? Am I supposed to ask first? About something private?
+Eddy: You do so much for me. I know that! I know already!
+Eddy: But....
+Eddy: How am I supposed to confide in you?
+Mom: I'm not going to do this.
+Mom: Go to your room.
+<< camerashake Cameras 1 0.1 50 >> 
+Eddy: No. I need to talk.
+Eddy: Like... I wish I didn't feel like I need to sneak around.
+Eddy: But everything I do wrong is the most important thing.
+Eddy: I don't want to talk to you about that.
+Eddy: I don't want to share how I'm feeling when you think you know how I <i>should</i> feel.
+Mom: This is why I tell you you're too young to date. Kids your age are always thinking with their other head!
+Eddy: We both wanted to --
+Mom: And just like with that guy Ellen dated, it's disrespecting our family, and our rules, and telling you to do things you shouldn't.
+Eddy: There were problems for sure,but  you rag on them so much.
+Eddy: It's no wonder I didn't want to tell you we were dating!
+Eddy: Just... picking apart everything he said and did.
+Eddy: It's no wonder I didn't want to tell you we were dating!
+Eddy: Comparing this and that. Not smart enough, not rich enough, not good enough.
+<< camerashake Cameras 1 0.1 50 >> 
+Eddy: <b>I</b> don't even know if I'm good enough!
+Eddy: Why would I think you'd treat her any different!?
+Mom: .....
+Mom: I'm going to talk to that girl's parents tomorrow.
+Mom: All these ideas are not yours.
+Eddy: Listen to me. Listen. To the words. I'm saying.
+Eddy: Please.
+Eddy: I'm telling you.... I've been like this for a long time.
+Eddy: When I forget my homework, bomb a quiz....
+Eddy: I feel crushed, and then you say I didn't care enough,
+Eddy: So I just have to hold it in.
+Eddy: I have no one to tell.
+Mom: ...You could have told me at any point.
+Mom: That's... what family is supposed to be for.
+Mom: Family time is time to complain! And have us complain with you.
+Mom: We come home and try to let go of our stress from work, school, job by talking to you.
+Eddy: ...Two of those are the same thing.
+Eddy: ...
+Eddy: The frustrating part is, I know you're being sincere.
+Eddy: You ask... how I did in school, how my day was.
+Eddy: And I know you care.
+Eddy: But please just... just listen. Let me talk to you as another person.
+Eddy: It's not just the bad things I want to share, too.
+Eddy: We... June and I share other things.
+Mom: Like what?
+Eddy: Shows... we like? Uh, the things we want to do in the future?
+Mom: I can't... give any input to your anime, but you should tell me the things that make you happy.
+Mom: It's why your old man comes home from work every day. Tired and sore.
+Mom: It's... why we come home.
+Mom: ...
+Mom: What do you want to do in the future?
+Eddy: Uh... that, I'm not sure about yet....
+Mom: Then what were <i>you</i> two doing? ...Making babies?
+Mom: You're too young for that.
+<< camerashake Cameras 1 0.1 50 >>
+Eddy: Noooo, no no no.
+Eddy: ...Okay, maybe that should be a secret.
+<<cross TransitionCanvas 2>>
+<<settod TimeManager bedtime>>
+===
+title: d3_ellen
+---
+Ellen: ...
+Eddy: ...Did you hear?
+Ellen: I don't know how I <i>wouldn't</i> have.
+Eddy: What... do you think?
+Ellen: You know what?
+Ellen: I already told Mom about my new boyfriend.
+Eddy: ...You WHAT?
+Ellen: She already knew. Or had a suspicion.
+Ellen: So I told her. I had to muster up... a lot.
+Ellen: I was like, "damn it!"
+Ellen: And she told me the usual things. Be careful, is he a doctor, etc.
+Eddy: Even though you... hid it from her?
+Ellen: Was it a smart idea? I'm not sure either.
+Ellen: I do think, though....
+Ellen: Sometimes people will listen, if you're willing to talk.
+Ellen: Not always, but a conversation happens when two people want to understand each other.
+Ellen: And I think she understood how much it hurt me last time.
+Eddy: I... hope it works out for you.
+Eddy: So wait.
+Eddy: Since when do you listen to me?
+Ellen: I listen enough to know you're not a virgin any more.
+Eddy: ...Alright, that's the end of that.
+Ellen: Night.
+Eddy: Night.
+<<to TransitionCanvas EddyRoom>>
+===
+title: d3_bed
+---
+<<showplayer Player false>>
+<<cameratarget Cameras TextingJune>>
+Another night....
+<<clockset UICanvas 22:00>>
+<<unhide Phone>>
+<<wait 0.1>>
+<<hidetalk DialogueCanvas>>
+<<textcontact DialogueCanvas June>>
+June: hi again
+hey
+June: just wanted to make sure you got home safe
+i'm in one piece somehow
+preferably as sanji
+June: thanks again for coming!!
+June: I know it was a big risk for you
+i don't mind! but
+my mom noticed i snuck out.... we got into a pretty big fight
+June: are you ok??
+yeah, just really really tired
+June: want to talk about it?
+i'll tell you in the morning...
+promise! for real!!!
+June: ya better
+June: (if it makes you feel better!)
+i'm trying to share more things with you
+thank you for inviting me
+June: i'm also excited to try more things with you
+how about next weekend?
+June: i'd love to
+June: let's do it
+let's do it!
+<<wait 2>>
+<<to TransitionCanvas Credits>>
+===

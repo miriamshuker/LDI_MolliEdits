@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 637fee3bc10824b52ae37f6cb950a232
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - nightreturn-heistreturn-0
+  - nightreturn-heistreturn-1
+  - nightreturn-heistreturn-2
+  - nightreturn-caught-3
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

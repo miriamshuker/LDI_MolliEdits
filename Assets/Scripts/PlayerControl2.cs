@@ -206,7 +206,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
     }
     bool IsOpen()
     {
-        return canMove && state != PlayerState.BUSY && !GameManager.Instance.isBusy && !EssayGrader.isUp;
+        return canMove && state != PlayerState.BUSY && GameManager.Instance.IsOpen();
     }
     public void PlaySound(int index)
     {
@@ -235,14 +235,13 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
             return;
         if (resetAction.phase == InputActionPhase.Started)
         {
-            GameManager.Instance.isBusy = false;
+            GameManager.Instance.FreeControls();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (freeAction.phase == InputActionPhase.Started)
         {
             state = PlayerState.NONE;
-            GameManager.Instance.inConvo = false;
-            GameManager.Instance.isBusy = false;
+            GameManager.Instance.FreeControls();
         }
     }
     void Move()

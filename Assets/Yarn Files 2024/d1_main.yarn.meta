@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: 31217941cbfee83488d793bb492891bd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - d1_main-d1_wakeup-0
+  - d1_main-d1_wakeup-1
+  - d1_main-d1_wakeup-2
+  - d1_main-d1_wakeup-3
+  - d1_main-d1_wakeup-4
+  - d1_main-d1_wakeup-5
+  - d1_main-d1_prep-6
+  - d1_main-d1_prep-7
+  - d1_main-d1_prep-8
+  - d1_main-d1_prep-9
+  - d1_main-d1_prep-10
+  - d1_main-d1_prep-11
+  - d1_main-d1_prep-12
+  - d1_main-d1_prep-13
+  - d1_main-d1_prep-14
+  - d1_main-d1_prep-15
+  - d1_main-d1_prep-16
+  - d1_main-d1_prep-17
+  - d1_main-d1_prep-18
+  - d1_main-d1_prep-19
+  - d1_main-d1_prep-20
+  - d1_main-d1_afternoon_slow-21
+  - d1_main-d1_afternoon_slow-22
+  - d1_main-d1_curfew-23
+  - d1_main-d1_curfew-24
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

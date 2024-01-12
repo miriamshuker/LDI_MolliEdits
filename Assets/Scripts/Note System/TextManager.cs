@@ -14,6 +14,7 @@ public class TextManager : AppManager
     private Button[] buttons;
     public GameObject contactContainer;
     public Animator notificationAnimator;
+    public TextMeshProUGUI currentContactName;
 
     bool isNotifying;
     public GameObject newMessageObj;
@@ -38,6 +39,7 @@ public class TextManager : AppManager
             if (c.contactName == contactName)
             {
                 c.Open();
+                currentContactName.text = contactName;
                 newMessages = 0;
                 expanded = true;
                 contactContainer.SetActive(false);
@@ -91,6 +93,7 @@ public class TextManager : AppManager
             {
                 c.Close();
             }
+            currentContactName.text = "";
             contactContainer.SetActive(true);
             buttonParent.SetActive(false);
         }

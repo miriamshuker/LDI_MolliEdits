@@ -1,0 +1,87 @@
+title: bathfirst
+---
+<<hidephone Phone>>
+<<setday LevelElements 1>>
+<<setboxlocation DialogueCanvas downer>>
+<<wait 0.25>>
+OK. Let's think this through logically.
+<<musicplay Sound thinking>>
+Our deadline is <b>Sunday</b>, two days from now.
+<<setboxlocation DialogueCanvas up>>
+It's early dismissal today, so I'll get back around 12.
+<<setboxlocation DialogueCanvas down>>
+Tomorrow, I have SAT prep and piano lessons, but I can finish by 12 if I rush....
+<<setboxlocation DialogueCanvas upper>>
+Considering our draconian <b>6 PM curfew</b>, that leaves me with around 6 hours today and 9 hours tomorrow.
+<<setboxlocation DialogueCanvas upper>>
+That isn't a whole lot of time to prep, but I'll have to make something happen.
+
+Other factors aside, I'll definitely need to achieve at least 3 things --
+<<setboxlocation DialogueCanvas up>>
+<b>One</b>. Scout out the heist location.
+I've only been to June's house once, and it'd be really, <i>really</i> bad if I got caught by security or something.
+Oh god.
+<<setboxlocation DialogueCanvas down>>
+<b>Two</b>. Finish my homework and chores.
+Mom isn't gonna let me hear the end of it until she sees I'm done. Finishing early might even put her guard down!
+<<setboxlocation DialogueCanvas downer>>
+<b>Three</b>. Get. Condoms.
+This isn't optional.
+<<setboxlocation DialogueCanvas up>>
+I mean, it can be. If I want to have a kid... and <i>no, we're way too young for that.</i>
+<<setboxlocation DialogueCanvas downer>>
+Safe sex is important! Gotta go to the supermarket and pick some up.
+I feel like people will be watching me....
+I'd be screwed if other judgy-Asians-my-mom-probably-knows spot me and report me to the gossip police.
+<<setboxlocation DialogueCanvas up>>
+Imagine. An Asian high-school kid, sneaking around...
+<<camerashake Cameras 0.3 0.3 300>>
+...HAVING SEX???
+Yep, I might get disowned.
+...
+That's a problem for another time.
+Now, then. Let's get moving.
+<<setdialogue DialogueCanvas exposition>>
+<<fadestay Canvas 1>>
+A few hours of class later....
+<<settimeofday LevelElements afternoon>>
+<<to TransitionCanvas HomeLower HomeOutside>>
+===
+title: bathwalkin
+---
+<<if $timeofday is "freetime">>
+    <<if $vbathroomtrash is false && $donetrash is false>>
+        Oh yeah, I can get the trash while I'm in here. Should I?
+        ->Yes
+            Okay, good idea.
+            [[bathtrash]]
+        ->No
+            Maybe later.
+    <<else>>
+        The bathroom. My favorite place to think. Should I take some time to think?
+        ->Do it
+            This is all the stuff I still need to do....
+        ->That's weird
+            Coming to the bathroom to think <i>is</i> kinda weird, huh....
+    <<endif>>
+<<elseif $day == 3 && $timeofday is "between">>
+    Hmm. This room has a window. Maybe I should go out this way?
+<<endif>>
+===
+title: bathwindow
+---
+<<if $day == 3 && $timeofday is "evening">>
+    <<set $escapewindow to true>>
+    Ah! Now that's an idea. I can sneak through this window.
+    Let's just... force it open.
+    And... squeeze through... very quietly.....
+    Ouch.
+    Ouch!
+    <<cross TransitionCanvas 1.5>>
+    <<wait 1>>
+    <<to TransitionCanvas JuneOutside>>
+<<else>>
+    There's a window over here. For privacy reasons, the blinds are shut, of course.
+    No need for me to traumatize any stray passerby....
+<<endif>>
+===

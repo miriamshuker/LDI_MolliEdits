@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: bca8ed43638b74056ae040418197212e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - choiceoutside-choiceoutside-0
+  - choiceoutside-choiceoutside-1
+  - choiceoutside-choiceoutside-2
+  - choiceoutside-choiceoutside-3
+  - choiceoutside-choiceoutside-4
+  - choiceoutside-choiceoutside-5
+  - choiceoutside-choiceoutside-6
+  - choiceoutside-choiceoutside-7
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

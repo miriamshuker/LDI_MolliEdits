@@ -1,0 +1,67 @@
+fileFormatVersion: 2
+guid: a2fc5a201698244a08e2edbf0243b1fc
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Webtoon-Webtoon-0
+  - Webtoon-Webtoon-1
+  - Webtoon-Webtoon-2
+  - Webtoon-Webtoon-3
+  - Webtoon-Webtoon-4
+  - Webtoon-Webtoon-5
+  - Webtoon-Webtoon-6
+  - Webtoon-Webtoon-7
+  - Webtoon-Webtoon-8
+  - Webtoon-Webtoon-9
+  - Webtoon-Webtoon-10
+  - Webtoon-Webtoon-11
+  - Webtoon-Webtoon-12
+  - Webtoon-Webtoon-13
+  - Webtoon-Webtoon-14
+  - Webtoon-Webtoon-15
+  - Webtoon-Webtoon-16
+  - Webtoon-Webtoon-17
+  - Webtoon-Webtoon-18
+  - Webtoon-Webtoon-19
+  - Webtoon-Webtoon-20
+  - Webtoon-Webtoon-21
+  - Webtoon-Webtoon-22
+  - Webtoon-Webtoon-23
+  - Webtoon-Webtoon-24
+  - Webtoon-Webtoon-25
+  - Webtoon-Webtoon-26
+  - Webtoon-Webtoon-27
+  - Webtoon-Webtoon-28
+  - Webtoon-Webtoon-29
+  - Webtoon-Webtoon-30
+  - Webtoon-Webtoon-31
+  - Webtoon-Webtoon-32
+  - Webtoon-Webtoon-33
+  - Webtoon-Webtoon-34
+  - Webtoon-Webtoon-35
+  - Webtoon-Webtoon-36
+  - Webtoon-Webtoon-37
+  - Webtoon-Webtoon-38
+  - Webtoon-Webtoon-39
+  - Webtoon-Webtoon-40
+  - Webtoon-Webtoon-41
+  - Webtoon-Webtoon-42
+  - Webtoon-Webtoon-43
+  - Webtoon-Webtoon-44
+  - Webtoon-Webtoon-45
+  - Webtoon-Webtoon-46
+  - Webtoon-Webtoon-47
+  - Webtoon-Webtoon-48
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: a2fc5a201698244a08e2edbf0243b1fc,
+    type: 3}
+  localizations: []

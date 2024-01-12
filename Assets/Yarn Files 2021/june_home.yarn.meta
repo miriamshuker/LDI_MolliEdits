@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+guid: bda8cabe04c9f4648a4d74f95f60d348
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - june_home-june_home_enter-0
+  - june_home-june_home_enter-1
+  - june_home-june_home_enter-2
+  - june_home-june_home_enter-3
+  - june_home-june_home_enter-4
+  - june_home-june_home_enter-5
+  - june_home-juneplan-6
+  - june_home-juneplan-7
+  - june_home-juneplan-8
+  - june_home-juneplan-9
+  - june_home-juneplan-10
+  - june_home-juneplan-11
+  - june_home-juneplan-12
+  - june_home-juneplan-13
+  - june_home-junecreep-14
+  - june_home-junecreep-15
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 'Error on line 1 at position 1:
+
+    mismatched input
+    ''<EOF>'' expecting {ID, HASHTAG}
+
+
+
+
+
+    Tokens:
+
+    1:0 EOF "<EOF>"'
+  baseLanguage: {fileID: 7128917941130120860, guid: bda8cabe04c9f4648a4d74f95f60d348,
+    type: 3}
+  localizations: []

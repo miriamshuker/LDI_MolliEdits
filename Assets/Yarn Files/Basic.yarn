@@ -1,0 +1,52 @@
+title: curfew
+---
+Oh crap! It's curfew!
+Gotta get back home before Mom kills me!
+<<toblack Canvas 1>>
+<<set $late to true >>
+<<settimeofday LevelElements dinner>>
+<<to TransitionCanvas HomeLower Dinner>>
+===
+title: curfewhome
+---
+Ah, sounds like someone just got home.
+Let's go check on everyone. I should have a few minute before dinner, and I don't have time to do much else, anyway.
+<<if $spawnpointname is "HomeLower">>
+    <<fadeandwait Canvas 1>>
+    <<wait .5>>
+<<endif>>
+<<settimeofday LevelElements evening>>
+===
+title: caughtchinatown
+---
+Oh crap! I'm caught!
+<<fadeandwait Canvas 1.5>>
+<<wait .5>>
+Good thing that was all my imagination. Let's hypothesize another way out!
+That doesn't involve my social life being ruined or me breaking my legs.
+===
+title: caughtlaser
+---
+Oh crap! I got hit by a laser!
+<<tospawn Canvas window>>
+<<fadeandwait Canvas 1>>
+<<wait .25>>
+Just kidding. That was my mental runthrough of what NOT to do.
+These are just motion detectors, anyway.
+===
+title: caughtcamera
+---
+Oh crap! I'm caught on camera now!
+
+<<tospawn Canvas window>>
+<<fadeandwait Canvas 1>>
+<<wait .25>>
+Or am I? I was just doing shadow-heisting to visualize my movements.
+Let's try again.
+===
+title: entry
+---
+I'm in.
+Let's just avoid these cameras and lasers.
+I think June's room is right at the end!
+===

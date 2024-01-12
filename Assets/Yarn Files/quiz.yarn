@@ -68,7 +68,7 @@ title: quizstart
     ...
     Wow. Maybe I should've saved all this for the essay instead.
     I filled stuff in to the margins.
-    These were just supposed to be multiple-choice!
+    ...These were just supposed to be multiple-choice!
     <<set $quizdone to true>>
     <<showsuccess UICanvas 2>>
 <<endif>>

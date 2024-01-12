@@ -1,0 +1,52 @@
+title: phone_ellen_followup
+---
+Ellen: btw
+Ellen: I wasn't lying
+Ellen: You have time to talk now?
+->Now
+    [[phone_ellen_followup_now]]
+->Later
+    [[phone_ellen_followup_later]]
+===
+title: phone_ellen_followup_now
+---
+<<set $ellennow to true>>
+Eddy: Sure
+Ellen: Met this serious creeper a few dates ago
+Ellen: SERIOUS mistake
+Eddy: You ok?
+Ellen: Yeah, not hurt or anything
+Ellen: But just thinking about it gives me the shiver-me-timbers
+Eddy: ...what kind of saying is that
+Ellen: I got up to go to the bathroom
+Ellen: And this guy GRABS my arm
+Eddy: wtf
+Ellen: He's like, "where you going? Where you going??"
+Ellen: I'm like... NONE OF YOUR BUSINESS
+Eddy: You said that?
+Ellen: No
+Ellen: But I should have
+Ellen: Against my better judgment, I still came back to the table after I took my shit ;_;
+Eddy: Dude, you should've just left then and there
+Ellen: I WISH
+Ellen: And later, he tries to get me to call him "oppa"
+Eddy: EWWWW
+Ellen: Like, I don't even know you, dude!!!
+Eddy: This guy's been watching too many korean dramas or something
+Ellen: fr
+Ellen: and not even the good ones
+Eddy: glad you're ok tho
+Ellen: Yeah, after that, I was just like...
+Ellen: I'll just tell you when I go out next time....
+Eddy: I mean, you shouldn't need to
+Eddy: It's actually scary how people think they can just act this way
+Ellen: Anyway, got work. Talk more when I get home
+Eddy: k
+===
+title: phone_ellen_followup_later
+---
+<<set $ellennow to false>>
+Eddy: Not rn, sorry
+Ellen: Ugh
+Ellen: I'll tell you when I get back home then
+===

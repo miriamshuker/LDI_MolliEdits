@@ -1,0 +1,60 @@
+title: d2_violin
+---
+Eddy: Wait, so...
+Eddy: Where's your violin?
+June: ...
+June: ...Uh, I think I left it in the car.
+Eddy: Is your dad still outside?
+June: I'll be right back!
+Eddy: Want me to walk you?
+June: Mmm, I'm not sure if you want to meet my dad....
+Eddy: I will eventually!
+Eddy: But I can wait inside.
+June: Thanks!
+<<to TransitionCanvas EddyRoom>>
+===
+title: d2_wait
+---
+<<spawn TransitionCanvas LieDown>>
+<<wait  0.5>>
+<<hide Phone>>
+Eddy: ...Funny thing is, we first met in orchestra when she forgot her music stand.
+Eddy: I know how that feels.
+June: I'm back!
+June: Let's play!
+<<setfade TransitionCanvas 1>>
+<<wait  0.5>>
+<<sortorder TransitionCanvas 1>>
+[[d2_music]]
+===
+title: d2_music
+---
+Eddy: Ever played in a small ensemble before?
+June: No, just orchestral music....
+Eddy: I haven't either! But I've played accompaniment on piano before.
+Eddy: Like, I'm playing the chords and stuff while someone else plays the main part.
+June: This is kinda hard.
+Eddy: Yeah, I'm pretty nervous too. I'm still not used to performing in front of people.
+June: Even me?
+June: Look, my hands are all sweaty!
+Eddy: I'm fumbling like, every other note....
+June: Well, what helped during accompaniment?
+Eddy: Uh....
+Eddy: It's really about listening to each other, I think.
+Eddy: You signal when you want to start, and then you keep an ear open to any changes.
+Eddy: So if they start to go a little slower, I listen and try to follow.
+Eddy: And if they get too loud, we can look at each other to confirm where we should be.
+Eddy: It's all about reading each others' cues and trying to complement each other.
+June: Sort of like a head chef and sous chef?
+Eddy: ...Maybe?
+June: Let's practice some more then!
+June: Really wanna get this piece down....
+Eddy: Sure.
+Eddy: That's what makes good music!
+<<wait  0.5>>
+<<showplayer Player false>>
+<<sortorder TransitionCanvas 5>>
+<<cross TransitionCanvas 1.5>>
+<<wait  1.5>>
+<<settod TransitionCanvas bedtime>>
+===

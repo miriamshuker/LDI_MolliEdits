@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: 4c7545bfde1dd0d47be06bf48c1e65b2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs: []
+  compilationStatus: 1
+  isSuccesfullyCompiled: 0
+  compilationErrorMessage: "Error on line 70 at position 1:\nmismatched input '==='
+    expecting COMMAND_START\r\n===\r\r\n^^^\n\nTokens:\n1:0 ID \"title\"\n1:5 HEADER_DELIMITER
+    \": \"\n1:7 REST_OF_LINE \"vase\"\n2:0 HEADER_NEWLINE \"\r\n\"\n2:0 '---' \"---\"\n3:0
+    TEXT \"One of our vases.\"\n4:0 TEXT_NEWLINE \"\r\n\"\n4:0 TEXT \"The flowers
+    are fake, so we don't need to replace them. They're a little dusty now.\"\n5:0
+    TEXT_NEWLINE \"\r\n\"\n5:0 '===' \"===\"\n6:0 ID \"title\"\n6:5 HEADER_DELIMITER
+    \": \"\n6:7 REST_OF_LINE \"painting\"\n7:0 HEADER_NEWLINE \"\r\n\"\n7:0 '---'
+    \"---\"\n8:0 TEXT \"A painting my mom got from somewhere.\"\n9:0 TEXT_NEWLINE
+    \"\r\n\"\n9:0 TEXT \"It depicts a woman in <i>ao dai</i>, pulling a bamboo hat
+    over her face.\"\n10:0 TEXT_NEWLINE \"\r\n\"\n10:0 TEXT \"Cool pose.\"\n11:0
+    TEXT_NEWLINE \"\r\n\"\n11:0 '===' \"===\"\n12:0 ID \"title\"\n12:5 HEADER_DELIMITER
+    \": \"\n12:7 REST_OF_LINE \"dishwasher\"\n13:0 HEADER_NEWLINE \"\r\n\"\n13:0
+    '---' \"---\"\n14:0 COMMAND_START \"<<\"\n14:3 COMMAND_SET \"set \"\n14:7 VAR_ID
+    \"$vdishwasher\"\n14:20 OPERATOR_ASSIGNMENT \"to\"\n14:23 'false' \"false\"\n14:29
+    EXPRESSION_COMMAND_END \">>\"\n15:0 TEXT \"Our dishwasher.\"\n16:0 TEXT_NEWLINE
+    \"\r\n\"\n16:0 COMMAND_START \"<<\"\n16:3 COMMAND_IF \"if \"\n16:6 VAR_ID \"$vdishwasher\"\n16:19
+    OPERATOR_LOGICAL_EQUALS \"==\"\n16:22 'true' \"true\"\n16:27 EXPRESSION_COMMAND_END
+    \">>\"\n17:4 INDENT \"    \"\n17:4 TEXT \"We don't actually use it for washing
+    dishes, so it's like an extra cabinet for our cups.\"\n18:0 TEXT_NEWLINE \"\r\n\"\n17:0
+    DEDENT \"\n\"\n18:0 COMMAND_START \"<<\"\n18:3 'endif' \"endif\"\n18:9 COMMAND_END
+    \">>\"\n19:0 COMMAND_START \"<<\"\n19:3 COMMAND_SET \"set \"\n19:7 VAR_ID \"$vdishwasher\"\n19:20
+    OPERATOR_ASSIGNMENT \"to\"\n19:23 'true' \"true\"\n19:28 EXPRESSION_COMMAND_END
+    \">>\"\n20:0 '===' \"===\"\n21:0 ID \"title\"\n21:5 HEADER_DELIMITER \": \"\n21:7
+    REST_OF_LINE \"stove\"\n22:0 HEADER_NEWLINE \"\r\n\"\n22:0 '---' \"---\"\n23:0
+    TEXT \"The stove.\"\n24:0 TEXT_NEWLINE \"\r\n\"\n24:0 TEXT \"It's lined with
+    aluminum foil to make it easier to clean.\"\n25:0 TEXT_NEWLINE \"\r\n\"\n25:0
+    '===' \"===\"\n26:0 ID \"title\"\n26:5 HEADER_DELIMITER \": \"\n26:7 REST_OF_LINE
+    \"ricecooker\"\n27:0 HEADER_NEWLINE \"\r\n\"\n27:0 '---' \"---\"\n28:0 TEXT \"The
+    rice cooker.\"\n29:0 TEXT_NEWLINE \"\r\n\"\n29:0 COMMAND_START \"<<\"\n29:3 COMMAND_IF
+    \"if \"\n29:6 VAR_ID \"$ricedone\"\n29:16 OPERATOR_LOGICAL_EQUALS \"is\"\n29:19
+    'false' \"false\"\n29:25 EXPRESSION_COMMAND_END \">>\"\n30:4 INDENT \"    \"\n30:4
+    TEXT \"It's empty.\"\n31:0 TEXT_NEWLINE \"\r\n\"\n30:0 DEDENT \"\n\"\n31:0 COMMAND_START
+    \"<<\"\n31:3 COMMAND_ELSE \"else \"\n31:8 COMMAND_END \">>\"\n32:4 INDENT \"   
+    \"\n32:4 TEXT \"It's cooking rice right now.\"\n33:0 TEXT_NEWLINE \"\r\n\"\n32:0
+    DEDENT \"\n\"\n33:0 COMMAND_START \"<<\"\n33:3 'endif' \"endif\"\n33:9 COMMAND_END
+    \">>\"\n34:0 '===' \"===\"\n35:0 ID \"title\"\n35:5 HEADER_DELIMITER \": \"\n35:7
+    REST_OF_LINE \"ricecooker2\"\n36:0 HEADER_NEWLINE \"\r\n\"\n36:0 '---' \"---\"\n37:0
+    COMMAND_START \"<<\"\n37:3 COMMAND_IF \"if \"\n37:6 VAR_ID \"$ricedone\"\n37:16
+    OPERATOR_LOGICAL_EQUALS \"is\"\n37:19 'false' \"false\"\n37:25 EXPRESSION_COMMAND_END
+    \">>\"\n38:4 INDENT \"    \"\n38:4 TEXT \"Ah, yeah. I needed to make rice as
+    well.\"\n39:4 TEXT_NEWLINE \"  \"\n39:4 TEXT \"Should I go ahead and make it
+    now?\"\n40:4 TEXT_NEWLINE \"  \"\n40:4 '->' \"->\"\n40:7 TEXT \"Right now\"\n41:8
+    TEXT_NEWLINE \"  \"\n41:8 INDENT \"        \"\n41:8 TEXT \"Well, I got nothing
+    better to do.\"\n42:8 TEXT_NEWLINE \"  \"\n42:8 TEXT \"Scoop the rice...\"\n43:8
+    TEXT_NEWLINE \"  \"\n43:8 TEXT \"Wash once... Wash twice...\"\n44:8 TEXT_NEWLINE
+    \"  \"\n44:8 TEXT \"Fill it up to the line...\"\n45:8 TEXT_NEWLINE \"  \"\n45:8
+    TEXT \"And we're done!\"\n46:8 TEXT_NEWLINE \"  \"\n46:8 COMMAND_START \"<<\"\n46:11
+    COMMAND_SET \"set \"\n46:15 VAR_ID \"$ricedone\"\n46:25 OPERATOR_ASSIGNMENT \"to\"\n46:28
+    'true' \"true\"\n46:33 EXPRESSION_COMMAND_END \">>\"\n47:8 COMMAND_START \"<<\"\n47:10
+    COMMAND_TEXT \"showsuccess UICanvas 1\"\n47:32 COMMAND_TEXT_END \">>\"\n48:8
+    COMMAND_START \"<<\"\n48:10 COMMAND_TEXT \"animatesprite RiceCooker On true\"\n48:42
+    COMMAND_TEXT_END \">>\"\n48:4 DEDENT \" \"\n49:4 '->' \"->\"\n49:7 TEXT \"Not
+    yet\"\n50:8 TEXT_NEWLINE \"  \"\n50:8 INDENT \"        \"\n50:8 TEXT \"Do I reaaally
+    want to do it now? No.\"\n51:8 TEXT_NEWLINE \"  \"\n51:8 TEXT \"Let's hold off
+    on it until later.\"\n52:0 TEXT_NEWLINE \"\r\n\"\n51:0 DEDENT \"\n\"\n51:0 DEDENT
+    \"\n\"\n52:0 COMMAND_START \"<<\"\n52:3 'endif' \"endif\"\n52:9 COMMAND_END \">>\"\n53:0
+    '===' \"===\"\n54:0 ID \"title\"\n54:5 HEADER_DELIMITER \": \"\n54:7 REST_OF_LINE
+    \"stairs\"\n55:0 HEADER_NEWLINE \"\r\n\"\n55:0 '---' \"---\"\n56:0 COMMAND_START
+    \"<<\"\n56:2 COMMAND_IF \"if \"\n56:5 VAR_ID \"$day\"\n56:10 OPERATOR_LOGICAL_EQUALS
+    \"==\"\n56:13 NUMBER \"0\"\n56:15 OPERATOR_LOGICAL_AND \"&&\"\n56:18 OPERATOR_LOGICAL_NOT
+    \"!\"\n56:19 '(' \"(\"\n56:20 VAR_ID \"$timeofday\"\n56:31 OPERATOR_LOGICAL_EQUALS
+    \"==\"\n56:34 STRING \"\"freetime\"\"\n56:45 OPERATOR_LOGICAL_OR \"||\"\n56:48
+    VAR_ID \"$timeofday\"\n56:59 OPERATOR_LOGICAL_EQUALS \"==\"\n56:62 STRING \"\"night\"\"\n56:69
+    ')' \")\"\n56:70 EXPRESSION_COMMAND_END \">>\"\n57:4 INDENT \"    \"\n57:4 TEXT
+    \"Our stairs. Probably not the time to use 'em for some exercise.\"\n58:0 TEXT_NEWLINE
+    \"\r\n\"\n57:0 DEDENT \"\n\"\n58:0 COMMAND_START \"<<\"\n58:2 COMMAND_ELSE \"else\"\n58:6
+    COMMAND_END \">>\"\n59:4 INDENT \"    \"\n59:4 COMMAND_START \"<<\"\n59:6 COMMAND_TEXT
+    \"to TransitionCanvas HomeUpper\"\n59:35 COMMAND_TEXT_END \">>\"\n59:0 DEDENT
+    \"\n\"\n60:0 COMMAND_START \"<<\"\n60:2 'endif' \"endif\"\n60:7 COMMAND_END \">>\"\n61:0
+    '===' \"===\"\n62:0 ID \"title\"\n62:5 HEADER_DELIMITER \": \"\n62:7 REST_OF_LINE
+    \"fridge\"\n63:0 HEADER_NEWLINE \"\r\n\"\n63:0 '---' \"---\"\n64:0 TEXT \"Our
+    fridge. \"\n65:0 TEXT_NEWLINE \"\r\n\"\n65:0 COMMAND_START \"<<\"\n65:2 COMMAND_IF
+    \"if \"\n65:5 VAR_ID \"$day\"\n65:10 OPERATOR_LOGICAL_EQUALS \"is\"\n65:13 NUMBER
+    \"1\"\n65:14 EXPRESSION_COMMAND_END \">>\"\n66:4 INDENT \"    \"\n66:4 TEXT \"Looks
+    like we're stocking up on ingredients for spring rolls.:G\u1ECFi cu\u1ED1n, made
+    by wrapping pork or shrimp, vegetables, and rice noodles in rice paper. Often
+    served with a side of fish sauce or peanut sauce.\"\n67:0 TEXT_NEWLINE \"\r\n\"\n66:0
+    DEDENT \"\n\"\n67:0 COMMAND_START \"<<\"\n67:2 COMMAND_ELSEIF \"elseif \"\n67:9
+    VAR_ID \"$day\"\n67:14 OPERATOR_LOGICAL_EQUALS \"is\"\n67:17 NUMBER \"2\"\n67:18
+    EXPRESSION_COMMAND_END \">>\"\n68:4 INDENT \"    \"\n68:4 TEXT \"Oh, we're gonna
+    have c\xE1 kho today!:Caramelized and braised portions of fish steak, usually
+    served in a sweet brown sauce and topped with scallions.\"\n69:0 TEXT_NEWLINE
+    \"\r\n\"\n68:0 DEDENT \"\n\"\n69:0 COMMAND_START \"<<\"\n69:2 COMMAND_ELSE \"else\"\n69:6
+    COMMAND_END \">>\"\n70:0 '===' \"===\"\n71:0 ID \"title\""
+  baseLanguage: {instanceID: 0}
+  localizations: []

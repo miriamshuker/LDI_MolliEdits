@@ -1,0 +1,100 @@
+fileFormatVersion: 2
+guid: a445f4d93cf333942bcac0a039d98510
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - june_home-june_home_enter-0
+  - june_home-june_home_enter-1
+  - june_home-june_home_enter-2
+  - june_home-june_home_enter-3
+  - june_home-june_home_enter-4
+  - june_home-june_home_enter-5
+  - june_home-juneplan-6
+  - june_home-juneplan-7
+  - june_home-juneplan-8
+  - june_home-juneplan-9
+  - june_home-juneplan-10
+  - june_home-juneplan-11
+  - june_home-juneplan-12
+  - june_home-juneplan-13
+  - june_home-junecreep-14
+  - june_home-junecreep-15
+  - june_home-junesneak-16
+  - june_home-junesneak-17
+  - june_home-junesneak-18
+  - june_home-junesneak-19
+  - june_home-junesneak-20
+  - june_home-junesneak-21
+  - june_home-junesneak-22
+  - june_home-junesneak-23
+  - june_home-junesneak-24
+  - june_home-junesneak-25
+  - june_home-junesneak-26
+  - june_home-junesneak-27
+  - june_home-junesneak-28
+  - june_home-junesneak-29
+  - june_home-junesneak-30
+  - june_home-junesneak-31
+  - june_home-junesneak-32
+  - june_home-junesneak-33
+  - june_home-junesneak-34
+  - june_home-junesneak-35
+  - june_home-junesneak-36
+  - june_home-junesneak-37
+  - june_home-junesneak-38
+  - june_home-junesneak-39
+  - june_home-junesneak-40
+  - june_home-junesneak-41
+  - june_home-junesneak-42
+  - june_home-junesneak-43
+  - june_home-junesneak-44
+  - june_home-junesneak-45
+  - june_home-junesneak-46
+  - june_home-junesneak-47
+  - june_home-junesneak-48
+  - june_home-junesneak-49
+  - june_home-junesneak-50
+  - june_home-junesneak-51
+  - june_home-junesneak-52
+  - june_home-junesneak-53
+  - june_home-junesneak-54
+  - june_home-junesneak-55
+  - june_home-junesneak-56
+  - june_home-junesneak-57
+  - june_home-juneexit-58
+  - june_home-juneexit-59
+  - june_home-juneexit-60
+  - june_home-juneexit-61
+  - june_home-inspecthouseleft-62
+  - june_home-inspecthouseright-63
+  - june_home-inspecthousedoor-64
+  - june_home-inspecthousestatue-65
+  - june_home-inspecthousestatue-66
+  - june_home-inspecthousestatue-67
+  - june_home-inspecthousetree-68
+  - june_home-inspecthousetree-69
+  - june_home-inspecthousewindowbad-70
+  - june_home-inspecthousewindowbad-71
+  - june_home-inspecthousewindowbad-72
+  - june_home-inspecthousewindowgood-73
+  - june_home-inspecthousewindowgood-74
+  - june_home-inspecthousewindowgood-75
+  - june_home-inspecthousewindowgood-76
+  - june_home-inspecthousewindowgood-77
+  - june_home-inspecthousewindowgood-78
+  - june_home-inspecthousewindowgood-79
+  - june_home-inspecthousewindowgood-80
+  - june_home-inspecthousewindowgood-81
+  - june_home-inspecthousewindowgood-82
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

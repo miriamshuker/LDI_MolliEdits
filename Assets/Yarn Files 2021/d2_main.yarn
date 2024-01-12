@@ -1,0 +1,217 @@
+title: d2_wakeup
+---
+<<cross TransitionCanvas 1.5>>
+<<wait  0.5>>
+<<spawn TransitionCanvas LieDown>>
+<<wait  1>>
+<<camerashake Cameras 1 0.1 200 >> 
+Ellen: WAKE UP!!
+Eddy: Ah!!!
+<<camerashake Cameras 1 0.1 50 >> 
+Eddy: What? What!?
+<<camerashake Cameras 1 0.1 20 >> 
+Eddy: Did something happen??
+Ellen: Nope.
+Ellen: I just got bored.
+Eddy: ...
+Ellen: Had to make sure I annoy you before I go to class.
+Eddy: You should make sure you shower.
+Ellen: I did!
+Eddy: ...You can be honest with me, Ellen.
+Ellen: You stink.
+Eddy: That's what I'm telling you.
+Ellen: Okay, bye.
+Eddy: See ya.
+Ellen: I'm expecting boba in the fridge when I get back!
+Eddy: It'll be empty!
+<<wait  0.3>>
+<<unhide Phone>>
+<<cross TransitionCanvas 1.5>>
+<<wait  1.5>>
+<<clockset UICanvas 9:00>>
+<<clockend UICanvas 17:00>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<settod TimeManager freetime>>
+===
+title: d2_free
+---
+Another day, another set of opportunities to potentially squander.
+Let's stay focused -- you got this!
+===
+title: d2_curfew
+---
+<<if $currentscene != "HomeUpper" && $currentscene != "HomeLower" && $currentscene != "EddyRoom" && $currentscene != "Bathroom">>
+    Eddy: It's 5! I better head home and get ready for our duet.
+<<else>>
+    Eddy: It's 5! June should be arriving soon. Let's try to get ready a bit.
+<<endif>>
+Eddy: Maybe clean up a bit too. Wash my face, maybe?
+Eddy: ...Nah, who am I kidding?
+<<tor TransitionCanvas EddyRoom>>
+<<clockscale UICanvas 60>>
+My room needs cleaning....
+Oh well.
+<<settod TimeManager evening>>
+===
+title: d2_ellen
+---
+<<if $d2_ellen_talk is false>>
+    Eddy: Oh, hey.
+    Ellen: Finished cleaning your room?
+    Ellen: For your 'friend' hangout?
+    Eddy: W-Well, yeah!
+    Eddy: It's basic courtesy....
+    Ellen: Hmm, I guess it's hard to tell since you rarely have girls over.
+    Ellen: Or guys.
+    Ellen: Or friends.
+    Eddy: What do you mean? I have three friends in my room right now!
+    Eddy: Penny... chip... and used napkin!
+    Ellen: Huh!?
+    Eddy: Never mind, you wouldn't get it.
+    <<set $d2_ellen_talk to true>>
+<<else>>
+    Ellen: Get moving, Eddy!
+    Eddy: Kk.
+<<endif>>
+===
+title: d2_mom
+---
+<<if $d2_mom_talk is false>>
+    Mom: What time is she coming?
+    Eddy: 6:30.
+    Mom: And did you do your homework?
+    <<if $essaydone is true && $quizdone is true>>
+        Eddy: Yup.
+        Mom: Good!
+    <<else>>
+        Mom: What are you waiting for?
+        Eddy: I'm working on it....
+        Mom: Don't wait until tomorrow to fit everything.
+        Eddy: Yeah....
+        <<set $d2_mom_talk to true>>
+    <<endif>>
+<<else>>
+    Mom: What is she again?
+    Eddy: ...She's Viet.
+    Mom: Good, good.
+    Mom: As long as she's not --
+    Eddy: No, no! Mom.
+    Mom: As long as she's not from the North.
+    Mom: Can't understand that.
+    Eddy: Oh.
+<<endif>>
+===
+title: d2_dad
+---
+Dad: Are you coming for dinner, Eddy?
+Eddy: Yeah, after I practice this piece with June!
+Eddy: You guys can eat without me if we take too long.
+Dad: OK, make sure you eat before too late.
+===
+title: d2_meet
+---
+<<cross TransitionCanvas 1.5>>
+<<wait  0.5>>
+<<spawn TransitionCanvas HomeOutside2>>
+Eddy: Hi!
+June: Hello.
+Eddy: Got everything you need?
+June: Yeah, I ate before coming.
+Eddy: Come on in!
+===
+title: d2_meet_mom
+---
+<<if $vmeetmom is false>>
+    <<set $vmeetmom to true>>
+    June: Oh --
+    June: Xin chào bà.@v
+    Mom: ...
+    June: Xin chào bác!:Xin chào is a polite greeting. Bác is a respectful way to address an older woman. Bà is literally "grandma".
+    Mom: Hello, con.
+    Mom: Have you eaten yet?
+    June: Yes, I had dinner earlier.
+    Mom: Good! We have food in the fridge if you need anything.
+    June: Thank you!@
+    June: ....
+    June: (D-Did she...?)
+    Eddy: (...She noticed.)
+<<else>>
+    Mom: Make sure you two get to bed early.
+<<endif>>
+===
+title: d2_meet_dad
+---
+<<if $vmeetdad is false>>
+    <<set $vmeetdad to true>>
+    Dad: Hello!@v
+    Dad: Have you two eaten yet?@
+    June: Uh....
+    Eddy: She ate at home.@v
+    Dad: You should join us for dinner!
+    June: Ah, thank you, but I'm full....@
+    Eddy: I didn't eat yet -- save some for me!
+<<else>>
+    June: Hello.
+    Eddy: Hello.
+<<endif>>
+===
+title: d2_meet_ellen
+---
+<<if $vmeetellen is false>>
+    <<set $vmeetellen to true>>
+    Ellen: Hi! I'm Ellen.
+    June: Nice to meet you!
+    June: Um, you're... younger than I expected.
+    Ellen: Uh huh....
+    Eddy: Well, she is my OLDER sister.
+    Eddy: Elder sister.
+    Eddy: Ancient.
+    Eddy: Primordial, perhaps.
+    June: She looks like she could be younger than you.
+    Ellen: Case closed.
+    Eddy: ...Maybe I should start doing skincare.
+    Ellen: What piece are you playing?
+    June: It's a duet from Rokugatsu.
+    Ellen: That's cute!
+    June: Um, yeah! Thanks.
+<<else>>
+    Ellen: You guys are cute.
+    Eddy: We're uh, just friends.
+    June: Yes. Buddies.
+<<endif>>
+===
+title: d2_night
+---
+June's parents picked her up, so she's on her way home.
+I'm really glad I got to see her!
+Being able to play together is great.
+Laughing together... making her laugh....
+I kinda want to do that every day.
+...
+Now that she's gone though, it's really dawning on me.
+<<if $tasks > 2>>
+    This is a weird feeling.
+    I've gotten so much... <i>more</i> done.
+    I don't feel like I'm drowning.
+    I can sleep!
+    Well, if I stay on track, anyway.
+    Good work, me.
+<<else>>
+    I still have a lot to do.
+    Could've been so much further if I had just pushed a little harder....
+    Why am I like this?
+    How do I keep --
+    No -- no.
+    Anyway.
+    Sunday --
+    Sunday.
+    1 more to go.
+    Let's call it a night.
+<<endif>>
+<<settime TimeManager 3 morning>>
+<<cross TransitionCanvas 1.5>>
+<<to TransitionCanvas EddyRoom>>
+<<wait  0.5>>
+<<showplayer Player true>>
+===

@@ -88,11 +88,6 @@ public class TimeManager : MonoBehaviour
         SetDay(day);
         SetTimeOfDay(tod);
     }
-    void Set(int day, GameManager.TimeOfDay tod)
-    {
-        SetDay(day);
-        SetTimeOfDay(tod);
-    }
     [YarnCommand("setday")]
     public void SetDay(string param)
     {
@@ -160,20 +155,22 @@ public class TimeManager : MonoBehaviour
                 return;
         }
 
+        bool autoplay = GameManager.Instance.CurrentTimeOfDay != tod;
         GameManager.Instance.SetTimeOfDay(tod);
 
-        days[GameManager.Instance.CurrentDay].ShowTimeOfDay(tod);
-        any.ShowTimeOfDay(tod);
+        any.ShowTimeOfDay(tod, autoplay);
+        days[GameManager.Instance.CurrentDay].ShowTimeOfDay(tod, autoplay);
 
         Debug.Log($"Time of day: {tod}");
     }
     public void SetTimeOfDay(GameManager.TimeOfDay tod)
     {
+        bool autoplay = tod == GameManager.Instance.CurrentTimeOfDay;
         GameManager.Instance.SetTimeOfDay(tod);
         Debug.Log(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
         
-        any.ShowTimeOfDay(tod);
-        days[GameManager.Instance.CurrentDay].ShowTimeOfDay(tod);
+        any.ShowTimeOfDay(tod, autoplay);
+        days[GameManager.Instance.CurrentDay].ShowTimeOfDay(tod, autoplay);
 
         Debug.Log($"Time of day: {tod}");
     }

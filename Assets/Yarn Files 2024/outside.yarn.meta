@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: d93d79996d76dff46981d2768bb52c5d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - outside-outside-0
+  - outside-outside-1
+  - outside-outside-2
+  - outside-outside-3
+  - outside-outside-4
+  - outside-leave-5
+  - outside-leave-6
+  - outside-leave-7
+  - outside-leave-8
+  - outside-leave-9
+  - outside-leave-10
+  - outside-leave-11
+  - outside-leave-12
+  - outside-leave-13
+  - outside-leave-14
+  - outside-gotcondoms-15
+  - outside-gotcondoms-16
+  - outside-gotcondoms-17
+  - outside-gotcondoms-18
+  - outside-gotcondoms-19
+  - outside-gotcondoms-20
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

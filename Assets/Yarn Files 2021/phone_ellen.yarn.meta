@@ -1,0 +1,57 @@
+fileFormatVersion: 2
+guid: 89214c5c41dd4e646bb6d547fc0a5453
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - phone_ellen-phone_ellen_followup-0
+  - phone_ellen-phone_ellen_followup-1
+  - phone_ellen-phone_ellen_followup-2
+  - phone_ellen-phone_ellen_followup-3
+  - phone_ellen-phone_ellen_followup-4
+  - phone_ellen-phone_ellen_followup_now-5
+  - phone_ellen-phone_ellen_followup_now-6
+  - phone_ellen-phone_ellen_followup_now-7
+  - phone_ellen-phone_ellen_followup_now-8
+  - phone_ellen-phone_ellen_followup_now-9
+  - phone_ellen-phone_ellen_followup_now-10
+  - phone_ellen-phone_ellen_followup_now-11
+  - phone_ellen-phone_ellen_followup_now-12
+  - phone_ellen-phone_ellen_followup_now-13
+  - phone_ellen-phone_ellen_followup_now-14
+  - phone_ellen-phone_ellen_followup_now-15
+  - phone_ellen-phone_ellen_followup_now-16
+  - phone_ellen-phone_ellen_followup_now-17
+  - phone_ellen-phone_ellen_followup_now-18
+  - phone_ellen-phone_ellen_followup_now-19
+  - phone_ellen-phone_ellen_followup_now-20
+  - phone_ellen-phone_ellen_followup_now-21
+  - phone_ellen-phone_ellen_followup_now-22
+  - phone_ellen-phone_ellen_followup_now-23
+  - phone_ellen-phone_ellen_followup_now-24
+  - phone_ellen-phone_ellen_followup_now-25
+  - phone_ellen-phone_ellen_followup_now-26
+  - phone_ellen-phone_ellen_followup_now-27
+  - phone_ellen-phone_ellen_followup_now-28
+  - phone_ellen-phone_ellen_followup_now-29
+  - phone_ellen-phone_ellen_followup_now-30
+  - phone_ellen-phone_ellen_followup_now-31
+  - phone_ellen-phone_ellen_followup_now-32
+  - phone_ellen-phone_ellen_followup_now-33
+  - phone_ellen-phone_ellen_followup_now-34
+  - phone_ellen-phone_ellen_followup_now-35
+  - phone_ellen-phone_ellen_followup_later-36
+  - phone_ellen-phone_ellen_followup_later-37
+  - phone_ellen-phone_ellen_followup_later-38
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 89214c5c41dd4e646bb6d547fc0a5453,
+    type: 3}
+  localizations: []

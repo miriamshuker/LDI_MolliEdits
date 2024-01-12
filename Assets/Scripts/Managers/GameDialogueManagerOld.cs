@@ -169,7 +169,6 @@ public class GameDialogueManagerOld : MonoBehaviour
             dialogueState = DialogueState.TALK;
         }
         pc.SetPlayerState(PlayerControl.PlayerState.BUSY);
-        GameManager.Instance.isBusy = true;
         GameManager.Instance.inConvo = true;
     }
     public void StopDialogue()
@@ -183,7 +182,6 @@ public class GameDialogueManagerOld : MonoBehaviour
         {
             HideAll();
             pc.SetPlayerState(PlayerControl.PlayerState.NONE);
-            GameManager.Instance.isBusy = false;
             GameManager.Instance.inConvo = false;
         }
     }
@@ -735,7 +733,6 @@ public class GameDialogueManagerOld : MonoBehaviour
         yield return new WaitForSeconds(PhoneManager.Instance.hideAnimationTime - 0.5f);
         HideAll();
         pc.SetPlayerState(PlayerControl.PlayerState.NONE);
-        GameManager.Instance.isBusy = false;
         GameManager.Instance.inConvo = false;
     }
     [YarnCommand("putawayphone")]

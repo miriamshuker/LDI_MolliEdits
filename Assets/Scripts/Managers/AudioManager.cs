@@ -68,32 +68,13 @@ public class AudioManager : MonoBehaviour
         _instance = this;
         DontDestroyOnLoad(this.gameObject);
     }*/
-    public void PlayClipOnScene()
+    public string GetTrackForScene()
     {
         string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-        switch (sceneName)
-        {
-            case ("EddyRoom"):
-            case ("Bathroom"):
-            case ("HomeUpper"):
-            case ("HomeLower"):
-                PlayMusic("hideout");
-                break;
-            case ("HomeOutside"):
-            case ("ChinatownOutside"):
-                PlayMusic("v4");
-                break;
-            case ("JuneOutside"):
-                break;
-            case ("JuneInside"):
-                break;
-            case ("JuneRoom"):
-                break;
-        }
+        return GetTrackForScene(sceneName);
     }
-    string GetTrackForScene()
+    public string GetTrackForScene(string sceneName)
     {
-        string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
         switch (sceneName)
         {
             case ("EddyRoom"):
@@ -103,7 +84,7 @@ public class AudioManager : MonoBehaviour
                 return "hideout";
             case ("HomeOutside"):
             case ("ChinatownOutside"):
-                 return "v4";
+                return "v4";
             case ("JuneOutside"):
             case ("JuneInside"):
             case ("JuneRoom"):
@@ -187,9 +168,9 @@ public class AudioManager : MonoBehaviour
             name = GetTrackForScene();
         }
         AudioClip a = FindMusicByString(name);
-        Debug.Log((a != null) + " " + a.name);
         if (a)
         {
+            Debug.Log((a != null) + " " + a.name);
             if (musicSource.clip == a)
             {
                 return;

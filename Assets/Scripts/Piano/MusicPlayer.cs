@@ -7,45 +7,64 @@ using UnityEngine.UI;
 public class MusicPlayer : MonoBehaviour
 {
     public InputHelper input;
-    public AudioSource[] keyAudio;
-    public Button[] keyButton;
+    public PianoKey[] pianoKeys;
     public Color blackNorm, blackPress;
     public Color whiteNorm, whitePress;
+    public int maxKeys;
+    private int pressedKeys;
+
+    public MusicSheet currentPiece;
+    public MusicNoteUI noteUI;
+    public RectTransform sheetTransform;
+    public float vSpacing, hSpacing, cOffset, xOffset;
 
     // Start is called before the first frame update
     void Start()
     {
         InputAction[] keys = input.pianoKeys;
-        if (keyAudio.Length != keys.Length || keyAudio.Length != keyButton.Length)
+        if (pianoKeys == null || pianoKeys.Length != 13)
         {
             Debug.LogWarning("Piano is messed up!");
             return;
         }
-        whiteNorm = keyButton[0].colors.normalColor;
-        whitePress = keyButton[0].colors.pressedColor;
-        blackNorm = keyButton[1].colors.normalColor;
-        blackPress = keyButton[1].colors.pressedColor;
+
         for (int i = 0; i < keys.Length; i++)
         {
             int _i = i;
-            keys[i].started += _ => Highlight(_i);
-            keys[i].canceled += _ => Play(_i);
-            keyButton[i].onClick.AddListener(() => Play(_i));
+            keys[i].started += _ => PlayAndHighlight(_i);
+            keys[i].canceled += _ => Release(_i);
+            pianoKeys[i].button.onClick.AddListener(() => Play(_i));
+            pianoKeys[i].SetColor(whiteNorm, whitePress, blackNorm, blackPress);
         }
+
+        vSpacing = sheetTransform.rect.height / 4;
+    }
+    void PlayAndHighlight(int num)
+    {
+        Increment(num);
+        pianoKeys[num].PlayAndHighlight();
     }
     void Play(int num)
     {
-        keyAudio[num].Play();
-        SetButtonAlpha(num, 1f);
+        Increment(num);
+        pianoKeys[num].Play();
     }
-    void Highlight(int num)
+    void Release(int num)
     {
-        SetButtonAlpha(num, 0.75f);
+        Decrement(num);
+        pianoKeys[num].Release();
     }
-    void SetButtonAlpha(int num, float alpha)
+    void Increment(int num)
     {
-        Color c = keyButton[num].image.color;
-        c.a = alpha;
-        keyButton[num].image.color = c;
+        pressedKeys += 1;
+        noteUI.SetPosition(xOffset, cOffset, vSpacing, num, currentPiece.useSharps);
+    }
+    void Decrement(int num)
+    {
+        pressedKeys -= 1;
+        if (currentPiece != null && !currentPiece.IsFinished && pressedKeys == 0)
+        {
+            currentPiece.TryKey((MusicKey)num);
+        }
     }
 }

@@ -1,0 +1,148 @@
+title: chinatown
+---
+<<if $vchinatown is false>>
+    Our local Chinatown. I love this place, as unsavory as it can sometimes seem.
+    Let's look for a discreet store I can buy condoms from. I can take a look around at the same time.
+    <<set $vchinatown to true>>
+<<endif>>
+===
+title: blackguy
+---
+<<if $condomsdone is false>>
+    Guy: Hey, what's up?
+    Eddy: Not much. Just dropping by the store.
+    Guy: You seem a little tense, man. Find some time to relax.
+    Eddy: Thanks, I will. After it's over, that is!
+    Guy: Alright. I'll be waiting for stoplight here, in the meantime.
+    Eddy: It sure is a slow light.
+    Guy: You can say that again.
+<<else>>
+    Guy: Whoa! I saw you jumping around that building, man.
+    Guy: You've got serious hops, doing parkour like that.
+    Eddy: Thanks.
+<<endif>>
+===
+title: asianguy
+---
+Eddy: Oh, hey. Do I know you from somewhere?
+Guy: You go to piano lessons?
+Eddy: I do, actually! Just had a recital last week.
+Guy: Then that's where I'm from.
+===
+title: twogirls
+---
+<<set $vtwogirls to true>>
+Girl 1: My nails look gorgeous!
+Girl 2: But mine look better.
+Girl 1: Why don't we ask Jackie, then. She can decide!
+Girl 2: Jackie did my nails too, actually.
+Girl 2: Isn't she great?
+Eddy: Huh. Jackie is my mom's English name. She'd love this story.
+===
+title: latinoguy
+---
+Guy: What am I doing here, you're wondering?
+Eddy: I was.
+Guy: Waiting for my friend to show up.
+Guy: We wanted to snag some bubble tea together, but it's too packed for me to wait inside.
+Eddy: How long have you been waiting?
+Guy: Dunno. Two days or so?
+Eddy: .....
+===
+title: blackgirl
+---
+<<if $blackgirl is false>>
+    Girl: 'Scuse me, but do you know when they're going to move these boxes?
+    Girl: They've been here all day, blocking the street.
+    Eddy: Sorry, I have no idea.
+    Girl: Okay.
+    Girl: Then could you help me take a selfie?
+    ->Yes
+        Eddy: Sure.
+        Eddy: Just... in front of these boxes?
+        Girl: Yep. They look great, and I'll be sad once they're gone.
+        Eddy: Huh. So that's what you meant.
+        <<set $selfie to true>>
+    ->No
+        Eddy: I'm really sorry, but I'm in a rush.
+        Girl: Eh, no problem.
+        <<set $selfie to false>>
+    <<set $blackgirl to true>>
+<<else>>
+    <<if $selfie is true>>
+        Girl: Thanks for the help!
+    <<else>>
+        Girl: Ah, hopefully they don't take away these boxes soon.
+        Girl: They just add so much style to this boring street, y'know.
+        Eddy: You might be right.
+    <<endif>>
+<<endif>>
+===
+title: kantohouse
+---
+A prototypical Chinese restaurant. It's small, but pretty busy.
+My dad used to work here as a chef. He moved locations when I started high school though.
+Their food isn't as good as his.
+===
+title: nails
+---
+A local nail salon.
+Mom works here. I hear she's in high-demand.
+The supplies they use are some brand name I can't remember.
+All I know is that June's parents manage that nail supply brand! Crazy, right?
+My mom and hers even have the same first name. What a small world.
+===
+title: tea
+---
+A bubble tea shop. I'm not much for boba myself - sacrilegious, I know - but Ellen goes all the time.
+One of my cousins works here, I think. She's probably their go-to for the kpop playlist they use in the shop.
+I should come by with June sometime.
+===
+title: devilfruit
+---
+It's graffiti of some kind of demonic produce. Probably the kind that'd make you all stretchy.
+I'm always amazed at where graffiti artists can go for their art.
+===
+title: sticker
+---
+Ah, this is a logo from one of my favorite games.
+Whoever put this outside their window has great taste.
+Or... maybe bad taste, because they left it outside.
+===
+title: supermarket
+---
+Agh, I'm actually so nervous my hands are shaking.
+C'mon, man. Let's go, let's go!
+I've never gotten condoms before.
+It feels like I'm gonna be stared at even though I know nobody cares.
+What if someone sees me...? Will I get a nod of disapproval?
+Someone might even tell my parents, considering how close-knit our neighborhood is.
+Everyone knows each other.
+Okay, deep breaths. Deep breaths.
+Let's just go in.
+<<showplayer Player false>>
+<<fadeandwait Canvas 2>>
+<<wait 1>>
+<<showplayer Player true>>
+<<sprite aunt true>>
+<<sprite auntson true>>
+Okay.
+I got them.
+I'm alive.
+The cashier looked at me a little weird.
+But that's probably just my imagination.
+It... actually wasn't that bad?
+I feel relieved I worked up the courage to come here, anyway.
+I'd prefer if I didn't feel pressured into doing this in secret, but... yeah.
+...Is that...?
+<<cameraswap Cameras>>
+<<camerashake Cameras 0.3 0.3 350>>
+IT'S MY AUNT!!!
+Why is she here!? And with her son, too!!
+<<cameraswap Cameras>>
+I can't go that way or she'll see me for sure....
+Gotta find a way around her or I'm toast.
+If anybody else sees me, she might notice too, so let's avoid EVERYONE.
+<<setactive losg true>>
+<<set $condomsdone to true>>
+===

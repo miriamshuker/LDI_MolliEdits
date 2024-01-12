@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: d98210c7b9d176d49be360f24e799802
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d0-d0_liedown-0
+  - d0-d0_liedown-1
+  - d0-d0_liedown-2
+  - d0-d0_liedown-3
+  - d0-d0_liedown-4
+  - d0-d0_liedown-5
+  - d0-d0_liedown-6
+  - d0-d0_liedown-7
+  - d0-d0_liedown-8
+  - d0-dinneryell-9
+  - d0-dinneryell-10
+  - d0-dinnerlate-11
+  - d0-dinnerlate-12
+  - d0-dinnerhelp-13
+  - d0-dinnerhelp-14
+  - d0-dinnerhelp-15
+  - d0-dinnerhelp-16
+  - d0-dinnerhelp-17
+  - d0-dinnerhelp-18
+  - d0-bowl-19
+  - d0-bowl-20
+  - d0-bowl-21
+  - d0-bowl-22
+  - d0-bowl-23
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: d98210c7b9d176d49be360f24e799802,
+    type: 3}
+  localizations: []

@@ -1,0 +1,65 @@
+title: ellen_d0
+---
+<<set $ellentalk to true>>
+Eddy: Yo, you in there?
+Ellen: Yeah, gimme a sec.
+<<yarnanim YarnController ellen ellen_appear>>
+Ellen: What do you want?
+<<if $hasboba is true>>
+    Eddy: Got you that boba.
+    Ellen: What a good minion!
+    Eddy: ...Maybe I shouldn't have.
+    Eddy: I mean, are you feeling okay?
+    Ellen: Surprisingly good, now that I have something to drink.
+    <<set $ellen_help to $ellen_help + 1>>
+<<endif>>
+Eddy: Did something happen when you went out? You seemed off.
+Ellen: Well....
+Ellen: Don't tell anybody, but actually....
+<size=30>Ellen: I went on a date.</size>
+<<camerashake Cameras .5 .1 100>>
+<<sfxplay Sound thud>>
+<<camerashake Cameras 1 0.1 200 >> 
+<size=70>Eddy: WHAT???</size>
+Ellen: Shush!
+<size=30>Eddy: Oh, right.</size>
+Eddy: I thought you were happy, free, and single, after all that...?
+Ellen: I was. But then I was like --
+Ellen: You know what? I can do whatever.
+Ellen: In fact... I've seen a couple different people already.
+Eddy: Whoa. Whoaaa.
+Eddy: Okay, okay.... No judgment.
+Ellen: This time though?
+Ellen: The guy was like, super creepy. Ultra creepy.
+Eddy: Uegh. Did he do anything weird?
+Ellen: I'm fine. But I feel like I want to talk about it with someone.
+<<sfx alarm>>
+Ellen: Oh.
+Ellen: I might tell you more tomorrow. After I sleep.
+Eddy: Yeah, seems like you're in a rush.
+Eddy: Considering you skipped brushing your teeth and all.
+Ellen: Hey!! I brushed!
+Eddy: Could've fooled me.
+Ellen: Get outta here.
+Eddy: Night.
+Ellen: Night.
+Ellen: Oh! One more thing --
+<<if $d0_argue is true>>
+    Ellen: For your sake, you should just stop talking back to Mom. Doesn't matter if you're right or wrong.
+    Eddy: I was just trying to explain!
+    Ellen: Come onnn, might as well be the same thing.
+<<else>>
+    Ellen: Were you going to say something earlier, too?
+    Eddy: I wanted to tell Mom to stop negging me.
+    Eddy: It's like, I get your point, but that extra stuff isn't any help.
+<<endif>>
+Ellen: You have a point, but like, you gotta choose your battles.
+Ellen: Knowing when to stay quiet is part of being an adult too, you know.
+Eddy: I guess....
+Ellen: Anyway. Night.
+<<cross TransitionCanvas 1.5>>
+<<wait 1.5>>
+<<settod TimeManager bedtime>>
+Eddy: ...
+Eddy: But does it always need to be?
+===

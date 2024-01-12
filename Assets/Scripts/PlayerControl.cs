@@ -161,7 +161,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     // Update is called once per frame
     void Update()
     {
-        if (CanAct())
+        if (CanAct() || IsStopped())
         {
             CheckGround();
             CheckFall();
@@ -279,7 +279,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
     void Jump(InputAction.CallbackContext context)
     {
-        if (!CanAct())
+        if (!CanAct() || GameDialogueManager.Instance.dialogueState != GameDialogueManager.DialogueState.NONE)
         {
             return;
         }
@@ -584,14 +584,16 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     {
         return forceSneak || isSneaking;
     }
-    bool CanAct()
+    public bool CanAct()
     {
         if (debugPause) return false;
-        return canMove && state != PlayerState.BUSY && !GameManager.Instance.isBusy && !EssayGrader.isUp;
+        return canMove && state != PlayerState.BUSY && GameManager.Instance.IsOpen();
     }
     void TogglePhone(InputAction.CallbackContext context)
     {
-        if ((!PhoneManager.Instance.isFocused && !CanAct() || GameDialogueManager.Instance.dialogueState != GameDialogueManager.DialogueState.NONE))
+        if (!PhoneManager.Instance.isActiveAndEnabled ||
+            !PhoneManager.Instance.isFocused && !CanAct() || 
+            GameDialogueManager.Instance.dialogueState != GameDialogueManager.DialogueState.NONE)
         {
             return;
         }
@@ -608,7 +610,6 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
     void Reset(InputAction.CallbackContext context)
     {
-        GameManager.Instance.isBusy = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     void Free(InputAction.CallbackContext context)
@@ -617,7 +618,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
             return;
         SetPlayerState(PlayerState.NONE);
         GameManager.Instance.inConvo = false;
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inEssay = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -1,0 +1,115 @@
+title: d3_wakeup
+---
+Dawn of the Final Day.
+...Is what I'm thinking.
+But it's not dawn.
+And it's not over!
+No morning text today.
+No Ellens to awaken me from sleep either.
+<<unhide Phone>>
+All that's left is to get ready and do what I can!
+<<settod TimeManager freetime>>
+<<clockset UICanvas 9:00>>
+<<clockend UICanvas 17:00>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+===
+title: d3_curfew
+---
+<<if $currentscene != "HomeUpper" && $currentscene != "HomeLower" && $currentscene != "EddyRoom" && $currentscene != "Bathroom">>
+    Eddy: It's 5! I better head home and get some rest for later.
+<<else>>
+    Eddy: It's 5! I need to get ready....
+<<endif>>
+<<to TransitionCanvas EddyRoom>>
+<<clockscale UICanvas 60>>
+<<settod TimeManager evening>>
+===
+title: d3_dinner
+---
+Eddy: Where's Mom?
+Dad: She's working late today.
+Ellen: Aw, again?
+Dad: It's just us and the leftovers.
+Eddy: Hey, these are pretty good leftovers.
+===
+title: d3_sneak
+---
+....
+It's 10 PM.
+I've been biding my chance for this moment...!
+My parents should be cozy in bed --
+Mom is probably snuggled up reading a book. And Dad...
+...is probably asleep.
+They do wake up early, so I can't blame them for sleeping early and/or staying up to enjoy the night.
+That's what I do, after all.
+Here's my chance.
+===
+title: d3_hall
+---
+<<if $v3hall is false>>
+    <<set $v3hall to true>>
+    Looks like the coast is clear....
+    Just gotta be careful not to make too much noise.
+<<endif>>
+===
+title: d3_room_ellen
+---
+Sounds like Ellen's still in her room....
+Good. Goooooood.
+Let's hope she doesn't come out to bother me.
+===
+title: d3_room_parents
+---
+It's pretty quiet, but I think I can make out a bit of music.
+Is Mom listening to music while she reads?
+===
+title: d3_ellen_help
+---
+<<if $ellentalk is false>>
+<<elseif $d3_ellen is false>>
+    Ellen: Hey.
+    << camerashake Cameras 1 0.1 50 >> 
+    Eddy: AGH!!
+    Eddy: I mean, 'ah,' what're you... doing here, dear sister?
+    Ellen: Heading somewhere?
+    Eddy: Um, the fridge.
+    Eddy: Starving.
+    Ellen: Mm hmm. I overheard you talking to June yesterday.
+    Ellen: Sneaking out?
+    Eddy: I --
+    Eddy: Well, I am....
+    Ellen: Don't worry, I get it.
+    Ellen: We all want to sneak around sometimes.
+    Ellen: I mean, I'm not allowed to go out and have fun two days in a row...
+    Ellen: ...and I'm older than you.
+    Eddy: Much older.
+    Ellen: Anyway!
+    Ellen: ...You should go.
+    Eddy: Wait, really?
+    Ellen: Yeah.
+    Ellen: A favor for a favor.
+    Eddy: I did you a favor...?
+    Ellen: ...You get a pass this time.
+    Ellen: Anyway, you should head out.
+    Ellen: If anyone checks in your room, I'll just be, y'know, taking a nap.
+    Ellen: Under the covers.
+    Ellen: Might not even know you're missing.
+    Eddy: ....
+    Eddy: Thanks.
+    <<set $d3_ellen to true>>
+<<else>>
+    Ellen: Smell ya later.
+    Eddy: But I showered....
+<<endif>>
+===
+title: d3_door
+---
+Sometimes the most unexpected option is the obvious one.
+I can use our spare key to lock it behind me.
+Sneak out the front door?
+->Yes
+    <<to TransitionCanvas JuneOutside>>
+->No
+    Maybe I have a better option....
+===

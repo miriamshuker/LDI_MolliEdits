@@ -36,7 +36,7 @@ public class Day : MonoBehaviour
         {
             if (_timesOfDay[i] != null)
             {
-                ShowTimedObject(_timesOfDay[i]);
+                ShowTimedObject(_timesOfDay[i], autoplay);
                 return;
             }
             else
@@ -57,7 +57,7 @@ public class Day : MonoBehaviour
             if (t == to)
             {
                 t.gameObject.SetActive(true);
-                if (t.nodeToAutoplay.Length > 0)
+                if (t.nodeToAutoplay.Length > 0 && autoplay)
                 {
                     //Debug.Log(t.nodeToAutoplay);
                     dr.StartDialogue(t.nodeToAutoplay);
@@ -88,7 +88,7 @@ public class Day : MonoBehaviour
                 break;
             }
         }
-        if (to && to.nodeToAutoplayPreTransition.Length > 0 && dr.IsInitialized)
+        if (to && to.nodeToAutoplayPreTransition.Length > 0 && dr != null)
         {
             //Debug.Log("pretransition 2");
             Debug.Log(dr.NodeExists(to.nodeToAutoplayPreTransition));

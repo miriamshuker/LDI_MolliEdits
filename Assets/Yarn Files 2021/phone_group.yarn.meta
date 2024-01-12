@@ -1,0 +1,48 @@
+fileFormatVersion: 2
+guid: e3d1014dd2d68964bb407dd09daca9a2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - phone_group-phone_group_0-0
+  - phone_group-phone_group_0-1
+  - phone_group-phone_group_0-2
+  - phone_group-phone_group_0-3
+  - phone_group-phone_group_0-4
+  - phone_group-phone_group_0-5
+  - phone_group-phone_group_0-6
+  - phone_group-phone_group_0-7
+  - phone_group-phone_group_0-8
+  - phone_group-phone_group_0-9
+  - phone_group-phone_group_0-10
+  - phone_group-phone_group_0-11
+  - phone_group-phone_group_0-12
+  - phone_group-phone_group_0-13
+  - phone_group-phone_group_0-14
+  - phone_group-phone_group_0-15
+  - phone_group-phone_group_0-16
+  - phone_group-phone_group_0-17
+  - phone_group-phone_group_0-18
+  - phone_group-phone_group_0-19
+  - phone_group-phone_group_0-20
+  - phone_group-phone_group_0-21
+  - phone_group-phone_group_1-22
+  - phone_group-phone_group_1-23
+  - phone_group-phone_group_1-24
+  - phone_group-phone_group_1-25
+  - phone_group-phone_group_1-26
+  - phone_group-phone_group_1-27
+  - phone_group-phone_group_1-28
+  - phone_group-phone_group_1-29
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: e3d1014dd2d68964bb407dd09daca9a2,
+    type: 3}
+  localizations: []

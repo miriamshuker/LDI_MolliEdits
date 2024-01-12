@@ -178,7 +178,7 @@ public class Clock : MonoBehaviour
     }
     private void Update()
     {
-        if (isTicking && !GameManager.Instance.inConvo)
+        if (!PhoneManager.Instance.IsHidden() && isTicking && !GameManager.Instance.inConvo)
         {
             elapsedTime += Time.deltaTime;
             //Debug.Log(elapsedTime);
@@ -215,7 +215,6 @@ public class Clock : MonoBehaviour
     }
     void Tick(int ticks = 1)
     {
-        //Debug.Log("tick");
         currentTime.AddMinute(ticks);
         timeText.text = currentTime.GetString(false);
         if (currentTime.GetInt() == stopTime.GetInt())
@@ -227,7 +226,7 @@ public class Clock : MonoBehaviour
     }
     void CheckClockEvents()
     {
-        if (!GameManager.Instance.isBusy && clockEvents.Length > 0)
+        if ((GameManager.Instance.CurrentDay == 0 || GameManager.Instance.CurrentTimeOfDay == GameManager.TimeOfDay.FREETIME) && !GameManager.Instance.IsOpen() && clockEvents.Length > 0)
         {
             //Debug.Log("looking through events");
             foreach (ClockEvent ce in clockEvents)
@@ -334,7 +333,7 @@ public class Clock : MonoBehaviour
             //TODO: Don't call DialogueRunner directly. Use GameDialogueManager as a buffer, to verify if the game state is open first
             //(so dialogue can't begin during a scene transition or interrupt another piece of dialogue).
 
-            if (!GameManager.Instance.isBusy && clockEvents.Length > 0)
+            if (!GameManager.Instance.IsOpen() && clockEvents.Length > 0)
             {
                 Debug.Log("looking through events");
                 foreach (ClockEvent ce in clockEvents)

@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: c6ca9f5bd437d44daa11c354ea3d908d
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - hometasks-trash-0
+  - hometasks-trash-1
+  - hometasks-trash-2
+  - hometasks-trash-3
+  - hometasks-trash-4
+  - hometasks-eddytrash-5
+  - hometasks-eddytrash-6
+  - hometasks-ellentrash-7
+  - hometasks-ellentrash-8
+  - hometasks-parentstrash-9
+  - hometasks-parentstrash-10
+  - hometasks-bathroomtrash-11
+  - hometasks-bathroomtrash-12
+  - hometasks-lowertrash-13
+  - hometasks-lowertrash-14
+  - hometasks-outsidetrash-15
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

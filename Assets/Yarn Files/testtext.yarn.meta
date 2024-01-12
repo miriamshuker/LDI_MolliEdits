@@ -1,0 +1,37 @@
+fileFormatVersion: 2
+guid: 8478c0dbe1a5a48cebae7391d583eebd
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - testtext-Start-0
+  - testtext-Start-1
+  - testtext-Start-2
+  - testtext-dance-3
+  - testtext-dance-4
+  - testtext-dance-5
+  - testtext-dance-6
+  - testtext-swole-7
+  - testtext-swole-8
+  - testtext-swole-9
+  - testtext-swole-10
+  - testtext-encourage-11
+  - testtext-encourage-12
+  - testtext-meet-13
+  - testtext-meet-14
+  - testtext-yesplease-15
+  - testtext-nothanks-16
+  - testtext-nothanks-17
+  - testtext-free-18
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 8478c0dbe1a5a48cebae7391d583eebd,
+    type: 3}
+  localizations: []

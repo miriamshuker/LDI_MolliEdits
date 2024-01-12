@@ -8,7 +8,7 @@ public class Contact : MonoBehaviour
 {
     public string contactName;
     public string displayName;
-    GameObject convoObj;
+    public GameObject convoObj;
     TextConversation convo;
     public TextMeshProUGUI preview;
     public GameObject newMessage;

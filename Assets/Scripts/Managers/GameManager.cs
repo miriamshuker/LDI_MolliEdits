@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Yarn.Unity;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,12 +22,15 @@ public class GameManager : MonoBehaviour
     }
 
     public VariableManager.DefaultVariable[] defaultVariables;
-    public bool isBusy;
+    public VariableStorageBehaviour vars;
     public bool inConvo;
+    public bool inEssay;
+    public bool inTransition;
     public int CurrentDay { get; private set; }
     public TimeOfDay CurrentTimeOfDay { get; private set; }
     public Clock.ClockTime CurrentTime { get; private set; }
     public int secondsPerMinute;
+    private int prevSpm;
 
     public bool doneEssay;
     public bool doneQuiz;
@@ -53,12 +57,10 @@ public class GameManager : MonoBehaviour
     public void ResetGame()
     {
         variables.Clear();
-        isBusy = false;
-        inConvo = false;
+        FreeControls();
+
         CurrentDay = 0;
         CurrentTimeOfDay = TimeOfDay.EVENING;
-        //currentDay = 1;
-        //currentTimeOfDay = TimeOfDay.MORNING;
         CurrentTime = new Clock.ClockTime(20, 30);
         secondsPerMinute = 1;
 
@@ -70,6 +72,20 @@ public class GameManager : MonoBehaviour
 
         EssayGrader.Reset();
 
+    }
+    public void FreeControls()
+    {
+        inConvo = false;
+        inEssay = false;
+        inTransition = false;
+    }
+    public bool IsOpen()
+    {
+        if (inConvo || inEssay || inTransition)
+        {
+            return false;
+        }
+        return true;
     }
     public void ResetToDefaults() {
         foreach (var variable in defaultVariables)
@@ -131,14 +147,20 @@ public class GameManager : MonoBehaviour
     }
     public void SetDay(int day)
     {
+        VariableStorageBehaviour var = GameDialogueManager.Instance.dr.variableStorage;
         CurrentDay = day;
+        var.SetValue("$ricedone", false);
+        if (!var.GetValue("$trashdone").AsBool)
+        {
+            var.SetValue("$trashdone", false);
+        }
     }
     public void SetDay(string param)
     {
         int.TryParse(param, out int day);
         if (day <= 4 && day >= 0)
         {
-            CurrentDay = day;
+            SetDay(day);
         }
     }
     public void SetTimeOfDay(TimeOfDay t)

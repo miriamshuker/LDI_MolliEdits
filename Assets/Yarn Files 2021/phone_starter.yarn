@@ -1,0 +1,44 @@
+title: phonestart_june
+---
+<<if $d0_june is false>>
+    Eddy: Let's see what time it is....
+    <<unhide Phone>>
+    <<wait 0.1>>
+    <<camerashake Cameras 0.5 0.1 100 >> 
+    Eddy: Oh, I got a text!
+    <<hidetalk DialogueCanvas>>
+    
+    <<textcontact DialogueCanvas June>>
+    June: Eddy! BIG NEWS
+    Eddy: Everything ok??
+    June: Wait, not that big XD
+
+    <<if $d0_june_late is true>>
+        Eddy: Do you mind waiting a bit? Parents just called me for dinner
+        Eddy: Sorryyy
+    <<else>>
+        <<setdialogue DialogueCanvas talk>>
+        <<sfxplay Sound thud>>
+        <<camerashake Cameras 1 0.1 100 >> 
+        Dad: EDDY!!! DINNER!!!
+        <<wait 0.1>>
+        <<hidetalk DialogueCanvas>>
+        <<setdialogue DialogueCanvas text>>
+        Eddy: Then do you mind waiting a bit? Parents just called me for dinner
+    <<endif>>
+    June: Oop, np
+    June: Don't want to keep them waiting
+    June: I'll tell you after then
+    Eddy: Thanks~
+    <<unfocus Phone>>
+    <<setdialogue DialogueCanvas talk>>
+    <<wait 0.75>>
+
+    <<if $d0_june_late is true>>
+        Eddy: Huh.
+        Eddy: Wonder what June wanted to say.
+    <<endif>>
+    <<settod TimeManager evening>>
+<<endif>>
+<<set $d0_june to true>>
+===

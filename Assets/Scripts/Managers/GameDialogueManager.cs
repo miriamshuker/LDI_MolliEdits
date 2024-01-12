@@ -53,6 +53,7 @@ public class GameDialogueManager : MonoBehaviour
     [Header("Sound Effects")]
     public AudioSource sfxSource;
     public AudioClip sfx;
+    public AudioClip phoneSfxMe, phoneSfxOther;
     public AudioClip boxSfx;
     public AudioClip[] sounds;
 
@@ -86,6 +87,9 @@ public class GameDialogueManager : MonoBehaviour
     public GameObject expositionObject;
     public Animator expositionAnimator;
     public TextMeshProUGUI expositionText;
+    public float expoHoldTime, expoWaitTime;
+
+    [Header("Other Vars")]
     private DialogueState prevState;
     public float quickNextTime;
     public float quickNextTimeText;
@@ -129,7 +133,7 @@ public class GameDialogueManager : MonoBehaviour
     {
         if (dialogueState != DialogueState.NONE)
         {
-            if (isHolding)
+            if (isHolding && !GameManager.Instance.inTransition)
             {
                 float targetTime = 1f;
                 if (dialogueState == DialogueState.TALK)
@@ -144,6 +148,10 @@ public class GameDialogueManager : MonoBehaviour
                     nextHoldTime = 0;
                 }
             }
+            else
+            {
+                nextHoldTime = 0;
+            }
         }
     }
     void Next(InputAction.CallbackContext context)
@@ -154,6 +162,7 @@ public class GameDialogueManager : MonoBehaviour
             if (!isWaitingForPhone && dialogueState != DialogueState.EXPO)
             {
                 Next();
+                nextHoldTime = 0;
             }
         }
         else if (context.phase == InputActionPhase.Canceled)
@@ -164,7 +173,7 @@ public class GameDialogueManager : MonoBehaviour
     }
     void Navigate(InputAction.CallbackContext context)
     {
-        if (dialogueState == DialogueState.NONE || !waitingForOptions)
+        if (GameManager.Instance.inTransition || dialogueState == DialogueState.NONE || !waitingForOptions)
         {
             return;
         }
@@ -189,8 +198,8 @@ public class GameDialogueManager : MonoBehaviour
     }
     void Select(InputAction.CallbackContext context)
     {
-        if (dialogueState == DialogueState.NONE || !waitingForOptions || buttons == null || buttons.Count == 0 || 
-            buttonIndex < 0 || buttonIndex >= buttons.Count)
+        if (GameManager.Instance.inTransition || dialogueState == DialogueState.NONE || !waitingForOptions || 
+            buttons == null || buttons.Count == 0 || buttonIndex < 0 || buttonIndex >= buttons.Count)
         {
             return;
         }
@@ -205,7 +214,6 @@ public class GameDialogueManager : MonoBehaviour
         if (dialogueState != DialogueState.TEXT)
         {
             PlayerControl.Instance.SetPlayerState(PlayerControl.PlayerState.BUSY);
-            GameManager.Instance.isBusy = true;
             GameManager.Instance.inConvo = true;
         }
     }
@@ -220,7 +228,6 @@ public class GameDialogueManager : MonoBehaviour
         {
             HideAll();
             PlayerControl.Instance.SetPlayerState(PlayerControl.PlayerState.NONE);
-            GameManager.Instance.isBusy = false;
             GameManager.Instance.inConvo = false;
         }
     }
@@ -312,6 +319,7 @@ public class GameDialogueManager : MonoBehaviour
         {
             dialogueState = DialogueState.TEXT;
             PhoneManager.Instance.tManager.SetBackable(false);
+            PhoneManager.Instance.Focus();
         }
         else if (setting == "whisper")
         {
@@ -464,9 +472,9 @@ public class GameDialogueManager : MonoBehaviour
     IEnumerator Exposition()
     {
         expositionObject.SetActive(true);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(expoHoldTime);
         expositionAnimator.SetTrigger("Start");
-        yield return new WaitForSeconds(.8f);
+        yield return new WaitForSeconds(expoWaitTime);
 
         expositionObject.SetActive(false);
         dui.MarkLineComplete();
@@ -490,12 +498,12 @@ public class GameDialogueManager : MonoBehaviour
     void TextLine(string contactName, string line)
     {
         Debug.Log($"Contacting {contactName}");
-        sfxSource.PlayOneShot(sfx);
         //Debug.Log("Called text");
         currentMessage = ParseLinesToMessage(line);
 
         //PhoneManager.Instance.NotifyText(contactName, currentMessage);
         PhoneManager.Instance.OpenText(contactName, currentMessage);
+        sfxSource.PlayOneShot(phoneSfxMe);
         //convo.Add(currentMessage);
         //Resize buttons
         showFullButton.SetActive(false);
@@ -699,7 +707,6 @@ public class GameDialogueManager : MonoBehaviour
         phoneManager.Unfocus();
         yield return new WaitForSeconds(PhoneManager.Instance.hideAnimationTime - 0.5f);
         HideAll();
-        GameManager.Instance.isBusy = false;
         GameManager.Instance.inConvo = false;
     }
     [YarnCommand("putawayphone")]
@@ -715,6 +722,10 @@ public class GameDialogueManager : MonoBehaviour
 
     public void Next()
     {
+        if (GameManager.Instance.inTransition)
+        {
+            return;
+        }
         //Debug.Log("nexting");
         if (dialogueState == DialogueState.TEXT)
         {

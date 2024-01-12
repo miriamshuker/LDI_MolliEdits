@@ -1,0 +1,175 @@
+title: june_home_enter
+---
+<<if $vjunehouse is false>>
+    <<set $windowsinspected to 0>>
+    .....
+    Wow.
+    <<cameraswap Cameras>>
+    <<wait 0.1>>
+    This place is HUGE!
+    <<cameraswap Cameras>>
+    Considering urban real estate prices, this must've cost a fortune.
+    Hmm....
+    Since the front door's a no-go, I should really take a look around to find an entry point.
+    <<set $vjunehouse to true>>
+<<endif>>
+===
+title: juneplan
+---
+<<if $timeofday is "freetime" && $vjuneplan is false>>
+    <<textcontact DialogueCanvas June>>
+    <<set $vjuneplan to true>>
+    June: Hey!
+    Hey
+    June: Are you here now?
+    Uhh, yeah...
+    How'd you know?
+    June: The security camera footage
+    June: Anyway, can you come by the side of the house?
+    Sure
+    <<unfocus Phone>>
+    <<setdialogue DialogueCanvas talk>>
+<<endif>>
+===
+title: junecreep
+---
+<<if $timeofday is "freetime" && $vjunecreep is false>>
+    June: <size=30>Pssst.
+    <<animatesprite June Peek true>>
+    June: Over here.
+    <<set $vjunecreep to true>>
+<<endif>>
+===
+title: junesneak
+---
+<<if $timeofday is "freetime" && $vjunesneak is false && $vjunehouse is true && $vjunecreep is true >>
+    <<set $vjunesneak to true>>
+    June: Hi.
+    Eddy: Hi.
+    June: ...
+    June: Come on, you're not weirded out by this at all?
+    Eddy: I live with Ellen.
+    June: That's true.
+    June: Anyway - just wanted to check on you to make sure you're alright.
+    June: I mean, it's the least I could do! Since you're sneaking in and all.
+    June: You do the heisting - and I'm gonna be your Q, hehe.
+    Eddy: ...Ah! I get it - James Bond?
+    June: ...?
+    June: Star Trek.
+    Eddy: Ah.
+    Eddy: Nerd!
+    June: How uncultured....
+    June: Coming from the nerd emoji?
+    Eddy: Hey -- just because you're right doesn't mean you should say it!
+    Eddy: We can watch another episode when I come over. I'm still pretty behind.
+    June: On like, a 30-year-old show? For shame.
+    June: But okay!
+    Eddy: Thanks for coming out. I'll do my best to make it worth the trouble!
+    June: I should probably get back inside before my brother notices I snuck out.
+    June: Before we go thoughhh....
+    ->Give her a peck
+        *I give her a peck on the cheek.
+        June: Hmm, I guess that'll do for now.
+        June: I'll get a liiittle more out of you later, you hear?
+        Eddy: Planning on it!
+    ->Save it for later
+        *I boop her on the nose.
+        June: Awww, what?
+        Eddy: I want to save it for later!
+        June: Hmm, alright....
+    June: See you later!
+    Eddy: See you!
+    <<set $vjunesneak to true>>
+    <<setactive June false>>
+    <<animatesprite June Unpeek true>>
+    <<animatesprite June Peek false>>
+    <<wait 2.5>>
+    Well that happened.
+    <<showsuccess UICanvas 6>>
+    I still need to scout out an infiltration route though.
+    Let's take a look around.
+<<endif>>
+===
+title: juneexit
+---
+<<if $timeofday is "freetime">>
+    <<if $vjuneplan is false && $vjunesneak is false>>
+        <<to TransitionCanvas HomeOutside>>
+    <<elseif $foundroute is true>>
+        <<to UICanvas HomeLower>>
+    <<else>>
+        Wait, June said to meet her by the house.
+    <<endif>>
+<<elseif $timeofday is "evening">>
+    There's no turning back now. It's heist time!
+    <<if $foundroute is false>>
+        Since I didn't find an infiltration route earlier, let's do it now.
+    <<else>>
+        I already found a way in. It's around the other side, by that big tree.
+    <<endif>>
+<<else>>
+    <<to UICanvas HomeLower>>
+<<endif>>
+===
+title: inspecthouseleft
+---
+Looks pretty secure here.
+===
+title: inspecthouseright
+---
+Seems pretty secure here, too.
+===
+title: inspecthousedoor
+---
+No way I'm gonna go in through the front door. I'll 1000% be spotted on camera.
+===
+title: inspecthousestatue
+---
+It's a (bronze?) statue of two adults.
+The plaque reads "Employees of the Century Award".
+...Aren't June's parents the owners of their nail supply company?
+===
+title: inspecthousetree
+---
+It's a big tree.
+Looking closely, seems like I might be able to climb it....
+===
+title: inspecthousewindowbad
+---
+<<if $windowsinspected == 0>>
+    The window's locked.
+    <<set $windowsinspected to 1>>
+<<elseif $windowsinspected == 1>>
+    This window's locked too.
+    <<set $windowsinspected to 2>>
+<<else>>
+    Locked.
+<<endif>>
+===
+title: inspecthousewindowgood
+---
+<<if $vinspecthousewindowgood is false>>
+    The window's locked.
+    Or... is it??
+    It seems a bit loose.
+    Oh! It opens up. This seems like my way in.
+    I'll let June know so she can get it fixed later.
+    It's a little dangerous to leave it like this, after all!
+    <<set $vinspecthousewindowgood to true>>
+    <<set $foundroute to true>>
+    <<showsuccess UICanvas 7>>
+    <<set $tasks to $tasks + 1>>
+<<elseif $timeofday is "evening">>
+    This is my way in. Ready?
+    ->Yes
+        <<to TransitionCanvas JuneInside>>
+    ->No
+        <<stop>>
+<<else>>
+    This is the way in! Good find. Let's regroup later to sneak in.
+<<endif>>
+===
+title: infiltration
+---
+<<settime TimeManager 3 evening>>
+===

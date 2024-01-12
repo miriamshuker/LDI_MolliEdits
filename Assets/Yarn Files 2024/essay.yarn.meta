@@ -1,0 +1,45 @@
+fileFormatVersion: 2
+guid: 059eff825b9c75849b20f2a66c0018f3
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - essay-essay_feedback-0
+  - essay-essay_feedback-1
+  - essay-essay_feedback-2
+  - essay-essay_feedback-3
+  - essay-essay_feedback-4
+  - essay-essay_feedback-5
+  - essay-essay_feedback-6
+  - essay-essay_feedback-7
+  - essay-essay_feedback-8
+  - essay-essay_feedback-9
+  - essay-essay_feedback-10
+  - essay-essay_feedback-11
+  - essay-essay_feedback-12
+  - essay-essay_feedback-13
+  - essay-essay_feedback-14
+  - essay-essay_feedback-15
+  - essay-essay_feedback-16
+  - essay-essay_feedback-17
+  - essay-essay_feedback-18
+  - essay-essay_feedback-19
+  - essay-essay_feedback-20
+  - essay-essay_feedback-21
+  - essay-essay_feedback-22
+  - essay-essay_feedback-23
+  - essay-essay_feedback-24
+  - essay-essay_feedback-25
+  - essay-essay_feedback-26
+  - essay-essay_feedback-27
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

@@ -1,0 +1,57 @@
+fileFormatVersion: 2
+guid: 8161fa1abb247423b9b76fa81fb1e5e9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - FirstTextBetter-phone-0
+  - FirstTextBetter-phone-1
+  - FirstTextBetter-phone-2
+  - FirstTextBetter-dance-3
+  - FirstTextBetter-dance-4
+  - FirstTextBetter-dance-5
+  - FirstTextBetter-dance-6
+  - FirstTextBetter-swole-7
+  - FirstTextBetter-swole-8
+  - FirstTextBetter-swole-9
+  - FirstTextBetter-swole-10
+  - FirstTextBetter-encourage-11
+  - FirstTextBetter-encourage-12
+  - FirstTextBetter-meet-13
+  - FirstTextBetter-meet-14
+  - FirstTextBetter-yesplease-15
+  - FirstTextBetter-nothanks-16
+  - FirstTextBetter-nothanks-17
+  - FirstTextBetter-free-18
+  - FirstTextBetter-free-19
+  - FirstTextBetter-free-20
+  - FirstTextBetter-free-21
+  - FirstTextBetter-free-22
+  - FirstTextBetter-free-23
+  - FirstTextBetter-free-24
+  - FirstTextBetter-free-25
+  - FirstTextBetter-free-26
+  - FirstTextBetter-free-27
+  - FirstTextBetter-free-28
+  - FirstTextBetter-free-29
+  - FirstTextBetter-free-30
+  - FirstTextBetter-free-31
+  - FirstTextBetter-free-32
+  - FirstTextBetter-free-33
+  - FirstTextBetter-free-34
+  - FirstTextBetter-free-35
+  - FirstTextBetter-free-36
+  - FirstTextBetter-free-37
+  - FirstTextBetter-free-38
+  - FirstTextBetter-free-39
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

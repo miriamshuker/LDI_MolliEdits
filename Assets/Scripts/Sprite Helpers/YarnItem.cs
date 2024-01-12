@@ -9,6 +9,13 @@ public class YarnItem : MonoBehaviour
     public GameObject item;
     Animator anim;
     SpriteRenderer sr;
+    [System.Serializable]
+    public class SpriteInfo
+    {
+        public string name;
+        public Sprite sprite;
+    }
+    public SpriteInfo[] sprites;
 
     // Start is called before the first frame update
     private void Awake()
@@ -29,6 +36,24 @@ public class YarnItem : MonoBehaviour
     }
     public void Animate(string state)
     {
-        anim.Play(state);
+        if (anim)
+        {
+            anim.Play(state);
+        }
+    }
+    public void ShowSprite(string sprite)
+    {
+        foreach (SpriteInfo si in sprites)
+        {
+            if (si.name == sprite)
+            {
+                sr.sprite = si.sprite;
+                return;
+            }
+        }
+    }
+    public void EnableSprite(bool setting)
+    {
+        sr.enabled = setting;
     }
 }

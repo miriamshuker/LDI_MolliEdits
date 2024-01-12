@@ -1,0 +1,63 @@
+title: d0_liedown
+---
+<<usealt Player lay0>>
+<<clockset UICanvas 19:30>>
+<<clockend UICanvas 20:00>>
+<<clockscale UICanvas 0>>
+<<setspawn LevelElements HomeUpper>>
+<<settod TimeManager freetime>>
+<<cameratarget Cameras LieDown>> 
+Eddy: ...&tired
+Eddy: ...I don't have the energy to move.&normal
+Eddy: But I have work to do...&uh
+Eddy: And chores....&tired
+<<usealt Player lay1>>
+Eddy: ...
+<<usealt Player lay2>>
+Eddy: And people I want to talk to.&happy
+Eddy: ...Okay. Let's get moving.&hmph
+<<usebase Player>>
+Eddy: The clock's gonna be ticking, whether I like it or not.
+<<cameratarget Cameras Player>>
+<<wait 0.1>>
+<<clockscale UICanvas 5>>
+===
+title: d0_freetime_slow
+---
+<<sfxplay Sound thud>>
+<<camerashake Cameras 1 0.1 200 >> 
+Mom: EDDY! Get down here!!!
+Eddy: Coming!
+<<to TransitionCanvas HomeUpper>>
+<<wait 0.15>>
+===
+title: d0_hallway
+---
+<<settod TimeManager evening>>
+Eddy: Huh.
+Eddy: Wonder what June wanted to say.
+===
+title: dad_d0
+tags: 
+colorID: 0
+position: 205,520
+---
+<< if $vdadzero is false >> 
+    Dad: Hi, Eddy.
+    Dad: Try to eat some veggies with it, this time.
+    <<set $vdadzero to true>>
+<< else >>
+    Dad: Can you get the bowls for me?
+<< endif >>
+===
+title: mom_d0
+tags: 
+colorID: 0
+position: 417,519
+---
+<< playsound SFXSource murmur >>
+<<camerashake 1 0.1 100>>
+Eddy: Hey, dinnerrrrr!
+Mom: *hushed whispers*
+Ah, she's praying now. Let's not rush her.
+===

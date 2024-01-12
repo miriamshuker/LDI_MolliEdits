@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 76f81bc5dceb70a44814f5ccb032582f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - phone_andy-phone_andy_0-0
+  - phone_andy-phone_andy_0-1
+  - phone_andy-phone_andy_0-2
+  - phone_andy-phone_andy_0-3
+  - phone_andy-phone_andy_0-4
+  - phone_andy-phone_andy_0-5
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

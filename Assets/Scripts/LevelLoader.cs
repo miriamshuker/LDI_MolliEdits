@@ -11,6 +11,7 @@ public class LevelLoader : MonoBehaviour
     public Animator wipe;
     public Animator cross;
     public PlayerControl pc;
+    public Canvas canvas;
     public GameDialogueManager gdm;
     public float transitionTime;
     public string currentScene;
@@ -20,7 +21,14 @@ public class LevelLoader : MonoBehaviour
     private SpawnInfo spawnInfo;
     private bool ignoreNextSpawn;
 
-    public Scene[] scenes;
+    public ScenePoint[] scenes;
+
+    [System.Serializable]
+    public class ScenePoint
+    {
+        public string sceneName;
+        public Scene scene;
+    }
 
     [System.Serializable]
     public class SpawnPoint
@@ -46,7 +54,7 @@ public class LevelLoader : MonoBehaviour
         //ShowLevel();
     }
     public void ShowLevel() {
-        if (GameDialogueManager.Instance.dr.IsInitialized)
+        if (GameDialogueManager.Instance.dr != null)
             ShowLevel(SceneManager.GetActiveScene(), LoadSceneMode.Single);
     }
     public void ShowLevel(Scene scene, LoadSceneMode mode)
@@ -58,7 +66,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (!tm)
             tm = FindObjectOfType<TimeManager>();
-        GameManager.Instance.isBusy = true;
+        GameManager.Instance.inTransition = true;
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$currentscene", SceneManager.GetActiveScene().name);
         //Debug.Log("showing scene");
         //cross.SetInteger("Black", 1);
@@ -68,10 +76,7 @@ public class LevelLoader : MonoBehaviour
             tm.Begin();
         }
         yield return new WaitForSeconds(transitionTime);
-        if (!GameManager.Instance.inConvo || gdm.dialogueState == GameDialogueManager.DialogueState.NONE)
-        {
-            GameManager.Instance.isBusy = false;
-        }
+        GameManager.Instance.inTransition = false;
     }
 
     SpawnPoint FindSpawnPoint(string name)
@@ -106,6 +111,29 @@ public class LevelLoader : MonoBehaviour
     public void IgnoreNextSpawn()
     {
         ignoreNextSpawn = true;
+    }
+    [YarnCommand("tor")]
+    public IEnumerator GoCoroutine(string[] param)
+    {
+        if (param.Length == 2)
+        {
+            Debug.Log("'to' has 2 parameters");
+
+            Debug.Log("going to scene " + param[0] + " at spawnpoint " + param[1]);
+            currentSpawnPoint = param[1];
+            yield return LoadCoroutine(param[0]);
+        }
+        else if (param.Length == 1)
+        {
+            currentSpawnPoint = SceneManager.GetActiveScene().name;
+            Debug.Log("going to scene " + param[0]);
+            yield return LoadCoroutine(param[0]);
+        }
+    }
+    [YarnCommand("sortorder")]
+    public void MoveLayer(int num)
+    {
+        canvas.sortingOrder = num;
     }
     [YarnCommand("to")]
     public void GoTo(string[] param)
@@ -144,29 +172,54 @@ public class LevelLoader : MonoBehaviour
     [YarnCommand("toscene")]
     public void LoadLevel(string param)
     {
+        if (SceneManager.GetActiveScene().name == param)
+        {
+            Debug.Log("already at scene " + param);
+            return;
+        }
         StopAllCoroutines();
         StartCoroutine(LoadScene(param));
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$reload", true);
     }
+    private IEnumerator LoadCoroutine(string param)
+    {
+        if (SceneManager.GetActiveScene().name == param)
+        {
+            Debug.Log("already at scene " + param);
+            yield return null;
+            yield break;
+        }
+        StopAllCoroutines();
+        yield return LoadScene(param);
+        GameDialogueManager.Instance.dr.variableStorage.SetValue("$reload", true);
+    }
     IEnumerator LoadScene(string sceneName)
     {
+        string currentTrack = AudioManager.Instance.GetTrackForScene();
+        string nextTrack = AudioManager.Instance.GetTrackForScene(sceneName);
+
         wipe.SetBool("WipeIn", false);
 
         Debug.Log("waiting");
-        GameManager.Instance.isBusy = true;
-        AudioManager.Instance.FadeOutMusic(transitionTime);
+        PhoneManager.Instance.Unfocus();
+        GameManager.Instance.inTransition = true;
+        if (currentTrack != nextTrack && nextTrack != "")
+        {
+            AudioManager.Instance.FadeOutMusic(transitionTime);
+        }
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(sceneName);
 
-        AudioManager.Instance.FadeInMusic("", transitionTime, 1);
+        if (currentTrack != nextTrack || !AudioManager.Instance.musicSource.isPlaying)
+        {
+            AudioManager.Instance.FadeInMusic("", transitionTime, 1);
+        }
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$currentscene", sceneName);
         wipe.SetBool("WipeIn", true);
         Debug.Log("wiped");
-        if (!GameManager.Instance.inConvo || gdm.dialogueState == GameDialogueManager.DialogueState.NONE)
-        {
-            GameManager.Instance.isBusy = false;
-        }
+        GameManager.Instance.inTransition = false;
+        yield return null;
     }
     [YarnCommand("setfade")]
     public void SetFade(string param)
@@ -179,7 +232,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator DelayControls()
     {
         yield return new WaitForSeconds(transitionTime);
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inTransition = false;
     }
     [YarnCommand("fromblack")]
     public void FadeFromBlack(string param)
@@ -191,9 +244,10 @@ public class LevelLoader : MonoBehaviour
     }
     IEnumerator IFadeFromBlack(float waitTime)
     {
-        GameManager.Instance.isBusy = true;
+        GameManager.Instance.inTransition = true;
         cross.SetInteger("Black", 0);
         yield return new WaitForSeconds(waitTime);
+        GameManager.Instance.inTransition = false;
         cross.SetInteger("Black", -1);
     }
     [YarnCommand("cross")]

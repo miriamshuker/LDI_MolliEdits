@@ -1,0 +1,39 @@
+fileFormatVersion: 2
+guid: 107d95641ccd8447fb322ad353147603
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - chinatown-supermarket-0
+  - chinatown-supermarket-1
+  - chinatown-supermarket-2
+  - chinatown-supermarket-3
+  - chinatown-supermarket-4
+  - chinatown-supermarket-5
+  - chinatown-supermarket-6
+  - chinatown-supermarket-7
+  - chinatown-supermarket-8
+  - chinatown-supermarket-9
+  - chinatown-supermarket-10
+  - chinatown-supermarket-11
+  - chinatown-supermarket-12
+  - chinatown-supermarket-13
+  - chinatown-supermarket-14
+  - chinatown-supermarket-15
+  - chinatown-supermarket-16
+  - chinatown-supermarket-17
+  - chinatown-supermarket-18
+  - chinatown-supermarket-19
+  - chinatown-supermarket-20
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 107d95641ccd8447fb322ad353147603,
+    type: 3}
+  localizations: []

@@ -7,7 +7,7 @@ public class Talker : Interactable
 {
     //Reference to phone UI, to be able to send text notifications?
     DialogueRunner dialogueRunner;
-    public string nodeName;
+    public string nodeName, dontTriggerCondition;
     public ScheduledDialogue[] scheduledDialogues;
 
     [Header("Optional")]
@@ -28,12 +28,19 @@ public class Talker : Interactable
 
     public override void Interact()
     {
-        if (nodeName.Length > 0)
+        if (nodeName != null && nodeName.Length > 0)
         {
             if (!dialogueRunner.NodeExists(nodeName))
             {
                 Debug.LogWarning("no node with name " + nodeName);
                 return;
+            }
+            if (dontTriggerCondition != null && dontTriggerCondition.Length > 0)
+            {
+                if (dialogueRunner.variableStorage.GetValue("$" + dontTriggerCondition).AsBool)
+                {
+                    return;
+                }
             }
             dialogueRunner.StartDialogue(nodeName);
             return;

@@ -1,0 +1,145 @@
+title: d1_dinner
+---
+<<tor TransitionCanvas HomeLower>>
+<<cameratarget Cameras Table>>
+<<cross TransitionCanvas 1.5>>
+<<hide Phone>>
+<<wait 1.5>>
+<<settime TimeManager 1 dinner>>
+<<showplayer Player false>>
+<<yarnoff YarnController table>>
+Ellen: (munching) Mmm...
+Ellen: Feels like it's been so long since we had any gỏi cuốn.:Vietnamese spring rolls. Usually made with meat, shrimp, herbs, and rice noodles wrapped in rice paper.
+Ellen: Mmmm...
+Dad: Good?
+Ellen: Mmmm... gimme a sec....
+Ellen: Mm... mmmmm....
+Eddy: ......
+<<camerashake Cameras 0.3 0.4 200>>
+Ellen: ...!
+<<camerashake Cameras 0.1 0.2 100>>
+Ellen: Ahem.
+Ellen: Yep. Pretty good.
+Eddy: I agree. I mean, I haven't really eaten anything yet, so I might be a bit biased....
+<<if $d0_atefood is true>>
+    Eddy: All I've had is some leftover chicken nuggets.
+    Ellen: Hey! Those were mine!
+    Eddy: Not any more!!
+<<else>>
+    Eddy: I've been staaaarving.
+<<endif>>
+Mom: This is my first meal of the day, too.
+<<camerashake Cameras 0.1 0.2 100>>
+Eddy: What? Really? Don't you wake up at like, 6 AM?
+Dad: Your mom's too busy.@v
+Mom: I don't have time to eat at work.
+Eddy: That <i>can't</i> be healthy....@
+Eddy: Maybe get something for breakfast? We still got cereal.
+Mom: I'm fine! Not even hungry.@v
+Ellen: I can pack you lunch, maybe...?
+Ellen: Since I wake up around the same time.@
+Eddy: Yeah, you have to have a minute or two to scarf <i>something</i> down!
+Dad: Want me to make you something in the morning, <i>em</i>?:Vietnamese pronoun. Literally refers to a younger sibling, or in this case, one's wife.@v
+Mom: The coffee's enough. 
+Mom: Don't worry about it.@
+<<camerashake Cameras 0.5 0.1 100 >> 
+Ellen: Oh!
+<<camerashake Cameras 0.5 0.1 100 >> 
+Eddy: Ah!
+<<unhide Phone>>
+<<wait 0.1>>
+<<focus Phone>>
+<<wait 0.1>>
+<<hidetalk DialogueCanvas>>
+<<textcontact DialogueCanvas June>>
+June: fyi, i'll probably be late tomorrow, so you can eat without me
+Eddy: kk
+Eddy: see you soon
+Eddy: don't forget your stand
+<<unfocus Phone>>
+<<setdialogue DialogueCanvas talk>>
+Eddy: ...!
+Mom's glaring at me!
+Mom: ...
+Mom: Put your phone away.@v
+Mom: Dinner is supposed to be family time.
+Mom: And Ellen, who are you texting with that smile on your face?
+Ellen: M-Me? Smiling?@
+Mom: This is just like when you were with that guy. I'm so glad you got rid of him.
+Eddy: We're doing THIS again?
+Ellen: Why's this your favorite thing to talk about?
+Mom: I have to make sure you remember!@v
+Mom: I'm not saying you should move on right away, but don't have any second thoughts.
+Mom: You're beautiful, smart, and too kind, like me.
+Mom: So one guy is just a drop in the bucket.
+Dad: Heh.
+Mom: Did you say something?
+Dad: Your mom's completely right.
+Mom: You invested a lot of time in this relationship, so I know it's not easy to get over.
+Dad: But don't feel bad about leaving if you see something you don't like.
+Eddy: I mean, that has its pros and cons.@
+Eddy: Sometimes it takes some work to build something positive.
+Ellen: Yeah, there are things that should've been red flags, but it can be so hard to tell.
+Eddy: That's true too.
+Mom: Anyway, that guy was no good.@v
+Mom: He takes up all your time at home, doesn't respect our family's rules, makes you stay out late, and didn't even always pay when you go out!@
+Ellen: (But <i>I</i> want to stay out late....)
+Dad: There are plenty of fish in the sea.
+Mom: Taller, handsomer, thinner, and smarter fish who have money!
+...Hold on, I'm just the skinny fish here!@
+Mom: Like your cousin --@v
+Mom: She found a lawyer who gave her a CAR for their first anniversary.
+Dad: Much better than scraping by with a teacher.
+Dad: Being happy is good, but so is having a roof over your head.
+Mom: People say to marry who you love, but love doesn't keep your stomach full.
+Ellen: Yeah, yeah, I know....@
+Eddy: ...
+Ellen: ....
+Mom: So is your friend still coming over tomorrow, Eddy?@v
+Eddy: ....@
+Eddy: Uh, yeah. We're still practicing.
+Eddy: She'll be here after dinner with her violin.
+Mom: Remember she's just here for music.
+Eddy: Yeah.
+<<cross TransitionCanvas 2>>
+<<wait 2>>
+<<cameratarget Cameras Player>>
+<<showplayer Player true>>
+<<settod TimeManager night>>
+<<yarnon YarnController table>>
+Well....
+There's a good reason why June doesn't want my parents to know we're dating.
+You can't just <b>be</b>. You have to be better than someone else.
+===
+title: d1_help
+---
+Mom: Eddy, you have work?@v
+Mom: If not, wash and dry these beansprouts for me.@
+(Should I help? It'll probably take up the rest of my free time before dinner.)
+->Help:
+    Eddy: Okay.
+    Mom: They're in the bottom drawer of the fridge.
+    Eddy: And the spinny drying thing is under the sink, right?
+    Mom: Yeah.
+    [[d1_help_sprouts]]
+->Not now:
+    Eddy: Sorry, got some stuff to do.
+    Eddy: I'll help clean up after, though!
+    Mom: You have to do that anyway.
+    Eddy: ...True.
+===
+title: d1_help_sprouts
+---
+<<cross TransitionCanvas 1.5>>
+<<wait 1.5>>
+<<showplayer Player false>>
+(Should show the player in a different position, unable to move.)
+Eddy: Ugh... now my hands smell all like beansprouts.
+Eddy: Gross.
+<<cross TransitionCanvas 1.5 >>
+<<wait 1.5>>
+<<yarnoff YarnController table>>
+<<if $timeofday != "dinner">>
+    <<settod TimeManager dinner>>
+<<endif>>
+===

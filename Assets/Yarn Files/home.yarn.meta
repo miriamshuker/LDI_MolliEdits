@@ -1,0 +1,56 @@
+fileFormatVersion: 2
+guid: 1a51cdc4e91d84126b3e7fe588f5e5cb
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - home-doorentrance-0
+  - home-doorentrance-1
+  - home-doorentrance-2
+  - home-doorentrance-3
+  - home-dooreddy-4
+  - home-dooreddy-5
+  - home-dooreddy-6
+  - home-dooreddy-7
+  - home-dooreddy-8
+  - home-dooreddy-9
+  - home-dooreddy-10
+  - home-dooreddy-11
+  - home-dooreddy-12
+  - home-dooreddy-13
+  - home-dooreddy-14
+  - home-doorellen-15
+  - home-doorellen-16
+  - home-doorellen-17
+  - home-doorellen-18
+  - home-doorellen-19
+  - home-doorellen-20
+  - home-doorellen-21
+  - home-doorellen-22
+  - home-doorellen-23
+  - home-doorellen-24
+  - home-doorellen-25
+  - home-doorellen-26
+  - home-doorbathroom-27
+  - home-doorparents-28
+  - home-doorparents-29
+  - home-doorparents-30
+  - home-doorparents-31
+  - home-doorparents-32
+  - home-doorparents-33
+  - home-doorparents-34
+  - home-doorparents-35
+  - home-doorparents-36
+  - home-doorparents-37
+  - home-doorparents-38
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

@@ -1,0 +1,101 @@
+fileFormatVersion: 2
+guid: 5d9db2294101a2044b951efa86c5bf28
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - d0_dinner-d0_dinner-0
+  - d0_dinner-d0_dinner-1
+  - d0_dinner-d0_dinner-2
+  - d0_dinner-d0_dinner-3
+  - d0_dinner-d0_dinner-4
+  - d0_dinner-d0_dinner-5
+  - d0_dinner-d0_dinner-6
+  - d0_dinner-d0_dinner-7
+  - d0_dinner-d0_dinner-8
+  - d0_dinner-d0_dinner-9
+  - d0_dinner-d0_dinner-10
+  - d0_dinner-d0_dinner-11
+  - d0_dinner-d0_dinner-12
+  - d0_dinner-d0_dinner-13
+  - d0_dinner-d0_dinner-14
+  - d0_dinner-d0_dinner-15
+  - d0_dinner-d0_dinner-16
+  - d0_dinner-d0_dinner-17
+  - d0_dinner-d0_dinner-18
+  - d0_dinner-d0_dinner-19
+  - d0_dinner-d0_dinner-20
+  - d0_dinner-d0_dinner-21
+  - d0_dinner-d0_dinner-22
+  - d0_dinner-d0_dinner-23
+  - d0_dinner-d0_dinner-24
+  - d0_dinner-d0_dinner-25
+  - d0_dinner-d0_dinner-26
+  - d0_dinner-d0_dinner-27
+  - d0_dinner-d0_dinner-28
+  - d0_dinner-d0_dinner-29
+  - d0_dinner-d0_dinner-30
+  - d0_dinner-d0_dinner-31
+  - d0_dinner-d0_dinner-32
+  - d0_dinner-d0_dinner-33
+  - d0_dinner-d0_dinner-34
+  - d0_dinner-d0_dinner-35
+  - d0_dinner-d0_dinner-36
+  - d0_dinner-d0_dinner-37
+  - d0_dinner-d0_dinner-38
+  - d0_dinner-d0_dinner-39
+  - d0_dinner-d0_dinner-40
+  - d0_dinner-d0_dinner-41
+  - d0_dinner-d0_dinner-42
+  - d0_dinner-d0_dinner-43
+  - d0_dinner-d0_dinner-44
+  - d0_dinner-d0_dinner-45
+  - d0_dinner-d0_dinner-46
+  - d0_dinner-d0_dinner-47
+  - d0_dinner-d0_late-48
+  - d0_dinner-d0_late-49
+  - d0_dinner-d0_help-50
+  - d0_dinner-d0_help-51
+  - d0_dinner-d0_help-52
+  - d0_dinner-d0_help-53
+  - d0_dinner-d0_help-54
+  - d0_dinner-d0_help-55
+  - d0_dinner-bowl-56
+  - d0_dinner-bowl-57
+  - d0_dinner-bowl-58
+  - d0_dinner-bowl-59
+  - d0_dinner-bowl-60
+  - d0_dinner-d0_ellenchair-61
+  - d0_dinner-d0_ellenchair-62
+  - d0_dinner-d0_ellenchair-63
+  - d0_dinner-d0_ellenchair-64
+  - d0_dinner-d0_ellenchair-65
+  - d0_dinner-d0_ellenchair-66
+  - d0_dinner-d0_ellenchair-67
+  - d0_dinner-d0_eddychair-68
+  - d0_dinner-d0_eddychair-69
+  - d0_dinner-d0_eddychair-70
+  - d0_dinner-d0_eddychair-71
+  - d0_dinner-d0_eddychair-72
+  - d0_dinner-d0_eddychair-73
+  - d0_dinner-d0_dadchair-74
+  - d0_dinner-d0_dadchair-75
+  - d0_dinner-d0_dadchair-76
+  - d0_dinner-d0_dadchair-77
+  - d0_dinner-d0_momchair-78
+  - d0_dinner-d0_momchair-79
+  - d0_dinner-d0_momchair-80
+  - d0_dinner-d0_momchair-81
+  - d0_dinner-d0_momchair-82
+  - d0_dinner-morebowls-83
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

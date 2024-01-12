@@ -1,0 +1,35 @@
+fileFormatVersion: 2
+guid: 18594d74658d455408bbbbe64160bd30
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d1_dinner-d1_dinner-0
+  - d1_dinner-d1_help-1
+  - d1_dinner-d1_help-2
+  - d1_dinner-d1_help-3
+  - d1_dinner-d1_help-4
+  - d1_dinner-d1_help-5
+  - d1_dinner-d1_help-6
+  - d1_dinner-d1_help-7
+  - d1_dinner-d1_help-8
+  - d1_dinner-d1_help-9
+  - d1_dinner-d1_help-10
+  - d1_dinner-d1_help-11
+  - d1_dinner-d1_help-12
+  - d1_dinner-d1_help-13
+  - d1_dinner-d1_help_sprouts-14
+  - d1_dinner-d1_help_sprouts-15
+  - d1_dinner-d1_help_sprouts-16
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 18594d74658d455408bbbbe64160bd30,
+    type: 3}
+  localizations: []

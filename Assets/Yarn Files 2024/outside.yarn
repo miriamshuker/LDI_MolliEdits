@@ -1,0 +1,43 @@
+title: outside
+---
+<< if $day is 0>>
+    Should I go out today? The heist date is on the 4th, so I should try to get everything done sooner than later.
+    -> Go out
+        <to TransitionCanvas HomeOutside>>
+    -> Stay home
+        Maybe I should finish chores and schoolwork first.
+<< endif >>
+===
+title: leave
+---
+Where should I go from here?
+->Chinatown
+    <<if $condomsdone is false>>
+        Yeah, that'd be a good idea. Safety first, after all!
+        <<to TransitionCanvas ChinatownOutside>>
+    <<else>>
+        I already got everything I need from Chinatown.
+        Am I sure I want to go back?
+        ->Yes
+            <<to TransitionCanvas ChinatownOutside>>
+        ->No
+            <<stop>>
+    <<endif>>
+->June's house
+    The earlier I check on her house, the sooner I can plan. Let's go!
+    <<to TransitionCanvas JuneOutside>>
+->Stay here
+===
+title: gotcondoms
+---
+<<if $condomsdone is true && $vgotcondoms is false>>
+    Eddy: Whew. I actually got them.
+    Eddy: ACTUAL CONDOMS. In the flesh.
+    Eddy: Or shall I say, in the latex.
+    <<showsuccess UICanvas 5>>
+    Eddy: I've finally secured "the payload".
+    Eddy: Now all that's left is to sneak it back upstairs!
+    Eddy: ...Should probably test one before I meet up with June, to save myself the embarassment.
+    <<set $vgotcondoms to true>>
+<<endif>>
+===

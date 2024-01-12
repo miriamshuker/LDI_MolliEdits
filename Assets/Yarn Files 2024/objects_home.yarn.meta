@@ -1,0 +1,99 @@
+fileFormatVersion: 2
+guid: 786de39a7aa7ac445b471c4efddc1bd1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - objects_home-door_entrance-0
+  - objects_home-door_entrance-1
+  - objects_home-door_entrance-2
+  - objects_home-door_entrance-3
+  - objects_home-door_eddy-4
+  - objects_home-door_eddy-5
+  - objects_home-door_eddy-6
+  - objects_home-door_eddy-7
+  - objects_home-door_eddy-8
+  - objects_home-door_eddy-9
+  - objects_home-door_eddy-10
+  - objects_home-door_eddy-11
+  - objects_home-door_eddy-12
+  - objects_home-door_eddy-13
+  - objects_home-door_eddy-14
+  - objects_home-door_ellen-15
+  - objects_home-door_ellen-16
+  - objects_home-door_ellen_d0-17
+  - objects_home-door_ellen_d0-18
+  - objects_home-door_ellen_d0-19
+  - objects_home-door_ellen_d0-20
+  - objects_home-door_ellen_d0-21
+  - objects_home-door_ellen_d1-22
+  - objects_home-door_ellen_d1-23
+  - objects_home-door_ellen_d1-24
+  - objects_home-door_ellen_d1-25
+  - objects_home-door_ellen_d1-26
+  - objects_home-door_ellen_d1-27
+  - objects_home-door_bathroom-28
+  - objects_home-door_bathroom-29
+  - objects_home-door_bathroom-30
+  - objects_home-door_bathroom-31
+  - objects_home-door_bathroom-32
+  - objects_home-door_bathroom-33
+  - objects_home-door_parents-34
+  - objects_home-door_parents-35
+  - objects_home-door_parents-36
+  - objects_home-door_parents-37
+  - objects_home-door_parents-38
+  - objects_home-door_parents-39
+  - objects_home-door_parents-40
+  - objects_home-door_parents-41
+  - objects_home-door_parents-42
+  - objects_home-door_parents-43
+  - objects_home-door_parents-44
+  - objects_home-vase-45
+  - objects_home-vase-46
+  - objects_home-painting-47
+  - objects_home-painting-48
+  - objects_home-painting-49
+  - objects_home-dishwasher-50
+  - objects_home-dishwasher-51
+  - objects_home-stove-52
+  - objects_home-stove-53
+  - objects_home-ricecooker-54
+  - objects_home-ricecooker-55
+  - objects_home-ricecooker_make-56
+  - objects_home-ricecooker_make-57
+  - objects_home-ricecooker_make-58
+  - objects_home-ricecooker_make-59
+  - objects_home-ricecooker_make-60
+  - objects_home-ricecooker_make-61
+  - objects_home-ricecooker_make-62
+  - objects_home-ricecooker_make-63
+  - objects_home-ricecooker_make-64
+  - objects_home-ricecooker_make-65
+  - objects_home-ricecooker_make-66
+  - objects_home-ricecooker_made-67
+  - objects_home-ricecooker_made-68
+  - objects_home-stairs-69
+  - objects_home-fridge-70
+  - objects_home-fridge-71
+  - objects_home-fridge-72
+  - objects_home-fridge_d0-73
+  - objects_home-fridge_d0-74
+  - objects_home-fridge_d0-75
+  - objects_home-fridge_d0-76
+  - objects_home-fridge_d0-77
+  - objects_home-fridge_d0-78
+  - objects_home-fridge_d0-79
+  - objects_home-fridge_d0-80
+  - objects_home-fridge_d0-81
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

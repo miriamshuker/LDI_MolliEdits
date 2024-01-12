@@ -1,0 +1,63 @@
+title: d1_wakeup
+---
+<<clockset UICanvas 11:15>>
+<<clockend UICanvas 18:00>>
+<<clockscale UICanvas 5>>
+Eddy: Alright! It's the dawn of a new day, rife with opportunity.
+Eddy: Actually, it's the afternoon.
+Eddy: I woke up late.
+Eddy: Still!
+Eddy: The best thing to do in the "morning" is to collect your thoughts, in a quiet, peaceful place.
+Eddy: So let's head to the bathroom.
+===
+title: d1_prep
+---
+<<fromblack 1>>
+<<clockset UICanvas 11:50>>
+Eddy: Mouth fresh. Hair fixed. Mostly clean-shaven.^upper
+Eddy: Looks like I'm ready to go.
+<<clockset UICanvas 11:51>>
+Eddy: Just gotta keep in mind my main objectives....
+Eddy: First, I need to evade Mom's wrath -- 
+<<clockset UICanvas 11:52>>
+Eddy: That means finishing my homework and chores in time, and coming home before curfew at 6 o'clock.
+Eddy: Second, I need to prep for June and I's --
+<<clockset UICanvas 11:53>>
+Eddy: Uh, "June and mine"...?
+Eddy: <i>Our</i> "heist" --
+<<clockset UICanvas 11:54>>
+Eddy: That means scouting a path through security, getting er, protection, and most importantly...
+Eddy: ...making sure she's happy!
+<<clockset UICanvas 11:55>>
+Eddy: Anyway.
+<<clockset UICanvas 11:56>>
+Eddy: I bet as soon as I get busy, time will feel like it's flying by.
+<<clockset UICanvas 11:57>>
+Eddy: At the rate of 1 second per minute, even.
+<<shownote Phone To-do>>
+<<clockset UICanvas 11:58>>
+Eddy: I'll write it all down to keep track.
+<<clockset UICanvas 11:59>>
+Eddy: And with that... the mission begins!
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<settod TimeManager freetime>>
+//Some kind of mission text could appear here.
+===
+title: d1_afternoon_slow
+---
+Eddy: Oh! It's almost noon.
+Eddy: I need to brush my teeth and get ready!
+<<clockscale TimeCanvas 0>>
+<<to TransitionCanvas Bathroom>>
+===
+title: d1_curfew
+---
+<<if $currentscene != "HomeUpper" && $currentscene != "HomeLower" && $currentscene != "EddyRoom" && $currentscene != "Bathroom">>
+    Eddy: AH!! I'm not at home!
+<<else>>
+    Eddy: AHH!! I AM at home!
+<<endif>>
+<<to TransitionCanvas HomeLower>>
+<<settod TimeManager evening>>
+===

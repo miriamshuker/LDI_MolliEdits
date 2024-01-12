@@ -1,0 +1,86 @@
+title: quizstart
+---
+<<if $vquizstart is false>>
+    I'm actually looking forward to this homework, honestly.
+    I have a lot of questions about sex ed, and I hope at least some of them are answered.
+    I know our state curriculum isn't super progressive, but there should be a nugget of wisdom in there somewhere.
+    Let's kill this quiz!
+    With love, that is.
+    <<set $vquizstart to true>>
+    <<set $quizprogress to 0>>
+    [[quizstart]]
+<<elseif $quizprogress is 0>>
+    <<set $quizprogress to 1>>
+    Let's see here....
+    "1. What causes pregnancy? What effects does pregnancy have on the mother?"
+    A little vague, but we learned this in class. It's asking about sperm-and-egg contact.
+    I've heard to horror stories about teen pregnancy....
+    June told me she signed this abstinence pledge thing in middle school before she even knew what it meant.
+    Instead of letting her learn to make informed choices, they were trying to decide her options for her.
+    I know she had a rough time trying to... come to terms with her feelings about it.
+    And I'm glad she could talk about it with me.
+    Anyway....
+    ->Next question
+        [[quizstart]]
+    ->Take a break
+        <<stop>>
+<<elseif $quizprogress is 1>>
+    <<set $quizprogress to 2>>
+    "2. What is the key misunderstanding about 'safe sex'?"
+    Ah, I know this one.
+    I mean, it's true that abstinence is really <i>is</i> the only way to be 100% sure nobody's pregnant, but like....
+    They're trying to say that 'safe sex' doesn't really exist, because any sex is unsafe.
+    Which is technically true.
+    But the thing is, humans don't really work that way.
+    Most people have some urges.
+    My opinion is, as long as you're careful, respectful, and informed, you should be free to experiment!
+    ...As long as you keep the peep wrapped up.
+    For a pretty natural thing to have and want, sex isn't often really on the table for discussion, huh?
+    ...On the table....
+    Maybe I can bring that up with June.
+    ->Next question
+        [[quizstart]]
+    ->Take a break
+        <<stop>>
+<<elseif $quizprogress is 2>>
+    <<set $quizprogress to 3>>
+    This is the last question.
+    "3. What is consent? How do you give and identify consent? When should you ask for consent?"
+    This is a good one.
+    It's not too complicated, but it's really important to understand!
+    Not just for sex, but <i>especially</i> for sex, both partners need to be consenting.
+    If I'm not comfortable, I can talk to June, and she'll stop.
+    And same for her.
+    If she doesn't like how something's going, it's okay to say so. End of story.
+    I think... sex is about understanding each other, after all. It's like a conversation.
+    And I do have a few things I'd like to understand!
+    Oh wait... I'm not that good conversation....
+    ...We can have a conversation about that conversation!
+    ->Do a final review
+        [[quizstart]]
+    ->Take a break
+        <<stop>>
+<<else>>
+    A few bones to pick here and there, but there's some meat to this.
+    I think that the abstinence-only paradigm can lead some people to internalize a sense of guilt for their sexuality.
+    That is, it makes you feel bad for things that should be normal.
+    After all, media rarely about sex as fun and loving.
+    And I think it can lead to some weird ideas about it in general.
+    Like, it can be hard to recognize when you're being taken advantage of...
+    ...and that being taken advantage of isn't your fault.
+    Especially when you don't know how to deal with your own feelings.
+    Looking around at media, having sex makes you cool, but also trashy.
+    That's pretty silly, isn't it?
+    Now that I think about it, sex is particularly taboo for Asians.
+    I mean, we don't talk about anything intimate much anyway.
+    Feeling like you can't talk about something so key to your identity....
+    That's gotta be stressful for anybody.
+    ...
+    Wow. Maybe I should've saved all this for the essay instead.
+    I filled stuff in to the margins.
+    ...These were just supposed to be multiple-choice!
+    <<set $quizdone to true>>
+    <<set $tasks to $tasks + 1>>
+    <<showsuccess UICanvas 2>>
+<<endif>>
+===

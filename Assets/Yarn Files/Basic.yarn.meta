@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: b4c9fee7e08a64d3894543faaf220eaf
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Ellen-ellen-0
+  - Ellen-ellen-1
+  - Ellen-ellen-2
+  - Ellen-ellen-3
+  - Ellen-ellen-4
+  - Ellen-ellen-5
+  - Ellen-ellen-6
+  - Ellen-ellen-7
+  - Ellen-ellen-8
+  - Ellen-ellen-9
+  - Ellen-ellen-10
+  - Ellen-ellen-11
+  - Ellen-ellen-12
+  - Ellen-ellen-13
+  - Ellen-ellen-14
+  - Ellen-ellen-15
+  - Ellen-ellen-16
+  - Ellen-ellen-17
+  - Ellen-ellen-18
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

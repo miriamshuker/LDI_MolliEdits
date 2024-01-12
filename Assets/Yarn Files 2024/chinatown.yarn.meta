@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 001ceb4994ead324582374a1abf6c084
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: 
+  stringIDs:
+  - chinatown-chinatown-0
+  - chinatown-chinatown-1
+  - chinatown-blackguy-2
+  - chinatown-blackguy-3
+  - chinatown-blackguy-4
+  - chinatown-blackguy-5
+  - chinatown-blackguy-6
+  - chinatown-blackguy-7
+  - chinatown-blackguy-8
+  - chinatown-blackguy-9
+  - chinatown-blackguy-10
+  - chinatown-blackguy-11
+  - chinatown-asianguy-12
+  - chinatown-asianguy-13
+  - chinatown-asianguy-14
+  - chinatown-asianguy-15
+  - chinatown-twogirls-16
+  - chinatown-twogirls-17
+  - chinatown-twogirls-18
+  - chinatown-twogirls-19
+  - chinatown-twogirls-20
+  - chinatown-twogirls-21
+  - chinatown-latinoguy-22
+  - chinatown-latinoguy-23
+  - chinatown-latinoguy-24
+  - chinatown-latinoguy-25
+  - chinatown-latinoguy-26
+  - chinatown-latinoguy-27
+  - chinatown-latinoguy-28
+  - chinatown-blackgirl-29
+  - chinatown-blackgirl-30
+  - chinatown-blackgirl-31
+  - chinatown-blackgirl-32
+  - chinatown-blackgirl-33
+  - chinatown-blackgirl-34
+  - chinatown-blackgirl-35
+  - chinatown-blackgirl-36
+  - chinatown-blackgirl-37
+  - chinatown-blackgirl-38
+  - chinatown-blackgirl-39
+  - chinatown-blackgirl-40
+  - chinatown-blackgirl-41
+  - chinatown-blackgirl-42
+  - chinatown-blackgirl-43
+  - chinatown-blackgirl-44
+  - chinatown-blackgirl-45
+  - chinatown-kantohouse-46
+  - chinatown-kantohouse-47
+  - chinatown-kantohouse-48
+  - chinatown-nails-49
+  - chinatown-nails-50
+  - chinatown-nails-51
+  - chinatown-nails-52
+  - chinatown-nails-53
+  - chinatown-tea-54
+  - chinatown-tea-55
+  - chinatown-tea-56
+  - chinatown-devilfruit-57
+  - chinatown-devilfruit-58
+  - chinatown-sticker-59
+  - chinatown-sticker-60
+  - chinatown-sticker-61
+  - chinatown-supermarket-62
+  - chinatown-supermarket-63
+  - chinatown-supermarket-64
+  - chinatown-supermarket-65
+  - chinatown-supermarket-66
+  - chinatown-supermarket-67
+  - chinatown-supermarket-68
+  - chinatown-supermarket-69
+  - chinatown-supermarket-70
+  - chinatown-supermarket-71
+  - chinatown-supermarket-72
+  - chinatown-supermarket-73
+  - chinatown-supermarket-74
+  - chinatown-supermarket-75
+  - chinatown-supermarket-76
+  - chinatown-supermarket-77
+  - chinatown-supermarket-78
+  - chinatown-supermarket-79
+  - chinatown-supermarket-80
+  - chinatown-supermarket-81
+  - chinatown-supermarket-82
+  - chinatown-supermarket-83
+  - chinatown-supermarket-84
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

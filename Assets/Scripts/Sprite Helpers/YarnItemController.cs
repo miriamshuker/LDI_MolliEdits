@@ -54,16 +54,57 @@ public class YarnItemController : MonoBehaviour
         }
     }
     [YarnCommand("yarnanim")]
-    public void Animate(string state)
+    public void Animate(string[] param)
     {
+        string id = param[0];
+        string state = param[1];
         Debug.Log($"animate? {state}");
         foreach (YarnItem y in items)
         {
-            if (y != null && y.id == state)
+            if (y != null && y.id == id)
             {
                 y.Show(true);
                 y.Animate(state);
                 Debug.Log("animating");
+            }
+        }
+    }
+    [YarnCommand("yarnsprite")]
+    public void SetSprite(string[] param)
+    {
+        string itemName = param[0];
+        string spriteName = param[1];
+        foreach (YarnItem y in items)
+        {
+            if (y != null && y.id == itemName)
+            {
+                y.ShowSprite(spriteName);
+                Debug.Log("spriting");
+            }
+        }
+    }
+    [YarnCommand("yarnenable")]
+    public void EnableSprite(string[] param)
+    {
+        string itemName = param[0];
+        string setting = param[1];
+        foreach (YarnItem y in items)
+        {
+            if (y != null && y.id == itemName)
+            {
+                y.EnableSprite(setting == "true");
+                Debug.Log("spriting");
+            }
+        }
+    }
+    [YarnCommand("yarnlight")]
+    public void SetLightSwitch(bool on)
+    {
+        foreach (YarnItem y in items)
+        {
+            if (y != null && y is YarnLight light)
+            {
+                light.SetLights(on);
             }
         }
     }

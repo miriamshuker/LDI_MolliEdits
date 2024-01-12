@@ -76,6 +76,22 @@ public class FaceManager : MonoBehaviour
                 return fillerSprite;
         }
     }
+    public bool IsNamedCharacter(string name)
+    {
+        string lower = name.ToLower();
+        switch (lower)
+        {
+            case ("eddy"):
+            case (""):
+            case ("june"):
+            case ("ellen"):
+            case ("mom"):
+            case ("dad"):
+                return true;
+            default:
+                return false;
+        }
+    }
     public Sprite GetFaceFromName(string exp, string charName = "")
     {
         if (exp.Length < 1)

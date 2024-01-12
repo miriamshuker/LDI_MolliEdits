@@ -51,6 +51,7 @@ public class NoteManager : AppManager
         expanded = true;
 
         otherNotes.SetActive(false);
+        expansion.Show(n);
         expansion.gameObject.SetActive(true);
     }
     public void UnexpandNote()

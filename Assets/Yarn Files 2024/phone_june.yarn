@@ -1,0 +1,104 @@
+title: phone_june_d0
+---
+<<showplayer Player false>>
+<<textcontact DialogueCanvas June>>
+<<usealt Player textonbed>>
+June: Hey, you done with dinner?
+Just finished the rest of our bun bo hue
+June: Damn, that sounds good
+June: You got any extra?
+Nope, but I can sneak you some shrimp chips
+Or durian wafers
+June: Durian-flavored stuff stinks
+Isn't that the point? XD
+June: No, I mean it's far inferior to the real thing lol
+June: Oh, that reminds me!
+Hm?
+June: My grandma's coming over this Sunday, so we're going for dim sum:A type of Chinese cuisine served in the form of many small plates, including dunplings, buns, fried squid, and pig's feet.
+June: The thing is though
+June: I have an essay due on Monday, so I can't go
+Aw man
+Maybe I should go in your place? ;)
+June: Nahh, if my parents knew you were my bf and not just a friend you'd get yeeted out of there
+My parents know about you though
+June: I know. I wanna tell them too, but I'm scared about how they'd react
+June: And my entire family would be bombarding me with gossip ugh
+June: But nice try
+Worth a shot
+June: Anyway
+June: Just finished my essay early
+Good job!! That's early for you
+June: Hey, shush
+June: The thing is, my parents still think I have work to do
+June: WHICH MEANS
+You're gonna be home alone?
+June: Yep
+Are you sure you feel safe? I mean, your backdoor just got busted in last month
+June: Ngl, still pretty shook about it. 
+June: Like, we weren't in the house when it happened but thinking about it still gives me the creeps
+June: We're getting new security installed tomorrow, at least, so I do feel safer
+That's good! 
+June: Actually, a bit bad in one sense
+that being...?
+June: Like I said, I'll be home alone
+June: WHICH MEANS
+We can hang out?
+June: Exactly ;3
+June: You should come over
+Did you want to, you know...?
+June: YES, it's been like 2 months since we last had privacy
+June: 2 months of suffering
+Jeez, I didn't think I did *that* bad
+Joking, I lasted like 10 seconds...
+June: That's pretty normal for the first time I think
+June: I still want to try again though
+Yeah, I want to make it up to you
+Did some research on using my other parts and appendages
+June: Ooh that sounds nice
+June: I think...?
+Gonna put my feet to good use XD
+June: .....
+Okay, but being serious. Let me know what you like and don't like
+And especially if it hurts or anything
+June: Sure!!!
+June: Same for you
+That is, assuming I somehow get in
+Oh, to your house, that is 
+June: Yeah, you're probably going to need to sneak in...
+Past your security...
+June: And my parents...
+And mine
+June: At like 8 PM on Sunday
+Sounds like a plan
+June: Wait, really!?
+Yeah, I'll figure something out
+Mission accepted
+<<expo DialogueCanvas mainquest>>
+<<wait .1>>
+June: WAHOOOOO
+June: that was kinda cringe
+June: But I'm really excited. I'll help out however I can
+So it's a plan, then!
+June: Let's do it?
+let's do it!
+<<wait .1>>
+<<putawayphone DialogueCanvas >>
+<<wait .1>>
+<<animatet TextingJune DropPhone>>
+<<wait .75>>
+<<animatet TextingJune Flail>>
+<<setdialogue DialogueCanvas talk>>
+<<camerashake Cameras 1.25 0.1 200>>
+Yes!!!
+<<fadeandwait 2>>
+<<wait 1>>
+<<settime TimeManager 1 morning>>
+<<to TransitionCanvas EddyRoom>>
+===
+title: phone_june_prep
+---
+<<textcontact DialogueCanvas June>>
+June: I'm keeping an eye on any changes!
+June: I'll keep you posted 💪
+Eddy: Thanks T_T
+===

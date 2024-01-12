@@ -1,0 +1,134 @@
+title: eddy_shelf
+---
+//put these things in default variables, or have them be set when the day is set
+//<<set $essaydone to false>>
+//<<set $quizdone to false>>
+//<<set $vessay to false>>
+//<<set $trashcollected to 0>>
+Ah, my shelf. Gotta say, I'm pretty proud of this.&happy
+Want to check something out?&normal
+->Top shelf
+    <<setboxlocation DialogueCanvas center>>
+    Which items?
+    ->Awards
+        On the left, a perfect attendance certificate from middle school.
+        On the right, a 4th place trophy from my elementary school chess club.&away
+        ...
+    ->Photo
+        An old photo our parents took of me and Ellen.
+        People say we look around the same age, but I'm still in high school and she's already a quarter to 100!&psh
+->Middle shelves
+    Which items?
+    ->Figurines
+        A couple anime figures I've collected over the years.
+        They're really expensive, so I'm happy to have gotten them as gifts.
+        Their source material is pretty mainstream, so it shouldn't be too hard to recognize them.
+    ->Books
+        A physics textbook, Six of Crows, some Michio Kaku books from back in my science-phase, and the first 10 volumes of Hunter x Hunter.
+        The rest of our collection is in Ellen's room.
+->Bottom shelves
+    Which items?
+    ->Bear
+        A sock plushie June made me for Valentine's Day.
+        I think it's supposed to be a raccoon...&uh
+        ...But it's really cute!&happy
+    ->Box
+        A box of KINEX pieces. I think an old sock ended up in there somehow.
+        If you're wondering where I keep my clothes, they're in the closet on the opposite wall.
+        ...Wait, who am I talking to?&shock
+->(back)
+    Never mind.
+===
+title: eddy_desk_d0
+---
+<<if $vdesk is false>>
+    My desk. I have some homework to do.
+    ...But I'll get to it tomorrow.&psh
+    <<shownote Phone To-do>>
+    I'll write it down in case I forget.
+    <<set $vdesk to true>>
+<<else>>
+    I'll do my homework tomorrow.
+    I can check the Notes on my phone to make sure.
+<<endif>>
+===
+title: eddy_desk_d1
+---
+I should find somewhere to collect my thoughts first.
+Maybe somewhere I can freshen up.
+===
+title: eddy_desk
+---
+<<if $day is 0>>
+    [[eddy_desk_d0]]
+<<elseif $day is 1 && $timeofday is "afternoon">>
+    [[eddy_desk_d1]]
+<<endif>>
+<<if $timeofday is "freetime">>
+    [[eddy_desk_work]]
+<<else>>
+    Now's not the time to do homework.
+    <<if $essaydone is true && $quizdone is true>>
+        I'm already done, anyway!
+    <<endif>>
+<<endif>>
+===
+title: eddy_desk_work
+---
+<< if $essaydone is false or $quizdone is false>>
+    My desk. I have some homework to do.
+    Should I do it now?
+    ->Work on quiz <<if $quizdone is false >>
+        Okay, let's do the quiz real quick.
+        (Quiz placeholder!)
+        //[[quizstart]]
+    ->Work on essay <<if $essaydone is false>>
+        <<if $vessay is false>>
+            <<set $vessay to true>>
+            Let's work on the essay, then.
+            If I recall correctly, it's supposed to be a free-response.
+        <<endif>>
+        <<essayup EssayManager>>
+        <<stop>>
+    ->Later
+        Let's focus on other stuff for now.
+<< else >>
+    Wow! I'm all done with homework already!
+<<endif>>
+===
+title: eddy_bed_d0
+---
+<<if $timeofday is "bedtime">>
+    <<if $vdesk is false>>
+    Before going to bed, I should probably write down my assignments for this weekend.
+    I think I left them on the desk.
+    <<else>>
+        Should I go to sleep?
+        ->Yes
+            <<blackandback TransitionCanvas>>
+            <<settime TimeManager 1 morning>>
+        ->No
+    <<endif>>
+<<else>>
+    [[eddy_bed_main]]
+<<endif>>
+===
+title: eddy_bed
+---
+<<if $day is 0>>
+    [[eddy_bed_d0]]
+<<endif>>
+[[eddy_bed_main]]
+===
+title: eddy_bed_main
+---
+<< if $veddybed is false >> 
+    My trusty bed.
+    Actually, I have trouble sleeping in it, but it's comfortable nonetheless.
+    << set $veddybed to true>> 
+<< else >>
+    It's a bunk bed for some reason.
+    We used to store stuffed animals up there!
+    << set $veddybed to false>> 
+<< endif >>
+===

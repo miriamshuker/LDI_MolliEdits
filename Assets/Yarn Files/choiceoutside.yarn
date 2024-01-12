@@ -1,0 +1,18 @@
+title: choiceoutside
+tags: 
+colorID: 0
+position: 753,359
+---
+<< if $day is 0>>
+    Should I go out today? The heist date is on the 4th, so I should take care to get everything done sooner than later.
+    Where should I go?
+    -> Go to the supermarket
+        Yeah, it'd be a good idea to get condoms now. Safe sex is important, after all!
+        << goto UICanvas SupermarketInterior>>
+    -> Go scout June's house
+        The earlier I check on her house, the sooner I can plan. Let's go!
+        << goto UICanvas June'sHouseInterior>> 
+    -> Stay home
+        Maybe I should finish chores and schoolwork first.
+<< endif >>
+===

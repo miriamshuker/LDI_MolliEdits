@@ -1,0 +1,91 @@
+fileFormatVersion: 2
+guid: f807eeca5b22149799c0ce9d87cae197
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Day0-dinnercall-0
+  - Day0-dinnercallsequel-1
+  - Day0-dooreddy-2
+  - Day0-dooreddy-3
+  - Day0-doorellen-4
+  - Day0-doorellen-5
+  - Day0-doorbathroom-6
+  - Day0-doorbathroom-7
+  - Day0-doorparents-8
+  - Day0-doorparents-9
+  - Day0-dadzero-10
+  - Day0-dadzero-11
+  - Day0-dadzero-12
+  - Day0-momzero-13
+  - Day0-momzero-14
+  - Day0-momzero-15
+  - Day0-dinnerzero-16
+  - Day0-dinnerzero-17
+  - Day0-dinnerzero-18
+  - Day0-dinnerzero-19
+  - Day0-dinnerzero-20
+  - Day0-dinnerzero-21
+  - Day0-dinnerzero-22
+  - Day0-dinnerzero-23
+  - Day0-dinnerzero-24
+  - Day0-dinnerzero-25
+  - Day0-dinnerzero-26
+  - Day0-dinnerzero-27
+  - Day0-dinnerzero-28
+  - Day0-dinnerzero-29
+  - Day0-dinnerzero-30
+  - Day0-dinnerzero-31
+  - Day0-dinnerzero-32
+  - Day0-dinnerzero-33
+  - Day0-dinnerzero-34
+  - Day0-dinnerzero-35
+  - Day0-dinnerzero-36
+  - Day0-dinnerzero-37
+  - Day0-dinnerzero-38
+  - Day0-dinnerzero-39
+  - Day0-dinnerzero-40
+  - Day0-dinnerzero-41
+  - Day0-dinnerzero-42
+  - Day0-dinnerzero-43
+  - Day0-dinnerzero-44
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: "Error on line 24 at position 41:\nmismatched input '>>'
+    expecting '('\n<< if $day is 0 and $timeofday is night >>\n                                        ^^\n\nTokens:\n1:0
+    ID \"title\"\n1:5 HEADER_DELIMITER \": \"\n1:7 REST_OF_LINE \"dinnercall\"\n2:0
+    HEADER_NEWLINE \"\n\"\n2:0 ID \"tags\"\n2:4 HEADER_DELIMITER \": \"\n3:0 HEADER_NEWLINE
+    \"\n\"\n3:0 ID \"colorID\"\n3:7 HEADER_DELIMITER \": \"\n3:9 REST_OF_LINE \"0\"\n4:0
+    HEADER_NEWLINE \"\n\"\n4:0 ID \"position\"\n4:8 HEADER_DELIMITER \": \"\n4:10
+    REST_OF_LINE \"792,321\"\n5:0 HEADER_NEWLINE \"\n\"\n5:0 '---' \"---\"\n6:0 COMMAND_START
+    \"<<\"\n6:3 COMMAND_TEXT \"toblack UICanvas \"\n6:20 COMMAND_TEXT_END \">>\"\n7:0
+    TEXT \"Dad: Eddy! Dinner!\"\n8:0 TEXT_NEWLINE \"\n\"\n8:0 COMMAND_START \"<<\"\n8:3
+    COMMAND_TEXT \"showcontrols UICanvas [Use WASD or the arrow keys to move.]\\n[Press
+    X to interact.] \"\n8:87 COMMAND_TEXT_END \">>\"\n9:0 '===' \"===\"\n10:0 ID \"title\"\n10:5
+    HEADER_DELIMITER \": \"\n10:7 REST_OF_LINE \"dinnercallsequel\"\n11:0 HEADER_NEWLINE
+    \"\n\"\n11:0 ID \"tags\"\n11:4 HEADER_DELIMITER \": \"\n12:0 HEADER_NEWLINE \"\n\"\n12:0
+    ID \"colorID\"\n12:7 HEADER_DELIMITER \": \"\n12:9 REST_OF_LINE \"0\"\n13:0 HEADER_NEWLINE
+    \"\n\"\n13:0 ID \"position\"\n13:8 HEADER_DELIMITER \": \"\n13:10 REST_OF_LINE
+    \"1018,308\"\n14:0 HEADER_NEWLINE \"\n\"\n14:0 '---' \"---\"\n15:0 COMMAND_START
+    \"<<\"\n15:3 COMMAND_TEXT \"shake UICanvas 0.1 0.5 \"\n15:26 COMMAND_TEXT_END
+    \">>\"\n16:0 TEXT \"Mom: Eddy!!! What are you doing up there!? Eat!\"\n17:0 TEXT_NEWLINE
+    \"\n\"\n17:0 COMMAND_START \"<<\"\n17:3 COMMAND_SET \"set \"\n17:7 VAR_ID \"$dinnerloiter\"\n17:21
+    OPERATOR_ASSIGNMENT \"to\"\n17:24 'true' \"true\"\n17:29 EXPRESSION_COMMAND_END
+    \">>\"\n18:0 '===' \"===\"\n19:0 ID \"title\"\n19:5 HEADER_DELIMITER \": \"\n19:7
+    REST_OF_LINE \"dooreddy\"\n20:0 HEADER_NEWLINE \"\n\"\n20:0 ID \"tags\"\n20:4
+    HEADER_DELIMITER \": \"\n21:0 HEADER_NEWLINE \"\n\"\n21:0 ID \"colorID\"\n21:7
+    HEADER_DELIMITER \": \"\n21:9 REST_OF_LINE \"0\"\n22:0 HEADER_NEWLINE \"\n\"\n22:0
+    ID \"position\"\n22:8 HEADER_DELIMITER \": \"\n22:10 REST_OF_LINE \"212,57\"\n23:0
+    HEADER_NEWLINE \"\n\"\n23:0 '---' \"---\"\n24:0 COMMAND_START \"<<\"\n24:3 COMMAND_IF
+    \"if \"\n24:6 VAR_ID \"$day\"\n24:11 OPERATOR_LOGICAL_EQUALS \"is\"\n24:14 NUMBER
+    \"0\"\n24:16 OPERATOR_LOGICAL_AND \"and\"\n24:20 VAR_ID \"$timeofday\"\n24:31
+    OPERATOR_LOGICAL_EQUALS \"is\"\n24:34 FUNC_ID \"night\"\n24:40 EXPRESSION_COMMAND_END
+    \">>\"\n25:4 INDENT \"    \""
+  baseLanguage: {instanceID: 0}
+  localizations: []

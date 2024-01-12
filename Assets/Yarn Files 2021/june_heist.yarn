@@ -1,0 +1,207 @@
+title: hall_box
+---
+Boxes of nail supplies, books, and old toys.
+Might be fun to look through it with June sometime!
+===
+title: hall_ramen
+---
+Ah. Must be the ramen storage room.
+We need one of these.
+<<set $vhall_ramen to true>>
+===
+title: hall_ramen2
+---
+Maybe I'm just hungry, but...
+All of these sound good....
+===
+title: hall_fall
+---
+Oof!
+That was a farther drop than I expected.
+<<if $escapewindow is true>>
+    My leg already hurts from falling out of our window earlier....
+<<endif>>
+...Where is this?
+===
+title: hall_cooler
+---
+A water cooler.
+Cool.
+===
+title: hall_painting
+---
+A painting June's parents got from somewhere.
+It depicts a woman in <i>áo dài</i>, pulling a bamboo hat over her face.
+===
+title: hall_door
+---
+Whoo boy, I'm here. At her door.
+We're really going to.... We're going to do it!
+Okay, okay.
+I got this.
+===
+title: hall_exit
+---
+<<to TransitionCanvas JuneRoom>>
+===
+title: june_shelf
+---
+Eddy: This is a great shelf.
+Ellen: Thanks.
+->Ask about music<<if $asklightsticks is false || $askalbums is false || $askviolin is false || $asksheet is false>>
+    ->Lightsticks<<if $asklightsticks is false>>
+        <<set $asklightsticks to true>>
+    ->Albums<<if $askalbums is false>>
+        <<set $askalbums to true>>
+    ->Violin<<if $askviolin is false>>
+        <<set $askviolin to true>>
+    ->Sheet music<<if $asksheet is false>>
+        <<set $asksheet to true>>
+->Ask about interests<<if $askpurse is false || $askplushies is false || $askposters is false || $askphoto is false>>
+    ->Purse<<if $askpurse is false>>
+        <<set $askpurse to true>>
+    ->Plushies<<if $askplushies is false>>
+        <<set $askplushies to true>>
+    ->Posters<<if $askposters is false>>
+        <<set $askposters to true>>
+    ->Photo<<if $askphoto is false>>
+        <<set $askphoto to true>>
+===
+title: june_enter
+---
+June: Welcome.
+June: To my humble abode.
+Eddy: Oh...!
+Eddy: It's so...
+Eddy: Purple.
+Eddy: But it's cute!
+June: I'm still setting up my shelf.
+June: Believe it or not, this is cleaned up.
+Eddy: Um... that's kind of easy to believe, compared to my room.
+===
+title: june_talk
+---
+June: I... cleaned up too.
+Eddy: Erm....
+Eddy: Same.
+<<yarnoff YarnController june>>
+<<yarnon YarnController june2>>
+<<yarnenable YarnController player false>>
+<<wait 1>>
+June: Thanks for coming.
+June: Sorry for the unreasonable request.
+Eddy: No, I was looking forward it!
+June: Same for me.
+<<yarnoff YarnController june2>>
+<<yarnon YarnController june>>
+<<yarnenable YarnController player true>>
+June: Did you... bring them?
+June: Uh, the condoms?
+<<if $condomsdone is false>>
+    [[june_nope]]
+<<else>>
+    [[june_yes]]
+<<endif>>
+===
+title: june_nope
+---
+Eddy: I.... no.
+June: What?
+Eddy: I really wanted to, but I couldn't bring myself to do it.
+Eddy: My face was heating up from just standing outside, thinking about it.
+June: ...Eddy.
+Eddy: And I had three whole days.... Even after I promised you.
+Eddy: We... don't need to do anything.
+June: Eddy.
+Eddy: Yeah?
+June: I'll tell you straight.
+June: I'm kind of upset with you.
+Eddy: That's... totally fair.
+Eddy: I'm sorry.
+June: I <i>really</i> wanted to....
+June: Aghhh.
+Eddy: Same.
+June: You should have told me!
+June: Then we could've planned something.
+June: ...
+June: Think a plastic glove will work?
+Eddy: ...No.
+Eddy: But I'm flattered you'd try that.
+June: Hm.... really though. Why didn't you say anything?
+Eddy: I don't know.
+Eddy: It's kinda hard for me to... say what's worrying me.
+Eddy: I'd rather just not... think about it.
+Eddy: That way, it's a little less real.
+June: ....,
+June: I won't judge how you deal with your feelings.
+June: I mean, I have a tough time with a lot of things. And I don't always make healthy decisions.
+June: Still. I can't. do anything if you don't tell me.
+Eddy: ...I'll try.
+Eddy: Ugh, I'm sorry. This should've been such a small thing, and now it's a mess.
+June: No....
+June: Small things matter too.
+Eddy: You're right....
+Eddy: You do matter.
+June: I am NOT that short.
+June: I have an easy joke here, but that's beneath me.
+Eddy: Hmm. That's not many things.
+June: You could have been.
+Eddy: I-I... w-whoa, whoa.
+Eddy: ...Yeah.
+June: Oh! I don't want to push you either.
+June: Um, tell me what you're comfortable with, and we'll work our way up.
+June: I just... want to understand you better.
+June: That's why I....
+Eddy: .....
+Eddy: Thanks.
+June: Thank you for coming. I do appreciate it.
+Eddy: ...
+Eddy: Do you still want to watch that new episode?
+June: Oh yeah! There's two, actually.
+Eddy: I want to talk about it with you. And listen!
+June: Me too.
+<<setfade TransitionCanvas 1>>
+<<sortorder TransitionCanvas 1>>
+<<wait 2>>
+June: Oh my -- did he really just...?
+<< camerashake Cameras 1 0.1 50 >>
+June: NOOO!
+Eddy: Is he really gone!?
+<< camerashake Cameras 1 0.5 100 >>
+June: NOOOOOOOOOOOOO!!!
+<<wait  0.3>>
+<<sortorder TransitionCanvas 5>>
+<<settime TimeManager 3 night>>
+<<cross TransitionCanvas 1.5>>
+<<to TransitionCanvas HomeLower>>
+===
+title: june_yes
+---
+Eddy: I did.
+June: Then... how do you want to do this?
+Eddy: C-Carefully, I guess.
+Eddy: I... read a bunch of tutorials online.
+June: Um, not sure how I feel about that.
+June: But I appreciate the effort!
+June: Do you want to try, maybe...?
+Eddy: Oh sure!
+June: I'm not sure either, but we can see what works for us.
+<<setfade TransitionCanvas 1>>
+<<wait 2>>
+Eddy: Let me help you with that....
+<< camerashake Cameras 1 0.1 50 >>
+June: Ouch!
+Eddy: Oh, sorry! I'm not sure how to take off a bra yet.
+June: It's okay, we can keep going.
+June: Maybe I can also....
+Eddy: ...Oh!
+Eddy: How did you think of that?
+June: I just saw your reaction and figured it might work.
+June: It's just like making music, remember?
+June: I'm a great listener.
+Eddy: That's true.
+Eddy: Give me a shot too!
+<<wait  0.1>>
+<<settime TimeManager 3 night>>
+<<to TransitionCanvas HomeLower>>
+===

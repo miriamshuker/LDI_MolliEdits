@@ -1,0 +1,232 @@
+title: d1_wakeup
+---
+<<tor TransitionCanvas EddyRoom>>
+<<showplayer Player true>>
+<<cross TransitionCanvas 2>>
+<<wait 2>>
+<<settime TimeManager 1 morning>>
+<<clockset UICanvas 8:42>>
+<<clockstop UICanvas>>
+<<cameratarget Cameras Player>>
+<<clockscale UICanvas 5>>
+<<unhide Phone>>
+Eddy: Alright! It's the dawn of a new day, rife with opportunity.
+Eddy: Actually, it's the afternoon.
+Eddy: I woke up late.
+Eddy: Still!
+Eddy: The best thing to do in the "morning" is to collect your thoughts, in a quiet, peaceful place.
+Eddy: So let's head to the bathroom.
+<<tor TransitionCanvas Bathroom>>
+===
+title: d1_prep
+---
+<<fromblack 1>>
+<<clockset UICanvas 8:50>>
+Eddy: Mouth fresh. Hair fixed. Mostly clean-shaven.^upper
+Eddy: Looks like I'm ready to go.
+Eddy: Just gotta keep in mind my main objectives....
+Eddy: First, I need to evade Mom's wrath -- 
+Eddy: That means finishing my homework and chores in time, and coming home before curfew at 5 o'clock.
+Eddy: Second, I need to prep for June and I's --
+<<clockset UICanvas 8:52>>
+Eddy: Uh, "June and mine"...?
+Eddy: <i>Our</i> "heist" --
+Eddy: That means scouting a path through security, getting er, protection, and most importantly...
+Eddy: ...making sure she's happy!
+Eddy: I should also keep <b>texting</b> people in mind.
+Eddy: I can make more time for conversation if I finish things early!
+<<clockset UICanvas 8:54>>
+Eddy: Anyway.
+Eddy: I bet as soon as I get busy, time will feel like it's flying by.
+<<clockset UICanvas 8:55>>
+Eddy: At the rate of 1 second per minute, even.
+//<<shownote Phone To-do>>
+<<clockset UICanvas 8:57>>
+Eddy: Okay! I'll try to write it all down to keep track.
+<<clockset UICanvas 8:59>>
+Eddy: And with that... the mission begins!
+<<clockset UICanvas 9:00>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<clockend UICanvas 17:00>>
+<<settod TimeManager freetime>>
+//Some kind of mission text could appear here.
+===
+title: d1_afternoon_slow
+---
+Eddy: Oh! It's almost noon.
+Eddy: I need to brush my teeth and get ready!
+<<clockscale TimeCanvas 0>>
+<<to TransitionCanvas Bathroom>>
+===
+title: d1_curfew
+---
+<<if $currentscene != "HomeUpper" && $currentscene != "HomeLower" && $currentscene != "EddyRoom" && $currentscene != "Bathroom">>
+    Eddy: AH!! I'm not at home!
+<<else>>
+    Eddy: AHH!! I AM at home!
+<<endif>>
+Eddy: Time's up today....
+<<cross TransitionCanvas 1.5>>
+<<wait 1.5>>
+<<hide Phone>>
+<<clockscale UICanvas 60>>
+<<to TransitionCanvas HomeLower>>
+<<settime TimeManager 1 evening>>
+===
+title: dadhome
+---
+<<if $tvfix is false && $tvdad is false>>
+    Dad: Hellooo, Eddy!
+    Eddy: Hellooooo, Dad!
+    Dad: Can you help me with the TV? It's not turning on for some reason.@v
+    Ellen: Yeah, I tried everything I could think of!@
+    Eddy: I can take a look.
+    <<set $tvdad to true>>
+<<elseif $tvfix is true>>
+    Dad: It works!!
+    Eddy: Are you going to get back to watching documentaries about Chinese people cooking in the countryside?
+    Ellen: Haha, you bet he is!
+    Dad: Ah, just let me know when you want to eat dinner.
+    Eddy: How about now?
+    <<wait 0.2>>
+    <<settime TimeManager 1 dinner>>
+<<else>>
+    Dad: Hi.
+    Eddy: Hello.
+<<endif>>
+===
+title: ellenhome
+---
+<<if $tvfix is false && $tvellen is false>>
+    Eddy: Ayy.
+    Ellen: Ayyyy.
+    Eddy: You changed into your PJs instantly.
+    Ellen: Duh. I transform into cute mode outside, then change back to Himouto-mode at home.
+    Eddy: The many masks of Ellen.
+    Ellen: They're all beautiful though.
+    Ellen: Oh yeah, the TV's busted. Take a look. Maybe put your programming class to good use.
+    Eddy: Huh?? What's that got to do with TVs?
+    Ellen: *sigh* Useless as usual.
+    Eddy: Ugh.
+    <<set $tvellen to true>>
+<<elseif $tvfix is true>>
+    Eddy: So you "tried everything" huh?
+    Ellen: Welllll - I was just testing you, obviously.
+    Eddy: Aha, all part of your master plan to consistently <i>seem</i> useless.
+    Ellen: ...
+    Ellen: ...And it looks like you caught me!
+<<else>>
+    Ellen: Need something?
+    Eddy: Your credit card, please.
+<<endif>>
+===
+title: momhome
+---
+<<if $vmomhome is false>>
+    Eddy: Hi.
+    Mom: Hello.
+    Mom: I just did my nails again. What do you think?@v
+    Eddy: Very... modern-looking, actually!@
+    Eddy: It's like something I'd expect from a trendy 20-year-old or whatever.
+    Eddy: No offense.
+    Mom: Mmhmm, that's because I found this design on Youtube.@v
+    Eddy: Wowww, adapting to the conveniences of the internet, now?@
+    Mom: Of course.@v
+    <<set $vmomhome to true>>
+<<else>>
+    Eddy: Was work OK today?
+    Mom: Not much business.@v
+    Mom: Everyone who wants their nails done will turn on you the instant you're unavailable.
+    Mom: Look - my hand's shaking from all the pedicure scrubbing I needed to do.
+    Mom: This is why you need to stay in school. Get a good, easy job.
+    Eddy: Yeah... you're right.@
+<<endif>>
+===
+title: inspecttv
+---
+<<if $timeofday is "evening" && $day is 1 && ($tvdad is true || $tvellen is true)>>
+    <<if $tvfix is false>>
+        Ellen and Dad are wondering what's wrong with the TV. Let's take a look.
+        [[inspecttvoptions]]
+    <<else>>
+        It's fixed!
+    <<endif>>
+<<else>>
+    It's our big TV.
+    We usually use the small one in Ellen's room for the Switch and old GameCube games.
+<<endif>>
+===
+title: inspecttvoptions
+---
+->Try power button <<if $tvbutton is false>>
+    Let's see.... the power button doesn't work, even if held down.
+    Ellen: I already tried that!
+    <<set $tvbutton to true>>
+->Check AV cables <<if $tvcable is false>>
+    Hm. Seems like the cables are all in the right place, so the display should show an image.
+    Ellen: I tried that too!
+    <<set $tvcable to true>>
+<<if $tvbutton is true && $tvcable is true>>
+    Eddy: Oh, wait. I know what it is.
+    Eddy: The plug is kinda loose. Just need to push it back in there, and....
+    Eddy: Got it.
+    Ellen: Whaaaat!? I tried that a million times!
+    Eddy: Then it worked the million-and-first time.
+    <<set $tvfix to true>>
+<<endif>>
+[[inspecttvoptions]]
+===
+title: d1_bedtime
+---
+<<showplayer Player false>>
+<<cameratarget Cameras TextingJune>>
+Another night....
+<<clockset UICanvas 22:00>>
+<<unhide Phone>>
+<<wait 0.1>>
+<<hidetalk DialogueCanvas>>
+<<textcontact DialogueCanvas June>>
+June: how'd your day go? :3
+<<if $tasks < 2>>
+    A little stressed, didn't get as much done as i hoped
+    June: It's ok! tomorrow's a new day
+<<else>>
+    Not bad actually! Somehow got most of what I need done
+    June: That's good newss
+<<endif>>
+How was yours?
+June: trying to help Davis with his math hw
+June: do you remember how to do inequalities?
+uhhh
+Maybe?
+June: I'm also trying to practice for tomorrow
+Don't forget your music stand!
+I know I would
+June: ok ok
+June: What time should I come over?
+I think about an hour before dinner would be good
+So like
+630?
+June: you guys eat so lateee
+At 10 sometimes, so this is early
+June: we eat at 6 usually
+Dinner at 6? You mean lunch? ;)
+My mom works too much....
+June: they need a break
+June: and so do you
+nahhhh
+I need to get my booty to work
+June: anyway
+June: night!! good luck tomorrow
+love you~
+June: love you too
+<<setdialogue DialogueCanvas talk>>
+<<wait 0.2>>
+<<unfocus Phone>>
+<<wait 0.2>>
+<<hide Phone>>
+Tomorrow's a new day, huh?
+Let's hope I don't mess it up again....
+[[d2_wakeup]]
+===

@@ -101,6 +101,10 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (GameManager.Instance.inConvo)
+        {
+            return;
+        }
         if (phoneState == PhoneState.NONE || phoneState == PhoneState.UNHOVER)
         {
             phoneState = PhoneState.HOVER;
@@ -114,6 +118,10 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (GameManager.Instance.inConvo)
+        {
+            return;
+        }
         if (phoneState == PhoneState.NONE || phoneState == PhoneState.HOVER)
         {
             phoneState = PhoneState.UNHOVER;
@@ -136,6 +144,14 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     //Previously Enter/Exit
     public void Focus()
     {
+        if (isFocused)
+        {
+            return;
+        }
+        if (GameManager.Instance.inConvo)
+        {
+            putAway.gameObject.SetActive(false);
+        }
         Debug.Log("enter");
         StartCoroutine(PlayFocus());
     }
@@ -143,19 +159,23 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void Unfocus()
     {
         //pc.SetPlayerState(PlayerControl.PlayerState.BUSY);
-        GameManager.Instance.isBusy = true;
         StartCoroutine(PlayUnfocus());
+    }
+    public bool IsHidden()
+    {
+        return phoneState == PhoneState.HIDE || phoneState == PhoneState.HIDDEN;
     }
     IEnumerator PlayFocus()
     {
         //pc.SetPlayerState(PlayerControl.PlayerState.BUSY);
         canvasGroup.interactable = true;
-        GameManager.Instance.isBusy = true;
         //putAway.gameObject.SetActive(true);
+        GameManager.Instance.inTransition = true;
         animator.SetInteger("State", (int)PhoneState.FOCUS);
         yield return new WaitForSeconds(focusAnimationTime);
-        animator.SetInteger("State", (int)PhoneState.FOCUSED);
 
+        animator.SetInteger("State", (int)PhoneState.FOCUSED);
+        GameManager.Instance.inTransition = false;
         isFocused = true;
         //Debug.Log("Focus");
     }
@@ -166,10 +186,13 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         OpenApp("home");
         animator.SetInteger("State", (int)PhoneState.UNFOCUS);
+        GameManager.Instance.inTransition = true;
         yield return new WaitForSeconds(focusAnimationTime);
+
         animator.SetInteger("State", (int)PhoneState.NONE);
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inTransition = false;
         isFocused = false;
+        putAway.gameObject.SetActive(true);
         //pc.SetPlayerState(PlayerControl.PlayerState.NONE);
         //Debug.Log("Unfocus");
     }
@@ -186,7 +209,6 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     IEnumerator PlayHide()
     {
         //pc.SetPlayerState(PlayerControl.PlayerState.BUSY);
-        GameManager.Instance.isBusy = true;
         animator.SetInteger("State", (int)PhoneState.HIDE);
         yield return null;
         //yield return new WaitForSeconds(hideAnimationTime);
@@ -198,9 +220,11 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     IEnumerator PlayUnhide()
     {
         animator.SetInteger("State", (int)PhoneState.UNHIDE);
+        GameManager.Instance.inTransition = true;
         yield return new WaitForSeconds(hideAnimationTime);
+
         animator.SetInteger("State", (int)PhoneState.NONE);
-        GameManager.Instance.isBusy = false;
+        GameManager.Instance.inTransition = false;
         isFocused = false;
         //pc.SetPlayerState(PlayerControl.PlayerState.NONE);
         Debug.Log("Unhide");

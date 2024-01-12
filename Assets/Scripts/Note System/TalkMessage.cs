@@ -111,11 +111,20 @@ public class TalkMessage : MonoBehaviour
     }
     void SetFace()
     {
+        face.enabled = true;
         Sprite sp = faceManager.GetFaceFromName(currentExpression, CurrentSpeakerName);
         if (sp != null)
+        {
             face.sprite = faceManager.GetFaceFromName(currentExpression, CurrentSpeakerName);
+        }
         else
+        {
             face.sprite = faceManager.GetDefaultFace(currentExpression);
+        }
+        if (!faceManager.IsNamedCharacter(CurrentSpeakerName))
+        {
+            face.enabled = false;
+        }
     }
     public void Express(string exp)
     {

@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: a1eb14148e1134d1984f0fb6addab08a
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - market-marketentry-0
+  - market-marketentry-1
+  - market-marketentry-2
+  - market-marketentry-3
+  - market-marketentry-4
+  - market-marketentry-5
+  - market-marketgossip1-6
+  - market-marketgossip1-7
+  - market-marketgossip1-8
+  - market-marketgossip1-9
+  - market-marketgossip1-10
+  - market-marketgossip1-11
+  - market-marketgossip1-12
+  - market-marketgossip1-13
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: a1eb14148e1134d1984f0fb6addab08a,
+    type: 3}
+  localizations: []

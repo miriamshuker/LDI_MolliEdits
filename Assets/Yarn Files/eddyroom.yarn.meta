@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: f4106f2ff885d4ebbbc981d84a303e5f
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - eddyroom-eddyshelf-0
+  - eddyroom-eddyshelf-1
+  - eddyroom-eddyshelf-2
+  - eddyroom-eddyshelf-3
+  - eddyroom-eddyshelf-4
+  - eddyroom-eddyshelf-5
+  - eddyroom-eddyshelf-6
+  - eddyroom-eddyshelf-7
+  - eddyroom-eddyshelf-8
+  - eddyroom-eddyshelf-9
+  - eddyroom-eddyshelf-10
+  - eddyroom-eddyshelf-11
+  - eddyroom-eddyshelf-12
+  - eddyroom-eddyshelf-13
+  - eddyroom-eddyshelf-14
+  - eddyroom-eddyshelf-15
+  - eddyroom-eddyshelf-16
+  - eddyroom-eddyshelf-17
+  - eddyroom-eddyshelf-18
+  - eddyroom-eddyshelf-19
+  - eddyroom-eddyshelf-20
+  - eddyroom-eddyshelf-21
+  - eddyroom-eddyshelf-22
+  - eddyroom-eddyshelf-23
+  - eddyroom-eddyshelf-24
+  - eddyroom-eddyshelf-25
+  - eddyroom-eddyshelf-26
+  - eddyroom-eddyshelf-27
+  - eddyroom-eddyshelf-28
+  - eddyroom-eddyshelf-29
+  - eddyroom-eddyshelf-30
+  - eddyroom-eddydesk-31
+  - eddyroom-eddydesk-32
+  - eddyroom-eddydesk-33
+  - eddyroom-eddydesk-34
+  - eddyroom-eddydesk-35
+  - eddyroom-eddydesk-36
+  - eddyroom-eddydesk-37
+  - eddyroom-eddydesk-38
+  - eddyroom-eddydesk-39
+  - eddyroom-eddydesk-40
+  - eddyroom-eddydesk-41
+  - eddyroom-eddydesk-42
+  - eddyroom-eddydesk-43
+  - eddyroom-eddydesk-44
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: "Error on line 52 at position 22:\nno viable alternative
+    at input '<<set $veddybedtrue'\n    << set $veddybed true>> \n                     ^^^^\n\nTokens:\n1:0
+    ID \"title\"\n1:5 HEADER_DELIMITER \": \"\n1:7 REST_OF_LINE \"eddyshelf\"\n2:0
+    HEADER_NEWLINE \"\n\"\n2:0 '---' \"---\"\n3:0 TEXT \"Ah, my shelf. Gotta say,
+    I'm pretty proud of this.\"\n4:0 TEXT_NEWLINE \"\n\"\n4:0 TEXT \"Want to check
+    something out?\"\n5:0 TEXT_NEWLINE \"\n\"\n5:0 '->' \"->\"\n5:2 TEXT \"Top shelf\"\n6:4
+    TEXT_NEWLINE \" \"\n6:4 INDENT \"    \"\n6:4 TEXT \"Which items?\"\n7:4 TEXT_NEWLINE
+    \" \"\n7:4 '->' \"->\"\n7:6 TEXT \"Awards\"\n8:8 TEXT_NEWLINE \" \"\n8:8 INDENT
+    \"        \"\n8:8 TEXT \"On the left, a perfect attendance certificate from middle
+    school.\"\n9:8 TEXT_NEWLINE \" \"\n9:8 TEXT \"On the right, a 4th place trophy
+    from my elementary school chess club.\"\n10:8 TEXT_NEWLINE \" \"\n10:8 TEXT \"...\"\n11:8
+    TEXT_NEWLINE \" \"\n11:8 TEXT \"This makes me sad to look at.\"\n12:4 TEXT_NEWLINE
+    \" \"\n11:4 DEDENT \" \"\n12:4 '->' \"->\"\n12:6 TEXT \"Photo\"\n13:8 TEXT_NEWLINE
+    \" \"\n13:8 INDENT \"        \"\n13:8 TEXT \"An old photo our parents took of
+    me and Ellen.\"\n14:8 TEXT_NEWLINE \" \"\n14:8 TEXT \"People say we look around
+    the same age, but I'm still in high school and she's already a quarter to 100!\"\n15:0
+    TEXT_NEWLINE \"\n\"\n14:0 DEDENT \"\n\"\n14:0 DEDENT \"\n\"\n15:0 '->' \"->\"\n15:2
+    TEXT \"Middle shelves\"\n16:4 TEXT_NEWLINE \" \"\n16:4 INDENT \"    \"\n16:4 TEXT
+    \"Which items?\"\n17:4 TEXT_NEWLINE \" \"\n17:4 '->' \"->\"\n17:6 TEXT \"Figurines\"\n18:8
+    TEXT_NEWLINE \" \"\n18:8 INDENT \"        \"\n18:8 TEXT \"A couple anime figures
+    I've collected over the years.\"\n19:8 TEXT_NEWLINE \" \"\n19:8 TEXT \"They're
+    really expensive, so I'm happy to have gotten them as gifts.\"\n20:8 TEXT_NEWLINE
+    \" \"\n20:8 TEXT \"Their source material is pretty mainstream, so it shouldn't
+    be too hard to recognize them.\"\n21:4 TEXT_NEWLINE \" \"\n20:4 DEDENT \" \"\n21:4
+    '->' \"->\"\n21:6 TEXT \"Books\"\n22:8 TEXT_NEWLINE \" \"\n22:8 INDENT \"        \"\n22:8
+    TEXT \"A physics textbook, Six of Crows, some Michio Kaku books from back in my
+    science-phase, and the first 10 volumes of Hunter x Hunter.\"\n23:8 TEXT_NEWLINE
+    \" \"\n23:8 TEXT \"The rest of our collection is in Ellen's room.\"\n24:0 TEXT_NEWLINE
+    \"\n\"\n23:0 DEDENT \"\n\"\n23:0 DEDENT \"\n\"\n24:0 '->' \"->\"\n24:2 TEXT \"Bottom
+    shelves\"\n25:4 TEXT_NEWLINE \" \"\n25:4 INDENT \"    \"\n25:4 '->' \"->\"\n25:6
+    TEXT \"Bear\"\n26:8 TEXT_NEWLINE \" \"\n26:8 INDENT \"        \"\n26:8 TEXT \"A
+    sock plushie June made for me on Valentine's Day.\"\n27:8 TEXT_NEWLINE \" \"\n27:8
+    TEXT \"It's really cute!\"\n28:8 TEXT_NEWLINE \" \"\n28:8 TEXT \"...It's supposed
+    to be a raccoon.\"\n29:4 TEXT_NEWLINE \" \"\n28:4 DEDENT \" \"\n29:4 '->' \"->\"\n29:6
+    TEXT \"Box\"\n30:8 TEXT_NEWLINE \" \"\n30:8 INDENT \"        \"\n30:8 TEXT \"A
+    box of KINEX pieces. I think an old sock ended up in there somehow.\"\n31:8 TEXT_NEWLINE
+    \" \"\n31:8 TEXT \"If you're wondering where I keep my clothes, they're in the
+    closet on the opposite wall.\"\n32:8 TEXT_NEWLINE \" \"\n32:8 TEXT \"Wait, who
+    am I talking to?\"\n33:0 TEXT_NEWLINE \"\n\"\n32:0 DEDENT \"\n\"\n32:0 DEDENT
+    \"\n\"\n33:0 '->' \"->\"\n33:2 TEXT \"(back)\"\n34:0 TEXT_NEWLINE \"\n\"\n34:0
+    '===' \"===\"\n35:0 ID \"title\"\n35:5 HEADER_DELIMITER \": \"\n35:7 REST_OF_LINE
+    \"eddydesk\"\n36:0 HEADER_NEWLINE \"\n\"\n36:0 '---' \"---\"\n37:0 TEXT \"My desk.
+    I have some homework to do.\"\n38:0 TEXT_NEWLINE \"\n\"\n38:0 COMMAND_START \"<<\"\n38:3
+    COMMAND_IF \"if \"\n38:6 VAR_ID \"$day\"\n38:11 OPERATOR_LOGICAL_EQUALS \"is\"\n38:14
+    NUMBER \"0\"\n38:16 EXPRESSION_COMMAND_END \">>\"\n39:4 INDENT \"    \"\n39:4
+    TEXT \"...But maybe I'll get to it later.\"\n40:0 TEXT_NEWLINE \"\n\"\n39:0 DEDENT
+    \"\n\"\n40:0 COMMAND_START \"<<\"\n40:3 COMMAND_ELSE \"else \"\n40:8 COMMAND_END
+    \">>\"\n41:4 INDENT \"    \"\n41:4 TEXT \"Should I do it now?\"\n42:4 TEXT_NEWLINE
+    \" \"\n42:4 '->' \"->\"\n42:7 TEXT \"Do it\"\n43:8 TEXT_NEWLINE \" \"\n43:8 INDENT
+    \"        \"\n43:8 TEXT \"Yeah, good idea.\"\n44:4 TEXT_NEWLINE \" \"\n43:4 DEDENT
+    \" \"\n44:4 '->' \"->\"\n44:7 TEXT \"Don't do it\"\n45:8 TEXT_NEWLINE \" \"\n45:8
+    INDENT \"        \"\n45:8 TEXT \"Nah, it's not due until Monday anyway.\"\n46:0
+    TEXT_NEWLINE \"\n\"\n45:0 DEDENT \"\n\"\n45:0 DEDENT \"\n\"\n46:0 COMMAND_START
+    \"<<\"\n46:3 'endif' \"endif\"\n46:9 COMMAND_END \">>\"\n47:0 TEXT \"==\"\n48:0
+    TEXT_NEWLINE \"\n\"\n48:0 TEXT \"title: eddybed\"\n49:0 TEXT_NEWLINE \"\n\"\n49:0
+    COMMAND_START \"<<\"\n49:3 COMMAND_IF \"if \"\n49:6 VAR_ID \"$veddybed\"\n49:16
+    OPERATOR_LOGICAL_EQUALS \"is\"\n49:19 'false' \"false\"\n49:25 EXPRESSION_COMMAND_END
+    \">>\"\n50:4 INDENT \"    \"\n50:4 TEXT \"My trusty bed.\"\n51:4 TEXT_NEWLINE
+    \" \"\n51:4 TEXT \"Actually, I have trouble sleeping in it, but it's comfortable
+    nonetheless.\"\n52:4 TEXT_NEWLINE \" \"\n52:4 COMMAND_START \"<<\"\n52:7 COMMAND_SET
+    \"set \"\n52:11 VAR_ID \"$veddybed\"\n52:21 'true' \"true\""
+  baseLanguage: {instanceID: 0}
+  localizations: []

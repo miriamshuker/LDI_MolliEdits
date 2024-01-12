@@ -1,0 +1,85 @@
+fileFormatVersion: 2
+guid: 2b610181e9029e547ad01388129dc4a0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - d3_main-d3_wakeup-0
+  - d3_main-d3_wakeup-1
+  - d3_main-d3_wakeup-2
+  - d3_main-d3_wakeup-3
+  - d3_main-d3_wakeup-4
+  - d3_main-d3_wakeup-5
+  - d3_main-d3_wakeup-6
+  - d3_main-d3_curfew-7
+  - d3_main-d3_curfew-8
+  - d3_main-d3_curfew-9
+  - d3_main-d3_dinner-10
+  - d3_main-d3_dinner-11
+  - d3_main-d3_dinner-12
+  - d3_main-d3_dinner-13
+  - d3_main-d3_dinner-14
+  - d3_main-d3_sneak-15
+  - d3_main-d3_sneak-16
+  - d3_main-d3_sneak-17
+  - d3_main-d3_sneak-18
+  - d3_main-d3_sneak-19
+  - d3_main-d3_sneak-20
+  - d3_main-d3_sneak-21
+  - d3_main-d3_sneak-22
+  - d3_main-d3_hall-23
+  - d3_main-d3_hall-24
+  - d3_main-d3_room_ellen-25
+  - d3_main-d3_room_ellen-26
+  - d3_main-d3_room_ellen-27
+  - d3_main-d3_room_parents-28
+  - d3_main-d3_room_parents-29
+  - d3_main-d3_ellen_help-30
+  - d3_main-d3_ellen_help-31
+  - d3_main-d3_ellen_help-32
+  - d3_main-d3_ellen_help-33
+  - d3_main-d3_ellen_help-34
+  - d3_main-d3_ellen_help-35
+  - d3_main-d3_ellen_help-36
+  - d3_main-d3_ellen_help-37
+  - d3_main-d3_ellen_help-38
+  - d3_main-d3_ellen_help-39
+  - d3_main-d3_ellen_help-40
+  - d3_main-d3_ellen_help-41
+  - d3_main-d3_ellen_help-42
+  - d3_main-d3_ellen_help-43
+  - d3_main-d3_ellen_help-44
+  - d3_main-d3_ellen_help-45
+  - d3_main-d3_ellen_help-46
+  - d3_main-d3_ellen_help-47
+  - d3_main-d3_ellen_help-48
+  - d3_main-d3_ellen_help-49
+  - d3_main-d3_ellen_help-50
+  - d3_main-d3_ellen_help-51
+  - d3_main-d3_ellen_help-52
+  - d3_main-d3_ellen_help-53
+  - d3_main-d3_ellen_help-54
+  - d3_main-d3_ellen_help-55
+  - d3_main-d3_ellen_help-56
+  - d3_main-d3_ellen_help-57
+  - d3_main-d3_ellen_help-58
+  - d3_main-d3_ellen_help-59
+  - d3_main-d3_door-60
+  - d3_main-d3_door-61
+  - d3_main-d3_door-62
+  - d3_main-d3_door-63
+  - d3_main-d3_door-64
+  - d3_main-d3_door-65
+  - d3_main-d3_door-66
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 2b610181e9029e547ad01388129dc4a0,
+    type: 3}
+  localizations: []

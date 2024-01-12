@@ -1,0 +1,188 @@
+title: d0_liedown
+---
+<<usealt Player lay0>>
+<<clockset UICanvas 19:30>>
+<<clockend UICanvas 20:00>>
+<<clockstop UICanvas>>
+<<hide Phone>>
+<<spawn TransitionCanvas LieDown>>
+<<settod TimeManager freetime>>
+<<cameratarget Cameras LieDown>>
+Eddy: Not feeling it today....&tired
+Eddy: There's so much I need to do...&normal
+Eddy: Homework, chores...&uh
+<<usealt Player lay1>>
+Eddy: ...and so little energy.&tired
+<<usealt Player lay0>>
+Eddy: Oh well. See ya.
+Eddy: ...
+<<usealt Player lay2>>
+Eddy: Actually, there's a ton of things I WANT to do.
+Eddy: People I WANT to talk to.&happy
+Eddy: Well, a few.
+<<camerashake Cameras 0.5 0.1 100 >> 
+Eddy: Oh!&shock
+<<unhide Phone>>
+<<wait 0.1>>
+<<hidetalk DialogueCanvas>>
+<<textcontact DialogueCanvas June>>
+June: haillo
+Eddy: hi
+June: I've got good news
+June: More details after i finish this essay ;)
+Eddy: You got this!!
+<<unfocus Phone>>
+<<wait 0.3>>
+<<setdialogue DialogueCanvas talk>>
+Eddy: You know what?
+Eddy: I've got this, too!&happy
+<<usebase Player>>
+<<cameratarget Cameras Player>>
+<<setdialogue DialogueCanvas expo >>
+(Use WASD or the arrow keys to move. Press X to interact. Check the Notes on your phone for details.)
+<<settod TimeManager evening>>
+<<clockscale UICanvas 60>>
+<<clockstart UICanvas>>
+===
+title: d0_freetime_slow
+---
+<<sfxplay Sound thud>>
+<<camerashake Cameras 1 0.1 200 >> 
+Mom: EDDY! Get down here!!!
+Eddy: Coming!
+<<set $d0_june_late to true>>
+<<to TransitionCanvas HomeUpper EddyRoom>>
+<<wait 0.15>>
+===
+title: d0_hallway
+---
+<<if $d0_june is false>>
+    [[phonestart_june]]
+<<endif>>
+Eddy: Hmm.
+Eddy: Wonder what June wanted to say.
+===
+title: dad_d0
+tags: 
+colorID: 0
+position: 205,520
+---
+<< if $vdadzero is false >> 
+    Dad: Hi, Eddy.
+    Dad: Try to eat some veggies with it, this time.
+    <<set $vdadzero to true>>
+<< else >>
+    Dad: Can you get the bowls for me?
+<< endif >>
+===
+title: mom_d0
+tags: 
+colorID: 0
+position: 417,519
+---
+<< playsound SFXSource murmur >>
+<<camerashake 1 0.1 100>>
+Eddy: Hey, dinnerrrrr!
+Mom: *hushed whispers*
+Ah, she's praying now. Let's not rush her.
+===
+title: d0_bedtime
+---
+<<showplayer Player false>>
+<<cameratarget Cameras TextingJune>>
+Let's see if I have any messages....
+<<clockset UICanvas 22:00>>
+<<unhide Phone>>
+<<wait 0.1>>
+<<hidetalk DialogueCanvas>>
+<<textcontact DialogueCanvas June>>
+June: Hey, you done with dinner?
+Just finished the rest of our bun bo hue
+June: Damn, that sounds good
+June: You got any extra?
+Nope, but I can sneak you some shrimp chips
+Or durian wafers
+June: Durian-flavored stuff stinks
+Isn't that the point? XD
+June: No, I mean it's far inferior to the real thing lol
+June: Oh, that reminds me!
+Hm?
+June: My grandma's coming over this Sunday, so we're going for dim sum:A type of Chinese cuisine served in the form of many small plates, including dunplings, buns, fried squid, and pig's feet.
+June: The thing is though
+June: I have an essay due on Monday, so I can't go
+Aw man
+Maybe I should go in your place? ;)
+June: Nahh, if my parents knew you were my bf and not just a friend you'd get yeeted out of there
+My parents know about you though
+June: I know. I wanna tell them too, but I'm scared about how they'd react
+June: And my entire family would be bombarding me with gossip ugh
+June: But nice try
+Worth a shot
+June: Anyway
+June: Just finished my essay early
+Good job!! That's early for you
+June: Hey, shush
+June: The thing is, my parents still think I have work to do
+June: WHICH MEANS
+You're gonna be home alone?
+June: Yep
+Are you sure you feel safe? I mean, your backdoor just got busted in last month
+June: Ngl, still pretty shook about it. 
+June: Like, we weren't in the house when it happened but thinking about it still gives me the creeps
+June: We're getting new security installed tomorrow, at least, so I do feel safer
+That's good! 
+June: Actually, a bit bad in one sense
+that being...?
+June: Like I said, I'll be home alone
+June: WHICH MEANS
+We can hang out?
+June: Exactly ;3
+June: You should come over
+Did you want to, you know...?
+June: YES, it's been like 2 months since we last had privacy
+June: 2 months of suffering
+Jeez, I didn't think I did *that* bad
+Joking, I lasted like 10 seconds...
+June: That's pretty normal for the first time I think
+June: I still want to try again though
+Yeah, I want to make it up to you
+Did some research on using my other parts and appendages
+June: Ooh that sounds nice
+June: I think...?
+Gonna put my feet to good use XD
+June: .....
+Okay, but being serious. Let me know what you like and don't like
+And especially if it hurts or anything
+June: Sure!!!
+June: Same for you
+That is, assuming I somehow get in
+Oh, to your house, that is
+I do have a LOT to do
+June: school?
+School and chores stuff, yeah
+But I'll catch up!!
+June: Don't stretch yourself too much
+June: We only have 2 days
+June: And it's at like 8 PM on Sunday
+Sounds like a plan
+June: Wait, really!?
+Yeah, I'll figure something out
+Mission accepted
+June: WAHOOOOO
+June: that was kinda cringe
+June: But I'm really excited. I'll help out however I can
+So it's a official, then!
+June: Let's do it?
+let's do it!
+<<setdialogue DialogueCanvas talk>>
+<<wait 0.2>>
+<<unfocus Phone>>
+<<wait 0.2>>
+<<hide Phone>>
+Eddy: .....
+<<yarnanim YarnController edbed Bedticipation>>
+Eddy: AHHHHHH!!!
+<<yarnanim YarnController edbed Bedflail>>
+Eddy: I'm excited!!
+[[d1_wakeup]]
+===

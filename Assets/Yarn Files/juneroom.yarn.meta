@@ -1,0 +1,43 @@
+fileFormatVersion: 2
+guid: e2639a14691194574b46fd5bb56fb9c1
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - juneroom-junedoor-0
+  - juneroom-juneroom-1
+  - juneroom-juneroom-2
+  - juneroom-juneroom-3
+  - juneroom-juneroom-4
+  - juneroom-juneroom-5
+  - juneroom-juneroom-6
+  - juneroom-juneroom-7
+  - juneroom-juneroom-8
+  - juneroom-juneroom-9
+  - juneroom-juneroom-10
+  - juneroom-juneroom-11
+  - juneroom-juneroom-12
+  - juneroom-juneroom-13
+  - juneroom-juneroom-14
+  - juneroom-juneroom-15
+  - juneroom-juneroom-16
+  - juneroom-juneroom-17
+  - juneroom-juneroom-18
+  - juneroom-juneroom-19
+  - juneroom-juneroom-20
+  - juneroom-juneroom-21
+  - juneroom-juneroom-22
+  - juneroom-juneroom-23
+  - juneroom-juneroom-24
+  - juneroom-juneroom-25
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

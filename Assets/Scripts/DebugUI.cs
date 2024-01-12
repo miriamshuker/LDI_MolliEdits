@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class DebugUI : MonoBehaviour
 {
-    public ObjectSchedule schedule;
+    public TimeManager timeManager;
     public TextMeshProUGUI dayText;
     public GameObject dayUI;
     public GameObject varUI;
@@ -18,6 +18,10 @@ public class DebugUI : MonoBehaviour
     {
         ToggleDay(dayIsVisible);
         ToggleVar(varIsVisible);
+        if (timeManager == null)
+        {
+            timeManager = GameObject.FindObjectOfType<TimeManager>();
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +57,7 @@ public class DebugUI : MonoBehaviour
     public void UpdateDay()
     {
         string s = "Day: " + GameManager.Instance.CurrentDay + ", Time of Day: " + GameManager.Instance.CurrentTimeOfDay;
-        s += "\nIs Busy? " + GameManager.Instance.isBusy;
+        s += "\nIs Busy? " + GameManager.Instance.IsOpen();
         dayText.text = s;
     }
     void ToggleVar(bool setting)
@@ -68,10 +72,22 @@ public class DebugUI : MonoBehaviour
     }
     public void SetDay(int day)
     {
-        schedule.SetDay(day.ToString());
+        if (timeManager == null)
+        {
+            timeManager = GameObject.FindObjectOfType<TimeManager>();
+        }
+        timeManager.SetDay(day.ToString());
     }
     public void SetTimeOfDay(string param)
     {
-        schedule.SetTimeOfDay(param);
+        if (timeManager == null)
+        {
+            timeManager = GameObject.FindObjectOfType<TimeManager>();
+        }
+        timeManager.SetTimeOfDay(param);
+    }
+    public void SetLocation(string scene)
+    {
+        LevelLoader.Instance.GoTo(scene);
     }
 }

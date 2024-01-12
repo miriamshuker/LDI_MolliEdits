@@ -1,0 +1,40 @@
+fileFormatVersion: 2
+guid: 1a6b8452fabf2424ba4fae4bf61ed003
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - Objects-dishwasher-0
+  - Objects-dishwasher-1
+  - Objects-stove-2
+  - Objects-stove-3
+  - Objects-clock-4
+  - Objects-clock-5
+  - Objects-fruit-6
+  - Objects-fruit-7
+  - Objects-fruit-8
+  - Objects-fruit-9
+  - Objects-ricecooker-10
+  - Objects-ricecooker-11
+  - Objects-ricecooker-12
+  - Objects-ricecooker-13
+  - Objects-ricecooker-14
+  - Objects-ricecooker-15
+  - Objects-ricecooker-16
+  - Objects-ricecooker-17
+  - Objects-ricecooker-18
+  - Objects-ricecooker-19
+  - Objects-ricecooker-20
+  - Objects-ricecooker-21
+  - Objects-ricecooker-22
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {instanceID: 0}
+  localizations: []

@@ -1,0 +1,36 @@
+fileFormatVersion: 2
+guid: 6b1053d5688b666498ff699986cf1964
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - june_heist-hall_box-0
+  - june_heist-hall_box-1
+  - june_heist-hall_ramen-2
+  - june_heist-hall_ramen-3
+  - june_heist-hall_ramen2-4
+  - june_heist-hall_ramen2-5
+  - june_heist-hall_fall-6
+  - june_heist-hall_fall-7
+  - june_heist-hall_fall-8
+  - june_heist-hall_fall-9
+  - june_heist-hall_cooler-10
+  - june_heist-hall_cooler-11
+  - june_heist-hall_painting-12
+  - june_heist-hall_painting-13
+  - june_heist-hall_door-14
+  - june_heist-hall_door-15
+  - june_heist-hall_door-16
+  - june_heist-hall_door-17
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 6b1053d5688b666498ff699986cf1964,
+    type: 3}
+  localizations: []

@@ -1,0 +1,287 @@
+title: door_entrance
+---
+<<if $day == 0>>
+    I probably shouldn't go running away from home right now.
+<<elseif $timeofday is "freetime">>
+    <<to TransitionCanvas HomeOutside>>
+<<elseif $day is 2 && ($timeofday is "evening" || $timeofday is "dinner")>>
+    June: Already trying to show me out?
+    Eddy: It's a nice door.
+<<elseif $day == 3 && $timeofday is "evening">>
+    [[d3_door]]
+<<else>>
+    I probably shouldn't go running away from home right now.
+<<endif>>
+===
+title: door_eddy
+---
+<< if $day is 0>>
+    <<if $timeofday is "evening" or $timeofday is "afternoon">>
+        My room. I made the carrot nameplate in kindergarten and kept it 'til now.
+        Speaking of carrots - I should get downstairs for dinner!
+    <<elseif $timeofday is "night">>
+        <<if $ellentalk is false>>
+            Wait, Ellen's probably in her room.
+            I shouldn't just ignore her, right?
+            ->Go to bed
+                Alright.
+                I feel bad, but maybe she needs some space.
+                It's always tough to open up, so she only needs to talk about it when she feels ready.
+                ...Well, sometimes you need to force a confrontation to make meaningful change, but I don't think this is an example.
+                <<settod TimeManager bedtime>>
+                <<to TransitionCanvas EddyRoom>>
+            ->Don't go in
+                Yeah, maybe I should see if she needs something.
+        <<else>>
+            <<to TransitionCanvas EddyRoom>>
+        <<endif>>
+    <<else>>
+        <<to TransitionCanvas EddyRoom>>
+    <<endif>>
+<<elseif $day is 2 && ($timeofday is "evening" || $timeofday is "dinner")>>
+    [[d2_violin]]
+<<elseif $day is 3 && $timeofday is "evening">>
+    I'm sneaking here....
+<<else>>
+    <<to TransitionCanvas EddyRoom>>
+<< endif >>
+===
+title: door_ellen
+---
+Ellen's room. 
+<<if $day == 0>>
+    [[door_ellen_d0]]
+<<elseif $timeofday is "freetime" && $donetrash is false>>
+    [[door_ellen_d1]]
+<<elseif $day is 3 && $timeofday is "evening">>
+    [[d3_room_ellen]]
+<<else>>
+    <<if $timeofday is "bedtime" || $timeofday is "between">>
+        Ellen's in her room now. Let's hope she doesn't notice I'm out....
+    <<endif>>
+<< endif >>
+===
+title: door_ellen_d0
+---
+<< if $timeofday is "evening" >>
+    She's in there now.
+    Considering recent events, I probably shouldn't bother her....
+    For now, at least!
+<<elseif $timeofday is "night">>
+    Should I knock?
+    ->Yes
+        [[ellen_d0]]
+    ->No
+        Maybe not.
+<<elseif $timeofday is "bedtime">>
+    She's probably playing an otome game before bed, so let's leave her alone.
+    I think she has work tomorrow anyway.
+<<endif>>
+===
+title: door_ellen_d1
+---
+<<if $knowstrash is false>>
+    Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+    <<set $knowstrash to true>>
+<<endif>>
+<<if $vellentrash is false>>
+    Ellen's at class right now. Should I go ahead and grab her trash?
+    ->Yes
+        Okay, good idea.
+        [[ellen_trash]]
+    ->No
+        Maybe later.
+<<endif>>
+===
+title: door_bathroom
+---
+<< if $day is 0>>
+    Our bathroom. I don't need to go right now.
+<<elseif $timeofday is "freetime" && $vbathroomtrash is false>>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $vbathroomtrash is false>>
+        Should I grab the trash?
+        ->Yes
+            [[bath_trash]]
+        ->No
+            Maybe later.
+    <<endif>>
+<<else>>
+    <<to TransitionCanvas Bathroom>>
+<< endif >>
+===
+title: door_parents
+---
+Mom and Dad's room.
+<< if $day is 0 >>
+    <<if $timeofday is "evening" >>
+        I don't go in often, but now's not the time anyway. Let's grab some dinner!
+    <<elseif $timeofday is "bedtime">>
+        They're probably sleeping already!
+    <<endif>>
+<<elseif $timeofday is "freetime" && $donetrash is false>>
+    <<if $knowstrash is false>>
+        Oh, that's right! One of my chores was to take out the trash. Let's do that now.
+        <<set $knowstrash to true>>
+    <<endif>>
+    <<if $vparentstrash is false>>
+        Mom and Dad are at work now, but I can drop in to grab their trash. Should I?
+        ->Yes
+            Okay, good idea.
+            [[parents_trash]]
+        ->No
+            Maybe later.
+    <<endif>>
+<<elseif $day is 3 && $timeofday is "evening">>
+    [[d3_room_parents]]
+<<elseif $timeofday is "night">>
+    They're in bed now.
+<<elseif $timeofday is "bedtime">>
+    Let's be as quiet as possible. Worst case, I get caught before I even go out!
+<< endif >>
+===
+title: vase
+---
+One of our vases.
+The flowers are fake, so we don't need to replace them. They're a little dusty now.
+===
+title: painting
+---
+A painting my mom got from somewhere.
+It depicts a woman in <i>ao dai</i>, pulling a bamboo hat over her face.
+Cool pose.
+===
+title: dishwasher
+---
+<< set $vdishwasher to false >> 
+Our dishwasher.
+<< if $vdishwasher == true >> 
+    We don't actually use it for washing dishes, so it's like an extra cabinet for our cups.
+<< endif >> 
+<< set $vdishwasher to true >>
+<<if $day is 2 && ($timeofday is "evening" || $timeofday is "dinner")>>
+    June: I didn't know other people did this too!
+<<endif>>
+===
+title: stove
+---
+The stove.
+It's lined with aluminum foil to make it easier to clean.
+===
+title: ricecooker
+---
+Our rice cooker.
+<< if $ricedone is false >> 
+    It's empty.<<if $ricecount is 0>>
+    It's empty. We're a hungry family.<<if $ricecount > 1>>
+    It's empty, once again. We're a hungry family.<<if $ricecount > 2>>
+    <<if $timeofday is "freetime" && $day != 0>>
+        [[ricecooker_make]]
+    <<endif>>
+<< else >>
+    [[ricecooker_made]]
+<< endif >>
+===
+title: ricecooker_make
+---
+<< if $ricedone is false >> 
+    Should I go ahead and make rice?
+    -> Now
+        Well, I got nothing better to do.
+        Scoop the rice...
+        Wash once... Wash twice...
+        Fill it up to the line...
+        And we're done!
+        << set $ricedone to true >>
+        << set $ricecount to $ricecount + 1 >>
+        <<showsuccess UICanvas 1>>
+        <<animatesprite RiceCooker On true>>
+    -> Not yet
+        Do I reaaally want to do it now?
+        Let's hold off on it until later.
+<< endif >>
+===
+title: ricecooker_made
+---
+<<if $ricedone is true>>
+    It's cooking rice right now.
+<<else>>
+    Looks like it's done cooking.
+<<endif>>
+===
+title: stairs
+---
+<<if $day == 0 && !($timeofday == "freetime" || $timeofday == "night")>>
+    Our stairs. Probably not the time to use 'em for some exercise.
+<<elseif $day == 1 && $timeofday == "evening">>
+    Let's try talking a bit first.
+    Everyone's home earlier than usual today!
+<<elseif $day == 2 && $timeofday == "evening">>
+    <<if $vmeetellen is false || $vmeetdad is false || $vmeetmom is false>>
+        We should probably greet everyone first.
+    <<else>>
+        <<cross TransitionCanvas 1.5>>
+        <<wait  0.5>>
+        <<settod TimeManager dinner>>
+        <<to TransitionCanvas HomeUpper>>
+    <<endif>>
+<<else>>
+    <<to TransitionCanvas HomeUpper>>
+<<endif>>
+===
+title: fridge
+---
+Our fridge. 
+<<if $day is 0 && $timeofday is "night">>
+    [[fridge_d0]]
+<<elseif $day is 1>>
+    [[fridge_d1]]
+<<elseif $day is 2>>
+    :Oh, we're gonna have cá kho today!:Caramelized and braised portions of fish steak, usually served in a sweet brown sauce and topped with scallions.
+    <<if $timeofday is "evening" || $timeofday is "dinner">>
+        June: That looks amazing.
+        Eddy: And it is.
+    <<endif>>
+<<elseif $day is 3>>
+    Just leftovers today. Yum!
+<<endif>>
+===
+title: fridge_d0
+---
+<<if $sawfridge is false>>
+    Hmm... Ellen looked a little down.
+    Boba always helps with her mood.
+    Should I grab some for her?
+    ->Yes
+        <<set $hasboba to true >>
+        Good idea.
+    ->No
+        <<set $hasboba to false >>
+        Maybe not.
+    <<set $sawfridge to true>>
+<<else>>
+    <<if $hasboba is true >>
+        I already got boba for Ellen, and ice cream for me!
+    <<else >>
+        Nah, let's pass for now.
+    <<endif>>
+<<endif>>
+===
+title: fridge_d1
+---
+<<if $vfridge_d1 is false>>
+    <<set $vfridge_d1 to true>>
+    We're having spring rolls for dinner.
+    Speaking of, should I have lunch now?
+    ->Yes
+        Let's see what we have here....
+        Chicken nuggets?
+        Don't mind if I do!
+    ->No
+<<else>>
+    :Looks like we're stocking up on ingredients for spring rolls.:Gỏi cuốn, made by wrapping pork or shrimp, vegetables, and rice noodles in rice paper. Often served with a side of fish sauce or peanut sauce.
+<<endif>>
+===
