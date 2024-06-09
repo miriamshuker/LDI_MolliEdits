@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            ResetGame();
         }
         else if (Instance != this)
         {
@@ -56,13 +57,14 @@ public class GameManager : MonoBehaviour
     }
     public void ResetGame()
     {
+        Debug.Log("reset");
         variables.Clear();
         FreeControls();
 
         CurrentDay = 0;
-        CurrentTimeOfDay = TimeOfDay.EVENING;
-        CurrentTime = new Clock.ClockTime(20, 30);
-        secondsPerMinute = 1;
+        CurrentTimeOfDay = TimeOfDay.FREETIME;
+        CurrentTime = new Clock.ClockTime(19, 30);
+        secondsPerMinute = 60;
 
         doneEssay = false;
         doneQuiz = false;

@@ -5,93 +5,39 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/First Try/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/First Try/Downstairs.unity
-    guid: 66391cafb64a44f1e9bea7ca0285a6dc
-  - enabled: 0
-    path: Assets/Scenes/First Try/Upstairs.unity
-    guid: f38023dcb5ac74248828800adaecab98
-  - enabled: 0
-    path: Assets/Scenes/First Try/Eddy'sRoom.unity
-    guid: 2066b2b14d244414bb261425aad05c6b
-  - enabled: 0
-    path: Assets/Scenes/Menu.unity
-    guid: 60b1a8e7e27f14b8a990eab97634dfa5
   - enabled: 1
-    path: Assets/Scenes/Final/Menu.unity
+    path: Assets/Scenes/Menu.unity
     guid: a3f4e84077b943b43a2dd3a1932ef563
   - enabled: 1
-    path: Assets/Scenes/Final/EddyRoom.unity
+    path: Assets/Scenes/EddyRoom.unity
     guid: 99f64465757cdb34c9d12ccf7ddee937
   - enabled: 1
-    path: Assets/Scenes/Final/HomeUpper.unity
+    path: Assets/Scenes/HomeUpper.unity
     guid: 4a0539a06295cb242a18f1647a987382
   - enabled: 1
-    path: Assets/Scenes/Final/HomeLower.unity
+    path: Assets/Scenes/HomeLower.unity
     guid: 5e83cfc12b2e4d3499309b7f7992013c
   - enabled: 1
-    path: Assets/Scenes/Final/Bathroom.unity
+    path: Assets/Scenes/Bathroom.unity
     guid: 711d165fcda26cd40898868cc0ff060b
   - enabled: 1
-    path: Assets/Scenes/Final/ChinatownOutside.unity
+    path: Assets/Scenes/ChinatownOutside.unity
     guid: bac3744cde5539848aed9fc4f7be1a97
-  - enabled: 0
-    path: Assets/Scenes/2021/ChinatownOutside.unity
-    guid: 9b9a7750e0bfdae4b9ee4c45fae68100
   - enabled: 1
-    path: Assets/Scenes/Final/JuneRoom.unity
+    path: Assets/Scenes/JuneRoom.unity
     guid: cc6e766762632ff46867d77151d4f667
   - enabled: 1
-    path: Assets/Scenes/Final/JuneInside.unity
+    path: Assets/Scenes/JuneInside.unity
     guid: d336310795fd8834ebfc35b9d74856c7
   - enabled: 1
-    path: Assets/Scenes/Final/JuneOutside.unity
+    path: Assets/Scenes/JuneOutside.unity
     guid: f83f16d144e8bdd4dac033796dc1217f
   - enabled: 1
-    path: Assets/Scenes/Final/HomeOutside.unity
+    path: Assets/Scenes/HomeOutside.unity
     guid: 41827964f0d3b0645b582685b977bfd8
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 2e022e8c27c1e4345b230d977017cc84
-  - enabled: 0
-    path: Assets/Scenes/HomeLower.unity
-    guid: 452419502297644069fa49250ecd4ee6
-  - enabled: 0
-    path: Assets/Scenes/HomeUpper.unity
-    guid: 211077d2ddffc47048dc5b7ca5562082
-  - enabled: 0
-    path: Assets/Scenes/HomeOutside.unity
-    guid: 68e2c921884dd4c5ca075c56ce3c54b6
-  - enabled: 0
-    path: Assets/Scenes/EddyRoom.unity
-    guid: 0381b76b8d5de4530a462ae890f15b0a
-  - enabled: 0
-    path: Assets/Scenes/First Try/Bathroom.unity
-    guid: bb220574a54344c08bd1c20ef2200367
-  - enabled: 0
-    path: Assets/Scenes/ChinatownOutside.unity
-    guid: a169affee2cf747ecb08795db67bf557
-  - enabled: 0
-    path: Assets/Scenes/ChinatownInside.unity
-    guid: 3b2e63b334d5d4292b0a1e195e87c348
-  - enabled: 0
-    path: Assets/Scenes/MarketInside.unity
-    guid: 5696611de94684fa1ac6a38cf4f36bfc
-  - enabled: 0
-    path: Assets/Scenes/JuneOutside.unity
-    guid: f995c80f832eb467dbb5a639eac6a3e8
-  - enabled: 0
-    path: Assets/Scenes/JuneInside.unity
-    guid: f32f8f2612dbb478e82c58c903f2c655
-  - enabled: 0
-    path: Assets/Scenes/JuneRoom.unity
-    guid: ff98b8c06998749b6be908daeb9f1ad3
-  - enabled: 0
-    path: Assets/Scenes/2021/HomeOutside.unity
-    guid: 719c7ca881fe8c947be818e6106793f9
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a5867900bfed7c24dacc5ea3e930c5b9,
       type: 2}
