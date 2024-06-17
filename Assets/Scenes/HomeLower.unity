@@ -15456,6 +15456,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1703197811370178233, guid: 928d02f67293fdb41928b026e5dd043a,
+        type: 3}
+      propertyPath: nodeToAutoplayPreTransition
+      value: d1_home
+      objectReference: {fileID: 0}
     - target: {fileID: 1703197811370178235, guid: 928d02f67293fdb41928b026e5dd043a,
         type: 3}
       propertyPath: m_IsActive

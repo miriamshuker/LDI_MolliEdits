@@ -211,7 +211,7 @@ public class GameDialogueManager : MonoBehaviour
         {
             dialogueState = DialogueState.TALK;
         }
-        if (dialogueState != DialogueState.TEXT)
+        if (dialogueState != DialogueState.NONE)
         {
             PlayerControl.Instance.SetPlayerState(PlayerControl.PlayerState.BUSY);
             GameManager.Instance.inConvo = true;

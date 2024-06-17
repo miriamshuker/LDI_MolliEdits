@@ -14,7 +14,7 @@ public class ConvoTracker : MonoBehaviour
 
     public static TextConversation GetConvo(string id)
     {
-        Debug.Log($"looking for id {id}");
+        //Debug.Log($"looking for id {id}");
         foreach (TextConversation g in convos)
         {
             if (g.name.Equals(id))

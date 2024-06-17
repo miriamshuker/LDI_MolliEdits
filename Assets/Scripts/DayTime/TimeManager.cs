@@ -6,6 +6,7 @@ using Yarn.Unity;
 
 public class TimeManager : MonoBehaviour
 {
+    public LevelLoader levelLoader;
     public Clock clock;
     public Day any;
     public Day[] days;
@@ -13,7 +14,6 @@ public class TimeManager : MonoBehaviour
     [Range(0, 3)]
     public int day;
     public GameManager.TimeOfDay timeOfDay;
-    bool began;
 
     private void Start()
     {
@@ -24,6 +24,7 @@ public class TimeManager : MonoBehaviour
             SetTimeOfDay(timeOfDay);
         }
         PhoneManager.Instance.SetTimeManager(this);
+        FindHelpers();
     }
     private void Update()
     {
@@ -58,6 +59,17 @@ public class TimeManager : MonoBehaviour
             NextTimeOfDay();
         }
     }
+    void FindHelpers()
+    {
+        if (levelLoader == null)
+        {
+            levelLoader = GameObject.FindObjectOfType<LevelLoader>();
+        }
+        if (clock == null)
+        {
+            clock = GameObject.FindObjectOfType<Clock>();
+        }
+    }
     public void Begin()
     {
         SetDay(GameManager.Instance.CurrentDay);
@@ -84,6 +96,11 @@ public class TimeManager : MonoBehaviour
         Set(num, param[1]);
     }
     void Set(int day, string tod)
+    {
+        SetDay(day);
+        SetTimeOfDay(tod);
+    }
+    public void Set(int day, GameManager.TimeOfDay tod)
     {
         SetDay(day);
         SetTimeOfDay(tod);
@@ -204,4 +221,35 @@ public class TimeManager : MonoBehaviour
     {
         clock.SetState(isOn);
     }
+
+    #region Day Helpers
+    [YarnCommand("d0")]
+    public void Day0()
+    {
+        Set(0, GameManager.TimeOfDay.FREETIME);
+        clock.SetTimeAndStart("19:30", "20:00", 60);
+        levelLoader.GoTo("EddyRoom", true);
+    }
+    [YarnCommand("d1")]
+    public void Day1()
+    {
+        Set(1, GameManager.TimeOfDay.MORNING);
+        clock.SetTimeAndStart("9:00", "17:00", 1);
+        levelLoader.GoTo("Bathroom", true);
+    }
+    [YarnCommand("d2")]
+    public void Day2()
+    {
+        Set(2, GameManager.TimeOfDay.MORNING);
+        clock.SetTimeAndStart("9:00", "17:00", 1);
+        levelLoader.GoTo("EddyRoom", true);
+    }
+    [YarnCommand("d3")]
+    public void Day3()
+    {
+        Set(3, GameManager.TimeOfDay.MORNING);
+        clock.SetTimeAndStart("9:00", "17:00", 1);
+        levelLoader.GoTo("EddyRoom", true);
+    }
+    #endregion
 }

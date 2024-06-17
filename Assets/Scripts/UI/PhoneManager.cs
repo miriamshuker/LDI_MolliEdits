@@ -55,7 +55,6 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public float focusAnimationTime;
     public float hideAnimationTime;
     public float alertAnimationTime;
-    public bool isFocused;
     public Animator animator;
     public Button putAway;
     public CanvasGroup canvasGroup;
@@ -144,7 +143,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     //Previously Enter/Exit
     public void Focus()
     {
-        if (isFocused)
+        if (GameManager.Instance.isPhoneFocused)
         {
             return;
         }
@@ -176,7 +175,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         animator.SetInteger("State", (int)PhoneState.FOCUSED);
         GameManager.Instance.inTransition = false;
-        isFocused = true;
+        GameManager.Instance.isPhoneFocused = true;
         //Debug.Log("Focus");
     }
     IEnumerator PlayUnfocus()
@@ -191,7 +190,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         animator.SetInteger("State", (int)PhoneState.NONE);
         GameManager.Instance.inTransition = false;
-        isFocused = false;
+        GameManager.Instance.isPhoneFocused = false;
         putAway.gameObject.SetActive(true);
         //pc.SetPlayerState(PlayerControl.PlayerState.NONE);
         //Debug.Log("Unfocus");
@@ -214,7 +213,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         //yield return new WaitForSeconds(hideAnimationTime);
         animator.SetInteger("State", (int)PhoneState.HIDDEN);
 
-        isFocused = false;
+        GameManager.Instance.isPhoneFocused = false;
         Debug.Log("Hide");
     }
     IEnumerator PlayUnhide()
@@ -225,7 +224,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         animator.SetInteger("State", (int)PhoneState.NONE);
         GameManager.Instance.inTransition = false;
-        isFocused = false;
+        GameManager.Instance.isPhoneFocused = false;
         //pc.SetPlayerState(PlayerControl.PlayerState.NONE);
         Debug.Log("Unhide");
     }

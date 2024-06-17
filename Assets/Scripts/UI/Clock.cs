@@ -226,7 +226,7 @@ public class Clock : MonoBehaviour
     }
     void CheckClockEvents()
     {
-        if ((GameManager.Instance.CurrentDay == 0 || GameManager.Instance.CurrentTimeOfDay == GameManager.TimeOfDay.FREETIME) && !GameManager.Instance.IsOpen() && clockEvents.Length > 0)
+        if (GameManager.Instance.IsOpen() && clockEvents.Length > 0)
         {
             //Debug.Log("looking through events");
             foreach (ClockEvent ce in clockEvents)
@@ -239,9 +239,18 @@ public class Clock : MonoBehaviour
             }
         }
     }
-
+    public void SetTimeAndStart(string startTime, string endTime, int secondsPerMinute = -1)
+    {
+        SetClockStart(startTime);
+        SetClockEnd(endTime);
+        if (secondsPerMinute > -1)
+        {
+            SetSecondsPerMinute(secondsPerMinute);
+        }
+        StartClock();
+    }
     [YarnCommand("clockset")]
-    public void SetClockTime(string param)
+    public void SetClockStart(string param)
     {
         Debug.Log($"setting time to {param}");
         string[] time = param.Split(':');
@@ -268,11 +277,15 @@ public class Clock : MonoBehaviour
         SetTicking(false);
     }
     [YarnCommand("clockscale")]
-    public void SetSecondsPerHour(string param)
+    public void SetSecondsPerMinute(string param)
     {
         int.TryParse(param, out int scaledSPM);
         Debug.Log($"scaling clock to {scaledSPM}");
-        GameManager.Instance.secondsPerMinute = scaledSPM;
+        SetSecondsPerMinute(scaledSPM);
+    }
+    void SetSecondsPerMinute(int secondsPerMinute)
+    {
+        GameManager.Instance.secondsPerMinute = secondsPerMinute;
     }
     [YarnCommand("clockend")]
     public void SetClockEnd(string param)
@@ -307,6 +320,10 @@ public class Clock : MonoBehaviour
     }
     public void SetTime(int hour, int minute = 0)
     {
+        if (currentTime == null)
+        {
+            currentTime = startTime;
+        }
         currentTime.SetTime(hour, minute);
         timeText.text = currentTime.GetString(false);
     }
@@ -323,34 +340,5 @@ public class Clock : MonoBehaviour
     {
         isTicking = setting;
         Debug.Log($"set ticking to {setting}");
-    }
-
-    IEnumerator StartTicking()
-    {
-        while (isTicking && currentTime.GetInt() != stopTime.GetInt())
-        {
-            Debug.Log("starting ticks");
-            //TODO: Don't call DialogueRunner directly. Use GameDialogueManager as a buffer, to verify if the game state is open first
-            //(so dialogue can't begin during a scene transition or interrupt another piece of dialogue).
-
-            if (!GameManager.Instance.IsOpen() && clockEvents.Length > 0)
-            {
-                Debug.Log("looking through events");
-                foreach (ClockEvent ce in clockEvents)
-                {
-                    if (ce.day == GameManager.Instance.CurrentDay && ce.triggerTime.GetInt() == currentTime.GetInt())
-                    {
-                        Debug.Log("Clock event met condition!");
-                        dr.StartDialogue(ce.dialogueNode);
-                        //StopAllCoroutines();
-                    }
-                }
-            }
-
-            yield return new WaitForSeconds(secondsPerMinute);
-            currentTime.AddMinute();
-            timeText.text = currentTime.GetString(false);
-        }
-        Debug.Log("Clock done!");
     }
 }

@@ -153,11 +153,10 @@ public class LevelLoader : MonoBehaviour
             LoadLevel(param[0]);
         }
     }
-    public void GoTo(string param)
+    public void GoTo(string param, bool force = false)
     {
         currentSpawnPoint = SceneManager.GetActiveScene().name;
-        Debug.Log("going to scene " + param);
-        LoadLevel(param);
+        LoadLevel(param, force);
     }
     [YarnCommand("spawn")]
     public void SpawnAt(string param)
@@ -170,13 +169,14 @@ public class LevelLoader : MonoBehaviour
         }
     }
     [YarnCommand("toscene")]
-    public void LoadLevel(string param)
+    public void LoadLevel(string param, bool force = false)
     {
-        if (SceneManager.GetActiveScene().name == param)
+        if (SceneManager.GetActiveScene().name == param && !force)
         {
             Debug.Log("already at scene " + param);
             return;
         }
+        Debug.Log("going to scene " + param);
         StopAllCoroutines();
         StartCoroutine(LoadScene(param));
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$reload", true);

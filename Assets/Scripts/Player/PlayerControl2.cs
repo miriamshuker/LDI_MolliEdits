@@ -180,7 +180,7 @@ public class PlayerControl2 : MonoBehaviour, ISoundMaker
         if (phoneAction.phase == InputActionPhase.Started)
         {
             Debug.Log(PhoneManager.Instance.phoneState);
-            if (PhoneManager.Instance.isFocused)
+            if (GameManager.Instance.isPhoneFocused)
             {
                 PhoneManager.Instance.Unfocus();
             }

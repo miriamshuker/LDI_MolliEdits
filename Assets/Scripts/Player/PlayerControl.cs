@@ -170,7 +170,9 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
     void FixedUpdate()
     {
-        transform.position += move * Time.deltaTime;
+        if (CanAct()) {
+            transform.position += move * Time.deltaTime;
+        }
     }
     public void SetPlayerState(PlayerState setting)
     {
@@ -591,14 +593,13 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     }
     void TogglePhone(InputAction.CallbackContext context)
     {
-        if (!PhoneManager.Instance.isActiveAndEnabled ||
-            !PhoneManager.Instance.isFocused && !CanAct() || 
+        if (!PhoneManager.Instance.isActiveAndEnabled || !CanAct() || 
             GameDialogueManager.Instance.dialogueState != GameDialogueManager.DialogueState.NONE)
         {
             return;
         }
         Debug.Log(PhoneManager.Instance.phoneState);
-        if (PhoneManager.Instance.isFocused)
+        if (GameManager.Instance.isPhoneFocused)
         {
             PhoneManager.Instance.Unfocus();
         }

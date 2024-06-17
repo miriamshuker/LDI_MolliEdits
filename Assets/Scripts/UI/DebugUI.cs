@@ -4,10 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using Yarn.Unity;
 
 public class DebugUI : MonoBehaviour
 {
     public TimeManager timeManager;
+    public LevelLoader levelLoader;
+    public Clock clock;
     public TextMeshProUGUI dayText;
     public GameObject dayUI;
     public GameObject varUI;
@@ -18,29 +21,17 @@ public class DebugUI : MonoBehaviour
     {
         ToggleDay(dayIsVisible);
         ToggleVar(varIsVisible);
+        FindHelpers();
+    }
+    void FindHelpers()
+    {
+        if (levelLoader == null)
+        {
+            levelLoader = GameObject.FindObjectOfType<LevelLoader>();
+        }
         if (timeManager == null)
         {
             timeManager = GameObject.FindObjectOfType<TimeManager>();
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (!GameManager.Instance.debugMode)
-            return;
-        Keyboard k = Keyboard.current;
-        if (k.rightBracketKey.wasPressedThisFrame)
-        {
-            ToggleDay();
-        }
-        if (dayIsVisible)
-        {
-            UpdateDay();
-        }
-
-        if (k.leftBracketKey.wasPressedThisFrame) {
-            ToggleVar();
         }
     }
 
@@ -72,18 +63,10 @@ public class DebugUI : MonoBehaviour
     }
     public void SetDay(int day)
     {
-        if (timeManager == null)
-        {
-            timeManager = GameObject.FindObjectOfType<TimeManager>();
-        }
         timeManager.SetDay(day.ToString());
     }
     public void SetTimeOfDay(string param)
     {
-        if (timeManager == null)
-        {
-            timeManager = GameObject.FindObjectOfType<TimeManager>();
-        }
         timeManager.SetTimeOfDay(param);
     }
     public void SetLocation(string scene)

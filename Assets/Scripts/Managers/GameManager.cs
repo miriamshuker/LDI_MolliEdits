@@ -26,11 +26,11 @@ public class GameManager : MonoBehaviour
     public bool inConvo;
     public bool inEssay;
     public bool inTransition;
+    public bool isPhoneFocused;
     public int CurrentDay { get; private set; }
     public TimeOfDay CurrentTimeOfDay { get; private set; }
     public Clock.ClockTime CurrentTime { get; private set; }
     public int secondsPerMinute;
-    private int prevSpm;
 
     public bool doneEssay;
     public bool doneQuiz;
@@ -146,6 +146,10 @@ public class GameManager : MonoBehaviour
             return Yarn.Value.NULL;
 
         return variables[variableName];
+    }
+    public int SecondsPerMinute()
+    {
+        return secondsPerMinute;
     }
     public void SetDay(int day)
     {
