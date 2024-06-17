@@ -50,6 +50,7 @@ Eddy: And with that... the mission begins!
 <<clockstart UICanvas>>
 <<clockend UICanvas 17:00>>
 <<settod TimeManager freetime>>
+<<unhide Phone>>
 //Some kind of mission text could appear here.
 ===
 title: d1_afternoon_slow
@@ -63,16 +64,22 @@ title: d1_curfew
 ---
 <<if $currentscene != "HomeUpper" && $currentscene != "HomeLower" && $currentscene != "EddyRoom" && $currentscene != "Bathroom">>
     Eddy: AH!! I'm not at home!
-<<else>>
-    Eddy: AHH!! I AM at home!
 <<endif>>
 Eddy: Time's up today....
 <<cross TransitionCanvas 1.5>>
 <<wait 1.5>>
 <<hide Phone>>
 <<clockscale UICanvas 60>>
+<<clockset UICanvas 9:00>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<clockend UICanvas 17:00>>
 <<to TransitionCanvas HomeLower>>
 <<settime TimeManager 1 evening>>
+===
+title: d1_home
+---
+Eddy: Hey, welcome back, everyone!
 ===
 title: dadhome
 ---

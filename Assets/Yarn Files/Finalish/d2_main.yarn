@@ -24,10 +24,10 @@ Ellen: Okay, bye.
 Eddy: See ya.
 Ellen: I'm expecting boba in the fridge when I get back!
 Eddy: It'll be empty!
-<<wait  0.3>>
-<<unhide Phone>>
+<<wait  1>>
 <<cross TransitionCanvas 1.5>>
 <<wait  1.5>>
+<<unhide Phone>>
 <<clockset UICanvas 9:00>>
 <<clockend UICanvas 17:00>>
 <<clockscale UICanvas 1>>

@@ -13,6 +13,7 @@ All that's left is to get ready and do what I can!
 <<clockend UICanvas 17:00>>
 <<clockscale UICanvas 1>>
 <<clockstart UICanvas>>
+<<settod TimeManager freetime>>
 ===
 title: d3_curfew
 ---

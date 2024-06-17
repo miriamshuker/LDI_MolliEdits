@@ -1,21 +1,10 @@
 title: quick_d0
 ---
-<<to TransitionCanvas EddyRoom>>
-<<settime TimeManager 0 freetime>>
-Quick jump to Day 0.
-<<set $d0_june to false>>
-<<clockset UICanvas 19:30>>
-<<clockend UICanvas 20:00>>
-//<<clockscale UICanvas 1>>
+<<d0 DebugUI>>
 ===
 title: quick_d1
 ---
-<<to TransitionCanvas Bathroom>>
-<<settime TimeManager 1 freetime>>
-Quick jump to Day 1.
-<<clockset UICanvas 12:00>>
-<<clockend UICanvas 18:00>>
-<<clockscale UICanvas 1>>
+<<d1 DebugUI>>
 ===
 title: debug_viet
 ---
@@ -28,8 +17,8 @@ title: quick_d1_dinner
 <<to TransitionCanvas HomeLower>>
 <<settime TimeManager 1 dinner>>
 Quick jump to Day 1 Dinner.
-<<clockset UICanvas 18:30>>
-<<clockend UICanvas 20:00>>
+<<clockset UICanvas 20:30>>
+<<clockend UICanvas 21:00>>
 <<clockscale UICanvas 5>>
 ===
 title: qd1
