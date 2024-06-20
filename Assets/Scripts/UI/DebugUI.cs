@@ -63,14 +63,17 @@ public class DebugUI : MonoBehaviour
     }
     public void SetDay(int day)
     {
+        FindHelpers();
         timeManager.SetDay(day.ToString());
     }
     public void SetTimeOfDay(string param)
     {
+        FindHelpers();
         timeManager.SetTimeOfDay(param);
     }
     public void SetLocation(string scene)
     {
+        FindHelpers();
         LevelLoader.Instance.GoTo(scene);
     }
 }

@@ -180,14 +180,7 @@ public class Clock : MonoBehaviour
     {
         if (!PhoneManager.Instance.IsHidden() && isTicking && !GameManager.Instance.inConvo)
         {
-            elapsedTime += Time.deltaTime;
-            //Debug.Log(elapsedTime);
-            /*int t = (int)(elapsedTime / GameManager.Instance.secondsPerMinute);
-            if (t > 0)
-            {
-                Tick(t);
-                elapsedTime = 0;
-            }*/
+            elapsedTime += Time.deltaTime * GameManager.Instance.TimeMultiplier();
             if (elapsedTime > GameManager.Instance.secondsPerMinute)
             {
                 Tick();

@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public TimeOfDay CurrentTimeOfDay { get; private set; }
     public Clock.ClockTime CurrentTime { get; private set; }
     public int secondsPerMinute;
+    public float timeMultiplier = 1;
 
     public bool doneEssay;
     public bool doneQuiz;
@@ -147,9 +148,16 @@ public class GameManager : MonoBehaviour
 
         return variables[variableName];
     }
-    public int SecondsPerMinute()
+    public float TimeMultiplier()
     {
-        return secondsPerMinute;
+        if (debugMode)
+        {
+            return timeMultiplier;
+        }
+        else
+        {
+            return 1f;
+        }
     }
     public void SetDay(int day)
     {

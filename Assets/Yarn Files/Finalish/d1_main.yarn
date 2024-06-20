@@ -66,16 +66,14 @@ title: d1_curfew
     Eddy: AH!! I'm not at home!
 <<endif>>
 Eddy: Time's up today....
-<<cross TransitionCanvas 1.5>>
-<<wait 1.5>>
-<<hide Phone>>
-<<clockscale UICanvas 60>>
-<<clockset UICanvas 9:00>>
-<<clockscale UICanvas 1>>
-<<clockstart UICanvas>>
-<<clockend UICanvas 17:00>>
 <<to TransitionCanvas HomeLower>>
 <<settime TimeManager 1 evening>>
+<<wait 1.5>>
+<<hide Phone>>
+<<clockscale UICanvas 1>>
+<<clockstart UICanvas>>
+<<clockset UICanvas 17:30>>
+<<clockend UICanvas 18:00>>
 ===
 title: d1_home
 ---

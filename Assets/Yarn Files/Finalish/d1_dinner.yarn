@@ -82,7 +82,8 @@ Eddy: Sometimes it takes some work to build something positive.
 Ellen: Yeah, there are things that should've been red flags, but it can be so hard to tell.
 Eddy: That's true too.
 Mom: Anyway, that guy was no good.@v
-Mom: He takes up all your time at home, doesn't respect our family's rules, makes you stay out late, and didn't even always pay when you go out!@
+Mom: He took up all your time at home, disrespected our family's rules, made you stay out late...
+Mom: ...and didn't even always pay when you go out!@
 Ellen: (But <i>I</i> want to stay out late....)
 Dad: There are plenty of fish in the sea.
 Mom: Taller, handsomer, thinner, and smarter fish who have money!
@@ -105,11 +106,16 @@ Eddy: Yeah.
 <<wait 2>>
 <<cameratarget Cameras Player>>
 <<showplayer Player true>>
-<<settod TimeManager night>>
+<<settod TimeManager bedtime>>
 <<yarnon YarnController table>>
 Well....
 There's a good reason why June doesn't want my parents to know we're dating.
 You can't just <b>be</b>. You have to be better than someone else.
+<<unhide Phone>>
+<<wait 0.1>>
+<<clockscale UICanvas 1>>
+<<clockset UICanvas 20:30>>
+<<clockend UICanvas 21:00>>
 ===
 title: d1_help
 ---

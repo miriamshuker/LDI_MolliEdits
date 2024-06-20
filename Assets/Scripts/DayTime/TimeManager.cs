@@ -226,13 +226,15 @@ public class TimeManager : MonoBehaviour
     [YarnCommand("d0")]
     public void Day0()
     {
-        Set(0, GameManager.TimeOfDay.FREETIME);
+        FindHelpers();
+        Set(0, GameManager.TimeOfDay.EVENING);
         clock.SetTimeAndStart("19:30", "20:00", 60);
         levelLoader.GoTo("EddyRoom", true);
     }
     [YarnCommand("d1")]
     public void Day1()
     {
+        FindHelpers();
         Set(1, GameManager.TimeOfDay.MORNING);
         clock.SetTimeAndStart("9:00", "17:00", 1);
         levelLoader.GoTo("Bathroom", true);
@@ -240,6 +242,7 @@ public class TimeManager : MonoBehaviour
     [YarnCommand("d2")]
     public void Day2()
     {
+        FindHelpers();
         Set(2, GameManager.TimeOfDay.MORNING);
         clock.SetTimeAndStart("9:00", "17:00", 1);
         levelLoader.GoTo("EddyRoom", true);
@@ -247,6 +250,7 @@ public class TimeManager : MonoBehaviour
     [YarnCommand("d3")]
     public void Day3()
     {
+        FindHelpers();
         Set(3, GameManager.TimeOfDay.MORNING);
         clock.SetTimeAndStart("9:00", "17:00", 1);
         levelLoader.GoTo("EddyRoom", true);

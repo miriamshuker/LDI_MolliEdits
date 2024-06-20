@@ -180,6 +180,7 @@ public class LevelLoader : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(LoadScene(param));
         GameDialogueManager.Instance.dr.variableStorage.SetValue("$reload", true);
+        GameDialogueManager.Instance.StopDialogue();
     }
     private IEnumerator LoadCoroutine(string param)
     {

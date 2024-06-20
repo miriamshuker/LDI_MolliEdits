@@ -180,6 +180,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
     IEnumerator PlayUnfocus()
     {
+        Debug.Log("unfocus");
         //putAway.gameObject.SetActive(false);
         canvasGroup.interactable = false;
 
@@ -252,7 +253,7 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         }
 
         phoneApp = p;
-        Debug.Log(timeManager != null);
+        Debug.Log("Opening app " + phoneApp);
         //timeManager.SetState(p == PhoneApp.HOME);
 
         if (p == PhoneApp.HOME)
@@ -316,10 +317,14 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     public void OpenText(string contactName, Message m)
     {
         tManager.ForceOpen(contactName, m);
-        StartCoroutine(Test(.5f));
+        if (phoneApp != PhoneApp.TEXTS)
+        {
+            StartCoroutine(Test(.5f));
+        }
     }
     IEnumerator Test(float dur)
     {
+        Debug.Log("test");
         yield return new WaitForSeconds(dur);
         Focus();
         OpenApp("texts");
