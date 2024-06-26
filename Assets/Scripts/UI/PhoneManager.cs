@@ -164,6 +164,10 @@ public class PhoneManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         return phoneState == PhoneState.HIDE || phoneState == PhoneState.HIDDEN;
     }
+    public bool IsFocusing()
+    {
+        return phoneState == PhoneState.FOCUS || phoneState == PhoneState.FOCUSED;
+    }
     IEnumerator PlayFocus()
     {
         //pc.SetPlayerState(PlayerControl.PlayerState.BUSY);

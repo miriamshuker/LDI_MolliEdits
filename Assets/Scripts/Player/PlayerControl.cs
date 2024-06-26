@@ -589,7 +589,7 @@ public class PlayerControl : MonoBehaviour, ISoundMaker
     public bool CanAct()
     {
         if (debugPause) return false;
-        return canMove && state != PlayerState.BUSY && GameManager.Instance.IsOpen();
+        return canMove && state != PlayerState.BUSY && GameManager.Instance.IsOpen() && !PhoneManager.Instance.IsFocusing();
     }
     void TogglePhone(InputAction.CallbackContext context)
     {

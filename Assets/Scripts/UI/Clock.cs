@@ -151,6 +151,7 @@ public class Clock : MonoBehaviour
 
     public ClockEvent[] clockEvents;
     public DialogueRunner dr;
+    public DebugHelper debugHelper;
 
     // Start is called before the first frame update
     void Start()
@@ -180,7 +181,7 @@ public class Clock : MonoBehaviour
     {
         if (!PhoneManager.Instance.IsHidden() && isTicking && !GameManager.Instance.inConvo)
         {
-            elapsedTime += Time.deltaTime * GameManager.Instance.TimeMultiplier();
+            elapsedTime += Time.deltaTime * debugHelper.TimeMultiplier();
             if (elapsedTime > GameManager.Instance.secondsPerMinute)
             {
                 Tick();

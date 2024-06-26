@@ -23,24 +23,25 @@ public class GameManager : MonoBehaviour
 
     public VariableManager.DefaultVariable[] defaultVariables;
     public VariableStorageBehaviour vars;
+    [Header("Game Vars")]
     public bool inConvo;
     public bool inEssay;
     public bool inTransition;
     public bool isPhoneFocused;
-    public int CurrentDay { get; private set; }
-    public TimeOfDay CurrentTimeOfDay { get; private set; }
-    public Clock.ClockTime CurrentTime { get; private set; }
-    public int secondsPerMinute;
-    public float timeMultiplier = 1;
-
     public bool doneEssay;
     public bool doneQuiz;
     public bool doneTrash;
     public bool doneRice;
-
     public int trashCollected;
 
+    public int CurrentDay { get; private set; }
+    public TimeOfDay CurrentTimeOfDay { get; private set; }
+    public Clock.ClockTime CurrentTime { get; private set; }
+
+    [Header("Debug Helpers")]
     public bool debugMode;
+    public int secondsPerMinute;
+
     public bool enteringNodeName;
 
     private void Awake()
@@ -147,17 +148,6 @@ public class GameManager : MonoBehaviour
             return Yarn.Value.NULL;
 
         return variables[variableName];
-    }
-    public float TimeMultiplier()
-    {
-        if (debugMode)
-        {
-            return timeMultiplier;
-        }
-        else
-        {
-            return 1f;
-        }
     }
     public void SetDay(int day)
     {

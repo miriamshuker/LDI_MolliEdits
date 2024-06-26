@@ -90,6 +90,7 @@ public class GameDialogueManager : MonoBehaviour
     public float expoHoldTime, expoWaitTime;
 
     [Header("Other Vars")]
+    public DebugHelper debugHelper;
     private DialogueState prevState;
     public float quickNextTime;
     public float quickNextTimeText;
@@ -141,7 +142,7 @@ public class GameDialogueManager : MonoBehaviour
                 else if (dialogueState == DialogueState.TEXT)
                     targetTime = quickNextTimeText;
 
-                nextHoldTime += Time.deltaTime;
+                nextHoldTime += Time.deltaTime * debugHelper.QuickHoldMultiplier();
                 if (nextHoldTime > targetTime)
                 {
                     Next();
