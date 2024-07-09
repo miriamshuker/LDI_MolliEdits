@@ -1,5 +1,6 @@
 title: d0_liedown
 ---
+<<cameratarget Cameras LieDown false>>
 <<usealt Player lay0>>
 <<clockset UICanvas 19:30>>
 <<clockend UICanvas 20:00>>
@@ -7,10 +8,10 @@ title: d0_liedown
 <<hide Phone>>
 <<spawn TransitionCanvas LieDown>>
 <<settod TimeManager freetime>>
-<<cameratarget Cameras LieDown>>
+<<cameratarget Cameras Player>>
 Eddy: Not feeling it today....&tired
 Eddy: There's so much I need to do...&normal
-Eddy: Homework, chores...&uh
+Eddy: Homework, chores, life...&uh
 <<usealt Player lay1>>
 Eddy: ...and so little energy.&tired
 <<usealt Player lay0>>
@@ -22,6 +23,7 @@ Eddy: People I WANT to talk to.&happy
 Eddy: Well, a few.
 <<camerashake Cameras 0.5 0.1 100 >> 
 Eddy: Oh!&shock
+Eddy: There's one of them!
 <<unhide Phone>>
 <<wait 0.1>>
 <<hidetalk DialogueCanvas>>

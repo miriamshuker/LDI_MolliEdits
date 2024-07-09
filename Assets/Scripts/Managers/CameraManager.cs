@@ -55,13 +55,16 @@ public class CameraManager : MonoBehaviour
         }
     }
     [YarnCommand("cameratarget")]
-    public void SetCameraFocus(string param)
+    public void SetCameraFocus(string[] param)
     {
         foreach (Transform t in subjects)
         {
-            if (t.name == param)
+            if (t.name == param[0])
             {
-                SwapCamera();
+                if (param.Length < 2 || bool.Parse(param[1]))
+                {
+                    SwapCamera();
+                }
                 cams[subjectIndex].Follow = t;
                 return;
             }
