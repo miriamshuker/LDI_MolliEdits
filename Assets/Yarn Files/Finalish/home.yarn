@@ -223,7 +223,7 @@ title: stairs
     <<if $vmeetellen is false || $vmeetdad is false || $vmeetmom is false>>
         We should probably greet everyone first.
     <<else>>
-        <<cross TransitionCanvas 1.5>>
+        //<<cross TransitionCanvas 1.5>>
         <<wait  0.5>>
         <<settod TimeManager dinner>>
         <<to TransitionCanvas HomeUpper>>

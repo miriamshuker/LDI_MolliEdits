@@ -218,6 +218,8 @@ public class Clock : MonoBehaviour
         }
         CheckClockEvents();
     }
+
+    //DO SOMETHING WHEN TIME AND DAY ARE MET
     void CheckClockEvents()
     {
         if (GameManager.Instance.IsOpen() && clockEvents.Length > 0)
@@ -228,6 +230,8 @@ public class Clock : MonoBehaviour
                 if (ce.day == GameManager.Instance.CurrentDay && ce.tod == GameManager.Instance.CurrentTimeOfDay && ce.triggerTime.GetInt() == currentTime.GetInt())
                 {
                     Debug.Log("Clock event met condition!");
+                    Debug.Log("ce.day = " + ce.day);
+                    Debug.Log("GameManager.Instance.CurrentDay = " + GameManager.Instance.CurrentDay);
                     dr.StartDialogue(ce.dialogueNode);
                 }
             }

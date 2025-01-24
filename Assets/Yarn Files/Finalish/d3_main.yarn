@@ -1,5 +1,10 @@
 title: d3_wakeup
 ---
+<<cross TransitionCanvas 1.5>>
+<<wait  0.5>>
+<<spawn TransitionCanvas LieDown>>
+<<showplayer Player true>>
+<<usebase Player>>
 Dawn of the Final Day.
 ...Is what I'm thinking.
 But it's not dawn.

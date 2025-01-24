@@ -5,6 +5,7 @@ title: d2_wakeup
 <<spawn TransitionCanvas LieDown>>
 <<wait  1>>
 <<camerashake Cameras 1 0.1 200 >> 
+<<settime TimeManager 2 morning>>
 Ellen: WAKE UP!!
 Eddy: Ah!!!
 <<camerashake Cameras 1 0.1 50 >> 
@@ -48,9 +49,10 @@ title: d2_curfew
 <<endif>>
 Eddy: Maybe clean up a bit too. Wash my face, maybe?
 Eddy: ...Nah, who am I kidding?
-<<tor TransitionCanvas EddyRoom>>
+
 <<clockscale UICanvas 60>>
-My room needs cleaning....
+//My room needs cleaning....
+//<<tor TransitionCanvas EddyRoom>>
 Oh well.
 <<settod TimeManager evening>>
 ===
@@ -190,6 +192,7 @@ Laughing together... making her laugh....
 I kinda want to do that every day.
 ...
 Now that she's gone though, it's really dawning on me.
+//this comparison returns true even if you didn't do chores.
 <<if $tasks > 2>>
     This is a weird feeling.
     I've gotten so much... <i>more</i> done.

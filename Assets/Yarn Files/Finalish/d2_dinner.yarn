@@ -15,16 +15,16 @@ June: Thanks!
 ===
 title: d2_wait
 ---
-<<spawn TransitionCanvas LieDown>>
+//<<spawn TransitionCanvas LieDown>>
 <<wait  0.5>>
 <<hide Phone>>
 Eddy: ...Funny thing is, we first met in orchestra when she forgot her music stand.
 Eddy: I know how that feels.
 June: I'm back!
 June: Let's play!
-<<setfade TransitionCanvas 1>>
+//<<setfade TransitionCanvas 1>>
 <<wait  0.5>>
-<<sortorder TransitionCanvas 1>>
+//<<sortorder TransitionCanvas 1>>
 [[d2_music]]
 ===
 title: d2_music
@@ -53,8 +53,8 @@ Eddy: Sure.
 Eddy: That's what makes good music!
 <<wait  0.5>>
 <<showplayer Player false>>
-<<sortorder TransitionCanvas 5>>
+//<<sortorder TransitionCanvas 5>>
 <<cross TransitionCanvas 1.5>>
 <<wait  1.5>>
-<<settod TransitionCanvas bedtime>>
+<<settime TimeManager 2 bedtime>>
 ===
